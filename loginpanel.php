@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LoginPanel</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    
 </head>
 <body>
  
@@ -23,10 +24,10 @@
             <label for="Password"> Password </label>
         </div>
 
-        <input id="Sign" type="submit" value="Login">
-        <div>
-            <input id="Register" type="submit" value="Register">
-        </div>
+        
+<input  class = "btn btn-primary" type="submit" name="login" value="Sign Up"> </input>
+
+       
     </form>
 
     <?php
