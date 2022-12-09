@@ -4,10 +4,6 @@ session_start();
 require_once('config.php');
 $connection = mysqli_connect("localhost", "root" ,"", "gymweb");
 
-if(isset($_SESSION["username"])) {
-	$username= $_SESSION["username"];
-	echo "Welcome $username";
-}
 ?>
 
 
