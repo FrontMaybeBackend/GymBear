@@ -26,11 +26,7 @@
 header{
 	position: relative;
 }
-.IMGBEAR{ /*FOTO NIEDZWIEDZIA DO POPRAWY BO COS JEST LIPA */
-    position: absolute;
-	top: -105px;
-	left: 80px;
-}
+
 
 
 .UL_NAV{
@@ -42,7 +38,7 @@ header{
 .APP{
 	display: flex;
 	align-items: center;
-	justify-content: space-around;
+	justify-content: space-between;
 	border: solid 2px black;
 	height: 50px;
 	font-size: 20px;

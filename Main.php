@@ -21,6 +21,23 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 	$ppl = $_POST["ppl"];
 }
 
+
+/*class TrainingProgram {
+	public $training; 
+	public $days;
+
+	public function __construct($training, $days ){
+     $this ->training = $training;
+     $this ->days = $days;
+	 
+	}
+
+	public function get_training () {
+		$this ->$training;
+		$this ->$days;
+
+	}
+}*/
 ?>
 
 
@@ -68,7 +85,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 	<ul class="APP">
-	<form method ="POST" action=<?php $_SERVER["PHP_SELF"]?>>
+	<form method ="POST" action="<?php $_SERVER["PHP_SELF"]?>">
 	
 		<li class="Training">Training
 			<div class="Training-dropdown">
@@ -113,7 +130,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 	</ul>
 </form>
 
-	<form method ="POST" action=<?php $_SERVER["PHP_SELF"]?>>
+	<form method ="POST" action="<?php $_SERVER["PHP_SELF"]?>">
 	<div class="d-flex justify-content-between"  role="group">
 
 	<input  class = "btn btn-primary btn-lg border border-dark mx-3 " type="submit" name="monday" value="Monday"></input>
@@ -140,11 +157,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 	 <form action='' method='post'>
 	<button name ="ppl" type="submit" class="btn btn-primary text-uppercase text-center badge bg-dark text-wrap"> Push Pull Legs</button>
 	</form>
+	
 	 <button name ="ul" type="button" class="btn btn-primary text-uppercase text-center badge bg-dark text-wrap">Upper Lower</button>
+	
 	 <button name= "brs" type="button" class="btn btn-primary text-uppercase text-center badge bg-dark text-wrap">Bro Split</button>
 	 <button name= "fbw" type="button" class="btn btn-primary text-uppercase text-center badge bg-dark text-wrap">Full body workout</button>
-	 
 </ul>
+	</div>
+
+
+
 <?php
 	}
 	?>
@@ -165,6 +187,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 	}
 	?>
 
+<ul class="dropdown-menu">
+  <li><a class="dropdown-item" href="#">Link 1</a></li>
+  <li><a class="dropdown-item" href="#">Link 2</a></li>
+  <li><a class="dropdown-item" href="#">Link 3</a></li>
+  <li><a class="dropdown-item-text" href="#">Text Link</a></li>
+  <li><span class="dropdown-item-text">Just Text</span></li>
+</ul>
+
+
 <div id="add" style="display:none">
 <div class = "input-group mb-3"> 
 		<select class="form-select" id="inputGroupSelect1">
@@ -175,14 +206,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 	</select>
 	</div>
 </div>
-</div>
-</div>
+
+
 
 <?php
 if(isset($ppl)) {
 	?>
 	<div class="d-flex justify-content-end" style="display:none">
-	<button id="addE" name="addExc" type ="button" class ="btn btn-outline-dark mb-3 btn-sm"  onclick="showElement()">+</button>
+	<button id="addE" name="addExc" type ="button" class ="btn btn-outline-dark mb-3 btn-sm" onclick="showElement()" >+</button>
 	</div>
 	<?php
 }
@@ -193,12 +224,8 @@ if(isset($ppl)) {
 document.getElementById('addE').addEventListener('click', showElement);
     
         function showElement() {
-
-            document.getElementById("add").style.display="block";     
-			element.addEventListener("click", showElement);
+            document.getElementById("add").style.display="block";
         }
-    
-		
         </script>
 		
 </body>
