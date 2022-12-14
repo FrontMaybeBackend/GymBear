@@ -4,6 +4,7 @@ require_once("config.php");
 $connection = mysqli_connect("localhost", "root" ,"", "gymweb");
 
 
+
 $user_error="";
 $password_error = "";
 $fail_form = false;
@@ -27,9 +28,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "SELECT username FROM users WHERE username = '$user_name' AND password = '$password'";
     $result =mysqli_query($connection, $sql);
     if(mysqli_num_rows($result) === 1) {
-         header("Location: Main.php");
+        header("Location:Main.php");
     }else {
         $login_error = " we dont have this account in DB";
+    }if(!$fail_form){
+        $_SESSION["username"] = $user_name;
+        
     }
     
 }
