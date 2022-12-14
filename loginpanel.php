@@ -54,6 +54,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>LoginPanel</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    
     <style>
         .error{
             color:red;

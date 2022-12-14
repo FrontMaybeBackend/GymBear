@@ -50,6 +50,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>Document</title>
     <link  rel="stylesheet" type="text/css" href="Main_style.css">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<script src="js/bootstrap.bundle.js"> </script>
 	
 </head>
 <body>
@@ -84,54 +85,56 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 
-	<ul class="APP">
-	<form method ="POST" action="<?php $_SERVER["PHP_SELF"]?>">
 	
-		<li class="Training">Training
-			<div class="Training-dropdown">
-				<a class= "ppl" href="#"> PPL
-				
-				</a>
-				
-				<a href="#"> FBW</a>
-				<a href="#"> UpperLower</a>
-				<a href="#"> BroSplit</a>
-			</div>
-		</li>
+	<form method ="POST" action="<?php $_SERVER["PHP_SELF"]?>">
+<div class="dropdown container-fluid d-flex justify-content-between" style="background-color:black">                                                                     
+	<button class ="btn btn-info dropdown-toggle-split m-3 text-center text-nowrap" style="width: 12rem;" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+		Recomended Programs
+</button>
+<ul class =" dropdown-menu text-center btn-sm bg-dark" aria-labelledby="dropdownMenu2">
+	<li><button class="dropdown-item text-uppercase" type="button"style="color:white">Push Pull Legs</button></li>
+	<li><button class="dropdown-item text-uppercase" type="button"style="color:white">Upper Lower</button></li>
+	<li><button class="dropdown-item text-uppercase" type="button"style="color:white">Full Body Workout</button></li>
+	<li><button class="dropdown-item text-uppercase" type="button"style="color:white">Bro Split</button></li>
+</ul>
+ <button class ="btn btn-info dropdown-toggle-split m-3 text-center text-nowrap" style="width: 12rem;" type="button" id="dropdownMenu3" data-bs-toggle="dropdown" aria-expanded="false">
+ Diet
+</button>
+<ul class="dropdown-menu text-center btn-sm bg-dark " aria-labelledby="dropdownMenu3">
+	<li><button class="dropdown-item text-uppercase" type="button"style="color:white">Full Carbs </button></li>
+	<li><button class= "dropdown-item text-uppercase" type="button"style="color:white"> Full Fats </button></li>
+</ul>
 
-		<li class="Diet"> Diet
-			<div class="Diet-dropdown">
-				<a href="#">Keto</a>
-				<a href="#">FullCarb</a>
-				<a href="#">Wegan</a>
-			</div>
-		</li>
+<button class=" btn btn-info dropdown-toggle-split m-3 text-center text-nowrap " style= "width: 12rem;" type="button" id="dropdownMenu4" data-bs-toggle="dropdown" aria-expanded ="false">
+Supplements
+</button>
+<ul class="dropdown-menu text-center btn-sm bg-dark" aria-labelledby="dropdownMenu4" >
+	<li><button class="dropdown-item text-uppercase" type="button"style="color:white" > Creatine</button></li>
+	<li><button class="dropdown-item text-uppercase" type="button"style="color:white"> Whey</button></li>
+	<li><button class="dropdown-item text-uppercase" type="button"style="color:white"> Vitamins</button></li>
+</ul>
 
-		<li class="CC"> Calculator
-			<div class="CC-dropdown">
-				<a href="#">BMI</a>
-				<a href="#">Calories</a>
-			</div>
-		</li>
-		<li class="Suple"> Suplements
-			<div class="Suple-dropdown">
-				<a href="#">Creatine</a>
-				<a href="#">Whey</a>
-				<a href="#">Ashwaganda</a>
-			</div>
-		</li>
-		<li class="Max"> MaxWeight
-			<div class="Max-dropdown">
-				<a href="#">Squat</a>
-				<a href="#">Deadlift</a>
-				<a href="#">BenchPress</a>
-			</div>
-		</li>
-	</ul>
+<button class=" btn btn-info dropdown-toggle-split m-3 text-center text-nowrap" style ="width:12 rem;" type="button" id="dropdownMenu5" data-bs-toggle="dropdown" aria-expanded="false">
+Calculator
+</button>
+<ul class="dropdown-menu text-center btn-sm bg-dark " aria-labelledby="dropdownMenu5" >
+	<li ><button class ="dropdown-item " type="button " style="color:white"> BMI </button></li>
+	
+	<ul><button class ="dropdown-item text-uppercase" type="button"style="color:white"  >Maxes </button> 
+	<li><button class="dropdown-item text-uppercase" type="button"style="color:white" >Squat </button> </li>
+	<li><button class="dropdown-item text-uppercase" type="button" style="color:white">Bench Press</button> </li>
+	<li><button class="dropdown-item text-uppercase" type="button" style="color:white"> Dead Lift </button> </li>
+</ul>
+</ul>
+	
+</div>
+
+
 </form>
 
+
 	<form method ="POST" action="<?php $_SERVER["PHP_SELF"]?>">
-	<div class="d-flex justify-content-between"  role="group">
+	<div class="d-flex justify-content-between m-3"  role="group">
 
 	<input  class = "btn btn-primary btn-lg border border-dark mx-3 " type="submit" name="monday" value="Monday"></input>
 
@@ -152,7 +155,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 <?php
 	if(isset($monday)) {
 		?>
-		<div class = "d-flex m-3 " >
+		<div class = "d-flex m-4 p-2" >
      <ul class="d-grid gap-2  list-group ">
 	 <form action='' method='post'>
 	<button name ="ppl" type="submit" class="btn btn-primary text-uppercase text-center badge bg-dark text-wrap"> Push Pull Legs</button>
@@ -229,4 +232,5 @@ document.getElementById('addE').addEventListener('click', showElement);
         </script>
 		
 </body>
+
 </html>
