@@ -97,7 +97,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 	<li><button class="dropdown-item text-uppercase" type="button"style="color:white">Full Body Workout</button></li>
 	<li><button class="dropdown-item text-uppercase" type="button"style="color:white">Bro Split</button></li>
 </ul>
- <button class ="btn btn-info dropdown-toggle-split m-3 text-center text-nowrap" style="width: 12rem;" type="button" id="dropdownMenu3" data-bs-toggle="dropdown" aria-expanded="false">
+ <button class ="btn btn-info dropdown-toggle-split m-3 text-center text-nowrap" style="width: 10rem;" type="button" id="dropdownMenu3" data-bs-toggle="dropdown" aria-expanded="false">
  Diet
 </button>
 <ul class="dropdown-menu text-center btn-sm bg-dark " aria-labelledby="dropdownMenu3">
@@ -105,7 +105,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 	<li><button class= "dropdown-item text-uppercase" type="button"style="color:white"> Full Fats </button></li>
 </ul>
 
-<button class=" btn btn-info dropdown-toggle-split m-3 text-center text-nowrap " style= "width: 12rem;" type="button" id="dropdownMenu4" data-bs-toggle="dropdown" aria-expanded ="false">
+<button class=" btn btn-info dropdown-toggle-split m-3 text-center text-nowrap " style= "width: 10rem;" type="button" id="dropdownMenu4" data-bs-toggle="dropdown" aria-expanded ="false">
 Supplements
 </button>
 <ul class="dropdown-menu text-center btn-sm bg-dark" aria-labelledby="dropdownMenu4" >
@@ -114,17 +114,15 @@ Supplements
 	<li><button class="dropdown-item text-uppercase" type="button"style="color:white"> Vitamins</button></li>
 </ul>
 
-<button class=" btn btn-info dropdown-toggle-split m-3 text-center text-nowrap" style ="width:12 rem;" type="button" id="dropdownMenu5" data-bs-toggle="dropdown" aria-expanded="false">
+<button class=" btn btn-info dropdown-toggle-split m-3 text-center text-nowrap" style ="width:10 rem;" type="button" id="dropdownMenu5" data-bs-toggle="dropdown" aria-expanded="false">
 Calculator
 </button>
 <ul class="dropdown-menu text-center btn-sm bg-dark " aria-labelledby="dropdownMenu5" >
-	<li ><button class ="dropdown-item " type="button " style="color:white"> BMI </button></li>
-	
-	<ul><button class ="dropdown-item text-uppercase" type="button"style="color:white"  >Maxes </button> 
+	<li><button class ="dropdown-item text-uppercase" type="button"style="color:white"  >Maxes </button> </li>
 	<li><button class="dropdown-item text-uppercase" type="button"style="color:white" >Squat </button> </li>
 	<li><button class="dropdown-item text-uppercase" type="button" style="color:white">Bench Press</button> </li>
 	<li><button class="dropdown-item text-uppercase" type="button" style="color:white"> Dead Lift </button> </li>
-</ul>
+
 </ul>
 	
 </div>
