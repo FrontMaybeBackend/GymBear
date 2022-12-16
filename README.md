@@ -2,4 +2,5 @@
 TESTOWE README CZY DZIAŁA DEFAULT BRANCH !
 =======
 # GymBear
->>>>>>> 6812cfe05ef53df9d26e40b1901f62d098e524ab
+
+"repair created label for Push Pull Legs in monday" 
