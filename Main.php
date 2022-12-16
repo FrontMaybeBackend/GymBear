@@ -38,6 +38,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
 	}
 }*/
+
+
 ?>
 
 
@@ -55,13 +57,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
 <header class="All">
-		<h1 class="LOGO">
-			Gym&Bear
-
+	<form action ="">
+		 <h1 class="LOGO"> 
+			<button style="background-color:transparent;color: white;"> Gym&Bear</button>
 		</h1>
-
+</form>
+ 
 		<nav class="UL_NAV">
-			</ul>
+
 			<?php 
 		
 	echo "Witaj " . $_SESSION["username"];
@@ -70,14 +73,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 			
 			<button type="button" class="btn btn-info btn-outline-dark btn-sm">About </button>
 			<button type="button" class="btn btn-info btn-outline-dark btn-sm">Contact</button>
-			
-			
+
+
+			<div class="d-grid gap-2 d-md-block btn-sm">
 			<form class="Login" action="loginpanel.php">
-				<input id="Login" type="submit" value="Login">
-			</form>
-			<form class="Register" action="register.php">
-				<input id="Register" type="submit" value="Register">
-			</form>
+  <button class="btn btn-primary" type="submit">Logout</button>
+  </form>
+</div>
+			
 			
 		</nav>
 	</header>
@@ -86,13 +89,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 	
-	<form method ="POST" action="<?php $_SERVER["PHP_SELF"]?>">
-<div class="dropdown container-fluid d-flex justify-content-between" style="background-color:black">                                                                     
-	<button class ="btn btn-info dropdown-toggle-split m-3 text-center text-nowrap" style="width: 12rem;" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+	<form method="POST" action ="";>     
+<div class="dropdown container-fluid d-flex justify-content-between" style="background-color:black">        
+                                                        
+	<button id="recPrograms" class ="btn btn-info dropdown-toggle-split m-3 text-center text-nowrap" style="width: 12rem;" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
 		Recomended Programs
 </button>
+
 <ul class =" dropdown-menu text-center btn-sm bg-dark" aria-labelledby="dropdownMenu2">
-	<li><button class="dropdown-item text-uppercase" type="button"style="color:white">Push Pull Legs</button></li>
+
+	<li><button id= "pplR" class="dropdown-item text-uppercase" type="submit"style="color:white">Push Pull Legs</button></li>
+
+
 	<li><button class="dropdown-item text-uppercase" type="button"style="color:white">Upper Lower</button></li>
 	<li><button class="dropdown-item text-uppercase" type="button"style="color:white">Full Body Workout</button></li>
 	<li><button class="dropdown-item text-uppercase" type="button"style="color:white">Bro Split</button></li>
@@ -126,13 +134,10 @@ Calculator
 </ul>
 	
 </div>
-
-
 </form>
 
-
 	<form method ="POST" action="<?php $_SERVER["PHP_SELF"]?>">
-	<div class="d-flex justify-content-between m-3"  role="group">
+	<div class="  d-flex justify-content-between m-3 "  role="group">
 
 	<input  class = "btn btn-primary btn-lg border border-dark mx-3 " type="submit" name="monday" value="Monday"></input>
 
@@ -147,9 +152,37 @@ Calculator
 	<input  class = "btn btn-primary btn-lg border border-dark mx-3 " type="submit" name="saturday" value="Saturday"> </input>
 
 	<input  class = "btn btn-primary btn-lg border border-dark mx-3" type="submit" name="sunday" value="Sunday"> </input>
+	</div>
 </form>
-</div>
 
+
+<span id="pplWorkout" style="display:none" > Push Pull Legs Program 
+Workout 1 – Push
+Bench Press 3 X 5 – 7
+Seated Dumbbell Shoulder Press 3 X 6 – 8
+Incline Dumbbell Press 3 X 8 – 10
+Side Lateral Raises 2 X 10 – 12
+Triceps Pressdowns 2 X 8 – 10
+Overhead Triceps Extension 2 X 8 – 10
+
+Workout 2 – Pull
+Bent-over Row 3 X 5 – 7
+Pull Ups 3 X 6 – 8
+Barbell Shrugs 3 X 8 – 10
+Face Pulls 2 X 10 – 12
+Barbell Curl 2 X 8 – 10
+Dumbbell Hammer Curl 2 X 8 – 10
+
+Workout 3 – Legs/Abs
+Squats 3 X 6 – 8
+Romanian Deadlifts 2 X 8 – 10
+Leg Press 2 X 10 – 12
+Leg Curl 2 X 10 – 12
+Calf Raise 4 X 8 – 10
+Hanging Leg Raise 2 X 10 – 15
+
+The sets listed are your work sets. Always warm up properly first in order to prepare your body for the heavier work, and to help prevent injury. However another advantage of this split routine is that fewer warm-up sets are required as training each exercise/body part warms you up for the next. 
+</span>
 <?php
 	if(isset($monday)) {
 		?>
@@ -165,12 +198,11 @@ Calculator
 	 <button name= "fbw" type="button" class="btn btn-primary text-uppercase text-center badge bg-dark text-wrap">Full body workout</button>
 </ul>
 	</div>
-
-
-
 <?php
 	}
 	?>
+
+
 	<?php
 	if(isset($ppl)) {
 		?>
@@ -188,25 +220,8 @@ Calculator
 	}
 	?>
 
-<ul class="dropdown-menu">
-  <li><a class="dropdown-item" href="#">Link 1</a></li>
-  <li><a class="dropdown-item" href="#">Link 2</a></li>
-  <li><a class="dropdown-item" href="#">Link 3</a></li>
-  <li><a class="dropdown-item-text" href="#">Text Link</a></li>
-  <li><span class="dropdown-item-text">Just Text</span></li>
-</ul>
 
 
-<div id="add" style="display:none">
-<div class = "input-group mb-3"> 
-		<select class="form-select" id="inputGroupSelect1">
-			<option selected>Choose... </option>
-			<option value ="1"> Bench Press</option>
-			<option value="2"> Overhead Press</option>
-			<option value="3">Dumbell Chest Press </option>
-	</select>
-	</div>
-</div>
 
 
 
@@ -214,7 +229,7 @@ Calculator
 if(isset($ppl)) {
 	?>
 	<div class="d-flex justify-content-end" style="display:none">
-	<button id="addE" name="addExc" type ="button" class ="btn btn-outline-dark mb-3 btn-sm" onclick="showElement()" >+</button>
+	<button id="addE" name="addExc" type ="button" class ="btn btn-outline-dark mb-3 btn-sm" >+</button>
 	</div>
 	<?php
 }
@@ -222,11 +237,33 @@ if(isset($ppl)) {
 
 
 <script>
-document.getElementById('addE').addEventListener('click', showElement);
-    
-        function showElement() {
-            document.getElementById("add").style.display="block";
-        }
+
+
+const addButton = document.getElementById('addE');
+let numOfAdds = 0;
+
+addButton.addEventListener('click', function() {
+  const addDiv = document.createElement('div');
+  addDiv.id = 'addE' + numOfAdds++;
+  addDiv.style.display = 'block';
+  addDiv.innerHTML = `
+    <div class = "input-group mb-3"> 
+		<select class="form-select" id="inputGroupSelect1">
+			<option selected>Choose... </option>
+			<option value ="1"> Bench Press</option>
+			<option value="2"> Overhead Press</option>
+			<option value="3">Dumbell Chest Press </option>
+	</select>
+    </div>
+  `;
+
+  document.body.appendChild(addDiv);
+});
+
+
+
+
+
         </script>
 		
 </body>
