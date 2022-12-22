@@ -12,9 +12,9 @@
 
 require_once('config.php');
 $connection = mysqli_connect("localhost", "root" ,"", "gymweb");
-
+$pplR = $_SESSION["pplR"];
 $user_name = $_SESSION["username"];
-
+$pplW = $_SESSION["pplWorkout"];
 
 if($_SERVER["REQUEST_METHOD"] == "POST") {
 	$monday = $_POST["monday"];
@@ -153,7 +153,7 @@ Calculator
 </div>
 </form>
 
-	<form method ="POST" action="<?php $_SERVER["PHP_SELF"]?>">
+	<form  id ="days" method ="POST" action="<?php $_SERVER["PHP_SELF"]?>">
 	<div class="  d-flex justify-content-between m-3 "  role="group">
 
 	<input  class = "btn btn-primary btn-lg border border-dark mx-3 " type="submit" name="monday" value="Monday"></input>
@@ -187,6 +187,7 @@ Calculator
 	
 	 <button name= "brs" type="button" class="btn btn-primary text-uppercase text-center badge bg-dark text-wrap">Bro Split</button>
 	 <button name= "fbw" type="button" class="btn btn-primary text-uppercase text-center badge bg-dark text-wrap">Full body workout</button>
+	 
 </ul>
 	</div>
 <?php
@@ -455,6 +456,7 @@ if(isset($ppl)) {
 	<button id="addE" name="addExc" type ="button" class ="btn btn-outline-dark mb-3 btn-sm" >+</button>
 	</div>
 	<?php
+	
 }
 ?>
 

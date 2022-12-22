@@ -35,6 +35,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION["username"] = $user_name;
         
     }
+    $sql = "SELECT * FROM adminpanel WHERE admin  = '$user_name' AND admin  = '$password'";
+    $result = mysqli_query($connection,$sql);
+    if(mysqli_num_rows($result) === 1) {
+        header("Location:MainAdmin.php");
+    }else{
+        $login_error = " we dont have this account in DB";
+    }
     
 }
 }
