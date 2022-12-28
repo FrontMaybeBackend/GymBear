@@ -23,6 +23,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 
+
+
 /*class TrainingProgram {
 	public $training; 
 	public $days;

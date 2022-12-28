@@ -28,6 +28,12 @@ if(isset($_POST["send"])) {
     $sql = "INSERT INTO `adminpanel` (`id`,`programs`) VALUES ('0', '$programms')";
     $rs = mysqli_query($connection, $sql);
 }
+}if(isset($_POST["pplR"])){
+    $sql = "SELECT * FROM `adminpanel`";
+    $rs = mysqli_query($connection, $sql);
+    while($row = mysqli_fetch_array($rs)){
+        echo $row["programs"]. "<br>";
+    }
 }
 ?>
 
