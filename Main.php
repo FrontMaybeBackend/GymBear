@@ -211,8 +211,8 @@ Calculator
 	<?php
 	}
 	?>
-<section id ="Recomennded"> 
-<?php if(isset($_POST["pplR"])) {
+<!--<section id ="Recomennded"> 
+	<?php if(isset($_POST["pplR"])) {
 	?>
 	<p class=" text-center" id="pplWorkout" > <b>Push Pull Legs Program </b> :</p>
 
@@ -260,6 +260,7 @@ Calculator
 <?php
 }
 ?>
+-->
 
 <?php if(isset($_POST["upl"])) {
 	?>
