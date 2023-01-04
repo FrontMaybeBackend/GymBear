@@ -11,6 +11,7 @@ $_SESSION["pplWorkout"] = $pplW;
 $errorTIT="";
 $errorPRO="";
 $errorIMG="";
+$idCard = 0;
 
 
 if($_SERVER["REQUEST_METHOD"] =="POST") {
@@ -44,6 +45,7 @@ while($row = mysqli_fetch_array($rs)){
     <div class="card text-center mb-3 w-25 h-50 card-group " style="width: 18rem;">
     <div class="card-header">
 <img src="./images/<?php echo $row['img']?>" class="card-img-center img-fluid">
+<p><?php echo $row['id']?> </p>
 </div>
 <div class = "col-md-8 ">
 <div class="card-body ">
@@ -103,9 +105,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
  }
  
 if(!$fail_send){
+  
+
+
   echo "dodałes program !";
-  $sql = "INSERT INTO `recomennded` (`id`,`programms`, `title`,`img`) VALUES ('', '$programms', '$title' , '$img')";
+  $sql = "INSERT INTO `recomennded` (`id`,`programms`, `title`,`img`, `idCard`) VALUES ('', '$programms', '$title' , '$img', '$idCard')";
     $rs = mysqli_query($connection, $sql);
+
  }
  
 
