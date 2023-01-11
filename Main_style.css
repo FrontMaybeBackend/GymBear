@@ -28,3 +28,12 @@
   display: flex;
   justify-content: space-between;
 }
+
+.list-group {
+  background-color: grey;
+}
+
+#formMonday {
+  display: grid;
+  justify-items: center;
+}

@@ -121,19 +121,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	<form id="days" method="POST" action="<?php $_SERVER["PHP_SELF"] ?>">
 		<div class="  d-flex justify-content-between m-3 " role="group">
 
-			<input class="btn btn-primary btn-lg border border-dark mx-3 " type="submit" name="monday" value="Monday"></input>
+			<input class="btn  btn-lg border border-dark mx-3 " type="submit" name="monday" value="Monday"></input>
 
-			<input class="btn btn-primary btn-lg border border-dark  mx-3" type="submit" name="tuesday" value="Tuesday"> </input>
+			<input class="btn  btn-lg border border-dark  mx-3" type="submit" name="tuesday" value="Tuesday"> </input>
 
-			<input class="btn btn-primary btn-lg border border-dark mx-3 " type="submit" name="wednesday" value="Wednesday"> </input>
+			<input class="btn  btn-lg border border-dark mx-3 " type="submit" name="wednesday" value="Wednesday"> </input>
 
-			<input class="btn btn-primary btn-lg border border-dark mx-3 " type="submit" name="thursday" value="Thursday"> </input>
+			<input class="btn  btn-lg border border-dark mx-3 " type="submit" name="thursday" value="Thursday"> </input>
 
-			<input class="btn btn-primary btn-lg border border-dark  mx-3 " type="submit" name="friday" value="Friday"> </input>
+			<input class="btn  btn-lg border border-dark  mx-3 " type="submit" name="friday" value="Friday"> </input>
 
-			<input class="btn btn-primary btn-lg border border-dark mx-3 " type="submit" name="saturday" value="Saturday"> </input>
+			<input class="btn  btn-lg border border-dark mx-3 " type="submit" name="saturday" value="Saturday"> </input>
 
-			<input class="btn btn-primary btn-lg border border-dark mx-3" type="submit" name="sunday" value="Sunday"> </input>
+			<input class="btn  btn-lg border border-dark mx-3" type="submit" name="sunday" value="Sunday"> </input>
 		</div>
 	</form>
 
@@ -142,17 +142,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	<?php
 	if (isset($monday)) {
 	?>
-		<div class="d-flex m-4 p-2">
+		<div id="monday" class="d-flex m-4 p-2">
 			<ul class="d-grid gap-2  list-group ">
-				<form action='' method='post'>
-					<button name="ppl" type="submit" class="btn btn-primary text-uppercase text-center badge bg-dark text-wrap"> Push Pull Legs</button>
+				<form id="formMonday" action='' method='post'>
+					<button name="ppl" type="submit" class="btn  text-uppercase text-center badge  text-wrap"> Push Pull Legs</button>
+
+
+					<button name="ul" type="button" class="btn  text-uppercase text-center badge  text-wrap">Upper Lower</button>
+
+					<button name="brs" type="button" class="btn  text-uppercase text-center badge  text-wrap">Bro Split</button>
+					<button name="fbw" type="button" class="btn  text-uppercase text-center badge  text-wrap">Full body workout</button>
 				</form>
-
-				<button name="ul" type="button" class="btn btn-primary text-uppercase text-center badge bg-dark text-wrap">Upper Lower</button>
-
-				<button name="brs" type="button" class="btn btn-primary text-uppercase text-center badge bg-dark text-wrap">Bro Split</button>
-				<button name="fbw" type="button" class="btn btn-primary text-uppercase text-center badge bg-dark text-wrap">Full body workout</button>
-
 			</ul>
 		</div>
 	<?php
