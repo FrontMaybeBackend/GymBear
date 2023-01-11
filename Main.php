@@ -397,13 +397,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	<section>
 		<?php if (isset($_POST["Carb"])) {
 		?>
-			<p class=" text-center" id="pplWorkout"> <b>Diet High Carb</b> :</p>
-
-			<img class="img-fluid rounded mx-auto d-block" src="images/highcarb.jpg" alt="carbs img" ; style="width:50rem"> </img>
-
-
-			<p class="text-center text-wrap p-3"> <b> What is a high carb diet?</b></p>
-			<p class="text-center text-wrap p-3"> <b> Dieta wysokowęglowodanowa jest schematem żywieniowym, który opiera się na produktach o wysokiej zawartości węglowodanów, a w mniejszej ilości na produktach białkowych i tłuszczach. </p>
 
 
 
@@ -418,7 +411,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	<?php
 	if (isset($ppl)) {
 	?>
-		<div class="d-flex justify-content-end" style="display:none">
+		<div class=" d-flex justify-content-end" style="display:none">
 			<button id="addE" name="addExc" type="button" class="btn btn-outline-dark mb-3 btn-sm">+</button>
 		</div>
 	<?php

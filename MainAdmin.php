@@ -117,9 +117,33 @@ if (isset($_POST["prog"])) {
   }
   var_dump($sql);
 }
+?>
+<?php if (isset($_POST["Carb"])) {
+?>
 
+  <form method="POST">
+    <button class="btn btn-primary m-4" type="button" id="button">AddDiet</button>
+    <div id="title" class="form-floating-mb-3" style="display:none">
+      <input name="title" type="text" class="form-control" id="title" placeholder="Title" style="width:50%;">
+      <span class="error">* <?php echo $errorTIT; ?></span>
+    </div>
+    <div id="img" class="form-floating-mb-3" style="display:none">
+      <input name="img" type="file" class="form-control" id="img" Value="upload" style="width:50%;">
+      <span class="error">* <?php echo $errorPRO; ?></span>
+    </div>
 
+    <div id="text" style="display:none">
+      <label for="programms"></label><br>
+      <textarea id="programms" name="programms" rows="15" cols="100" placeholder="Text"></textarea>
+      <span class="error">* <?php echo $errorIMG; ?></span>
+      <form method="POST">
+        <input id="send" name="send" type="submit" value="Add"></input>
+      </form>
+  </form>
+  </div>
 
+<?php
+}
 ?>
 
 
@@ -147,7 +171,6 @@ if (isset($_POST["prog"])) {
       document.getElementById('title').style.display = 'block';
       document.getElementById('img').style.display = 'block';
       document.getElementById('idCard').style.display = 'block';
-
     }
   </script>
 
