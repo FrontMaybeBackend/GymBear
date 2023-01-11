@@ -12,8 +12,6 @@ $errorTIT = "";
 $errorPRO = "";
 $errorIMG = "";
 
-
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (isset($_POST["pplR"])) {
 ?>
@@ -29,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       </div>
 
       <div id="idCard" class="form-floating-mb3" style="display:none">
-        <input name="idCard" type="text" class="form-control" id="idCard" placeholder="idCard">
+        <input name="idCards" type="text" class="form-control" id="idCards" placeholder="idCard">
       </div>
 
 
@@ -55,14 +53,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
         <div class="col-md-8 ">
           <div class="card-body ">
-            <h5 class="card-title text-primary"><?php echo $row['title'] ?></h5>
-            <p class="card-text text-warning"><?php echo substr($row['programms'], 0, 100) ?> ... </p>
             <form method="POST" action="">
-
-              <input id="prog" name="prog" type="submit" class="btn btn-primary" value="Check More"> </input>
+              <input id="prog" name="prog" type="submit" class="btn btn-primary" value="<?php echo $row['title'] ?>"></input>
             </form>
-
-
+            <p class="card-text text-warning"><?php echo substr($row['programms'], 0, 100) ?> ... </p>
 
           </div>
         </div>
@@ -72,28 +66,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 }
 
-if (isset($_POST["prog"])) {
-
-  $sql = "SELECT * FROM `recomennded` WHERE `id` = 1 ";
-  $rs =  mysqli_query($connection, $sql);
-  while ($row = mysqli_fetch_array($rs)) {
-    ?>
-    <img src="./images/<?php echo $row['img'] ?>" class="img-fluid">
-    <h1 class="text-primary"> <?php echo $row['title'] ?></h1>
-    <span class="wrap"><?php echo $row["programms"] ?> </span>
-<?php
-
-  }
-}
-
-
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 
   if (isset($_POST["send"])) {
 
-    $idCard = $_POST['idCard'];
+    $idCards = $_POST['idCards'];
     $title = $_POST['title'];
     $programms = $_POST['programms'];
     $img = $_POST['img'];
@@ -118,12 +96,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
       echo "dodałes program !";
-      $sql = "INSERT INTO `recomennded` (`id`,`programms`, `title`,`img`, `idCard`) VALUES ('', '$programms', '$title' , '$img', '$idCard')";
+      $sql = "INSERT INTO `recomennded` (`id`,`programms`, `title`,`img`, `idCard`) VALUES ('', '$programms', '$title' , '$img', '$idCards')";
       $rs = mysqli_query($connection, $sql);
     }
   }
 }
+if (isset($_POST["prog"])) {
+  $row[`idCard`] = $idCards;
+  $sql = "SELECT `img`, `title`, `programms` FROM `recomennded` WHERE `idCard` = '$idCards'";
+  $rs =  mysqli_query($connection, $sql);
 
+  while ($row = mysqli_fetch_array($rs)) {
+    ?>
+    <img src="./images/<?php echo $row['img'] ?>" class="img-fluid">
+    <h1 class="text-primary"> <?php echo $row['title'] ?></h1>
+    <span class="wrap"><?php echo $row["programms"] ?> </span>
+
+<?php
+
+  }
+  var_dump($sql);
+}
 
 
 
