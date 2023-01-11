@@ -9,10 +9,9 @@ session_start();
 	echo " nie ma";
   }
 */
-
+include("navbar.php");
 require_once('config.php');
 $connection = mysqli_connect("localhost", "root", "", "gymweb");
-$pplR = $_SESSION["pplR"];
 $user_name = $_SESSION["username"];
 $pplW = $_SESSION["pplWorkout"];
 
@@ -24,22 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 
-/*class TrainingProgram {
-	public $training; 
-	public $days;
 
-	public function __construct($training, $days ){
-     $this ->training = $training;
-     $this ->days = $days;
-	 
-	}
-
-	public function get_training () {
-		$this ->$training;
-		$this ->$days;
-
-	}
-}*/
 
 
 ?>
@@ -61,43 +45,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body>
-	<header class="All">
-		<form action="">
-			<h1 class="LOGO">
-				<button style="background-color:transparent;color: white;"> Gym&Bear</button>
-			</h1>
-		</form>
-
-		<nav class="UL_NAV">
-
-			<?php
-
-			echo "Witaj " . $_SESSION["username"];
-
-			?>
-
-			<button type="button" class="btn btn-info btn-outline-dark btn-sm">About </button>
-			<button type="button" class="btn btn-info btn-outline-dark btn-sm">Contact</button>
 
 
-			<div class="d-grid gap-2 d-md-block btn-sm">
-				<form class="Login" action="loginpanel.php">
-					<button class="btn btn-primary" type="submit">Logout</button>
-				</form>
-			</div>
 
 
-		</nav>
-	</header>
+
 
 
 
 
 
 	<form method="POST" action="" ;>
-		<div class="dropdown container-fluid d-flex justify-content-between" style="background-color:black">
+		<div class="dropdown ">
 
-			<button id="recPrograms" class="btn btn-info dropdown-toggle-split m-3 text-center text-nowrap" style="width: 12rem;" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+			<button id="recPrograms" class="btn  dropdown-toggle-split m-3 text-center text-nowrap" style="width: 12rem;" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
 				Recomended Programs
 			</button>
 
@@ -119,7 +80,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			</ul>
 
 
-			<button class="btn btn-info dropdown-toggle-split m-3 text-center text-nowrap" style="width: 10rem;" type="button" id="dropdownMenu3" data-bs-toggle="dropdown" aria-expanded="false">
+			<button class="btn  dropdown-toggle-split m-3 text-center text-nowrap" style="width: 10rem;" type="button" id="dropdownMenu3" data-bs-toggle="dropdown" aria-expanded="false">
 				Diet
 			</button>
 			<ul class="dropdown-menu text-center btn-sm bg-dark " aria-labelledby="dropdownMenu3">
@@ -134,7 +95,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			</ul>
 
 
-			<button class=" btn btn-info dropdown-toggle-split m-3 text-center text-nowrap " style="width: 10rem;" type="button" id="dropdownMenu4" data-bs-toggle="dropdown" aria-expanded="false">
+			<button class=" btn  dropdown-toggle-split m-3 text-center text-nowrap " style="width: 10rem;" type="button" id="dropdownMenu4" data-bs-toggle="dropdown" aria-expanded="false">
 				Supplements
 			</button>
 			<ul class="dropdown-menu text-center btn-sm bg-dark" aria-labelledby="dropdownMenu4">
@@ -143,7 +104,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 				<li><button class="dropdown-item text-uppercase" type="button" style="color:white"> Vitamins</button></li>
 			</ul>
 
-			<button class=" btn btn-info dropdown-toggle-split m-3 text-center text-nowrap" style="width:10 rem;" type="button" id="dropdownMenu5" data-bs-toggle="dropdown" aria-expanded="false">
+			<button class=" btn  dropdown-toggle-split m-3 text-center text-nowrap" style="width:10 rem;" type="button" id="dropdownMenu5" data-bs-toggle="dropdown" aria-expanded="false">
 				Calculator
 			</button>
 			<ul class="dropdown-menu text-center btn-sm bg-dark " aria-labelledby="dropdownMenu5">

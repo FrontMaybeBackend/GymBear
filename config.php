@@ -10,6 +10,5 @@ if(mysqli_connect_error()){
     die("There was an error while connecting to database");
 
 }else {
-    echo  " succesfully connected to database";
+  //  echo  " succesfully connected to database";
 }
-?>
