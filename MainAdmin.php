@@ -120,33 +120,53 @@ if (isset($_POST["prog"])) {
 ?>
 <?php if (isset($_POST["Carb"])) {
 ?>
+  <?php
+
+  ?>
 
   <form method="POST">
     <button class="btn btn-primary m-4" type="button" id="button">AddDiet</button>
     <div id="title" class="form-floating-mb-3" style="display:none">
-      <input name="title" type="text" class="form-control" id="title" placeholder="Title" style="width:50%;">
+      <input name="titleDiet" type="text" class="form-control" id="titleDiet" placeholder="Title" style="width:50%;">
       <span class="error">* <?php echo $errorTIT; ?></span>
     </div>
     <div id="img" class="form-floating-mb-3" style="display:none">
-      <input name="img" type="file" class="form-control" id="img" Value="upload" style="width:50%;">
+      <input name="imgDiet" type="file" class="form-control" id="imgDiet" Value="upload" style="width:50%;">
       <span class="error">* <?php echo $errorPRO; ?></span>
     </div>
 
     <div id="text" style="display:none">
       <label for="programms"></label><br>
-      <textarea id="programms" name="programms" rows="15" cols="100" placeholder="Text"></textarea>
+      <textarea id="diets" name="programms" rows="15" cols="100" placeholder="Text"></textarea>
       <span class="error">* <?php echo $errorIMG; ?></span>
       <form method="POST">
-        <input id="send" name="send" type="submit" value="Add"></input>
+        <input id="sendDiet" name="sendDiet" type="submit" value="Add"></input>
       </form>
   </form>
   </div>
+
+  <?php
+  if (isset($_POST["sendDiet"])) {
+    $titleDiet = $_POST['titleDiet'];
+    $imgDiet = $_POST['imgDiet'];
+    $diets = $_POST['diets'];
+    $sql = "INSERT INTO `diets` ( `id`, `name`, `type`, `img`) VALUES ('', '$titleDiet', '$diets', '$imgDiet')";
+    $rs = mysqli_query($connection, $sql);
+  }
+  ?>
+
 
 <?php
 }
 ?>
 
+<?php
+//zrobic funkcje i oop !
 
+function validation($data)
+{
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
