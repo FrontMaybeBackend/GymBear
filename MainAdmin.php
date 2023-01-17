@@ -5,12 +5,12 @@ session_start();
 //SPRAWDZA CZY ZMIENNA JEST W SESJI !
 include_once("Main.php");
 require_once('config.php');
-$connection = mysqli_connect("localhost", "root", "", "gymweb");
 $fail_send = false;
 $_SESSION["pplWorkout"] = $pplW;
 $errorTIT = "";
 $errorPRO = "";
 $errorIMG = "";
+$fail_sendDiet = false;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (isset($_POST["pplR"])) {
@@ -65,42 +65,46 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
   }
 }
+if (isset($_POST["send"])) {
 
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
+  $idCards = $_POST['idCards'];
+  $title = $_POST['title'];
+  $programms = $_POST['programms'];
+  $img = $_POST['img'];
 
-
-  if (isset($_POST["send"])) {
-
-    $idCards = $_POST['idCards'];
-    $title = $_POST['title'];
-    $programms = $_POST['programms'];
-    $img = $_POST['img'];
-
-    if (empty($title)) {
-      $errorTIT  = "tittle must be required";
+  if (empty($title)) {
+    $errorTIT  = "tittle must be required";
+    $fail_send = true;
+    if (!is_string($title)) {
+      echo  "title must be string";
       $fail_send = true;
-    }
-
-    if (empty($programms)) {
-      $errorPRO = " programms must be required";
-      $fail_send = true;
-    }
-
-    if (empty($img)) {
-      $errorIMG = "img is required!";
-      $fail_send = true;
-    }
-
-    if (!$fail_send) {
-
-
-
-      echo "dodałes program !";
-      $sql = "INSERT INTO `recomennded` (`id`,`programms`, `title`,`img`, `idCard`) VALUES ('', '$programms', '$title' , '$img', '$idCards')";
-      $rs = mysqli_query($connection, $sql);
     }
   }
+
+  if (empty($programms)) {
+    $errorPRO = " programms must be required";
+    $fail_send = true;
+  }
+
+  if (empty($img)) {
+    $errorIMG = "img is required!";
+    $fail_send = true;
+  }
+
+  if (!$fail_send) {
+
+    echo "dodałes program !";
+    $stmt = $conn->prepare("INSERT INTO `recomennded` (title,img, idCard, programms) VALUES (?, ?, ?,?)");
+    $stmt->bindParam(1, $title, PDO::PARAM_STR);
+    $stmt->bindParam(2, $img, PDO::PARAM_BOOL);
+    $stmt->bindParam(3, $idCards, PDO::PARAM_INT);
+    $stmt->bindParam(4, $programms, PDO::PARAM_STR);
+    $stmt->execute();
+  }
 }
+
+
+
 if (isset($_POST["prog"])) {
   $row[`idCard`] = $idCards;
   $sql = "SELECT `img`, `title`, `programms` FROM `recomennded` WHERE `idCard` = '$idCards'";
@@ -115,7 +119,6 @@ if (isset($_POST["prog"])) {
 <?php
 
   }
-  var_dump($sql);
 }
 ?>
 <?php if (isset($_POST["Carb"])) {
@@ -136,11 +139,11 @@ if (isset($_POST["prog"])) {
     </div>
 
     <div id="text" style="display:none">
-      <label for="programms"></label><br>
-      <textarea id="diets" name="programms" rows="15" cols="100" placeholder="Text"></textarea>
+      <label for="diets"></label><br>
+      <textarea id="diets" name="diets" rows="15" cols="100" placeholder="Text"></textarea>
       <span class="error">* <?php echo $errorIMG; ?></span>
       <form method="POST">
-        <input id="sendDiet" name="sendDiet" type="submit" value="Add"></input>
+        <input id="sendDiet" name="sendDiet" type="submit" value="sendDiet"></input>
       </form>
   </form>
   </div>
@@ -150,8 +153,27 @@ if (isset($_POST["prog"])) {
     $titleDiet = $_POST['titleDiet'];
     $imgDiet = $_POST['imgDiet'];
     $diets = $_POST['diets'];
-    $sql = "INSERT INTO `diets` ( `id`, `name`, `type`, `img`) VALUES ('', '$titleDiet', '$diets', '$imgDiet')";
-    $rs = mysqli_query($connection, $sql);
+    if (empty($titleDiet)) {
+      $errorTIT  = "tittle must be required";
+      $fail_sendDiet = true;
+    }
+
+    if (empty($diets)) {
+      $errorPRO = " programms must be required";
+      $fail_sendDiet = true;
+    }
+
+    if (empty($imgDiet)) {
+      $errorIMG = "img is required!";
+      $fail_sendDiet = true;
+    }
+
+    if (!$fail_sendDiet) {
+
+      echo "dodałes program !";
+      $sql = "INSERT INTO `recomennded` (`id`,`name`, `type`,`img`) VALUES ('', '$titleDiet', '$diets' , '$img')";
+      $rs = mysqli_query($connection, $sql);
+    }
   }
   ?>
 
@@ -161,11 +183,9 @@ if (isset($_POST["prog"])) {
 ?>
 
 <?php
-//zrobic funkcje i oop !
+//zrobic funkcje i oo
 
-function validation($data)
-{
-}
+
 ?>
 
 <!DOCTYPE html>
