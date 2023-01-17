@@ -176,56 +176,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	<?php
 	}
 	?>
-	<!--<section id ="Recomennded"> 
-	<?php if (isset($_POST["pplR"])) {
+
+	<?php
+
 	?>
-	<p class=" text-center" id="pplWorkout" > <b>Push Pull Legs Program </b> :</p>
 
-	<img class ="img-fluid rounded mx-auto d-block"src="images/PUSHPULLLEGS.png" alt="push pull legs img";> </img>
-
-
-<p class="text-center text-wrap p-3"> <b>What is 'Push, Pull, Legs'? It's a full-body training split that's designed to build muscle in almost every single muscle group by following a simple format: on a certain day of the week, you only train either upper-body pushing muscles (push), upper-body pulling muscles (pull), or your entire lower-body (legs).</b></p>
-
-<ul class="text-center" style="list-style:none">
-<li><b> Workout 1 - Push </b> </li>
-	<li>Bench Press 3 X 5 - 7 </li>
-	<li>Seated Dumbbell Shoulder Press 3 X 6 - 8</li>
-	<li>Incline Dumbbell Press 3 X 8 - 10</li>
-	<li>Side Lateral Raises 2 X 10 - 12</li>
-	<li>Triceps Pressdowns 2 X 8 - 10</li>
-	<li>Overhead Triceps Extension 2 X 8 - 10</li>
-</ul>
-</p>
-<p>
-	<ul  class ="text-center" style="list-style:none">
-<li><b> Workout 2 - Pull</b></li>
-<li>Bent-over Row 3 X 5 - 7</li>
-<li>Pull Ups 3 X 6 - 8</li>
-<li>Barbell Shrugs 3 X 8 - 10</li>
-<li>Face Pulls 2 X 10 - 12</li>
-<li>Barbell Curl 2 X 8 - 10</li>
-<li>Dumbbell Hammer Curl 2 X 8 - 10</li>
-</p>
-<p>
-<ul  class ="text-center"  style="list-style:none">
-<li><b> Workout 3 - Legs/Abs</b></li>
-<li>Squats 3 X 6 - 8</li>
-<li>Romanian Deadlifts 2 X 8 - 10</li>
-<li>Leg Press 2 X 10 - 12</li>
-<li>Leg Curl 2 X 10 - 12</li>
-<li>Calf Raise 4 X 8 - 10</li>
-<li>Hanging Leg Raise 2 X 10 - 15</li>
-
-<p class="p-3">
-<b>The sets listed are your work sets. Always warm up properly first in order to prepare your body for the heavier work, and to help prevent injury. However another advantage of this split routine is that fewer warm-up sets are required as training each exercise/body part warms you up for the next.</b>
-
-</p>
-</p>
-</p>
-<?php
-	}
-?>
--->
 
 	<?php if (isset($_POST["upl"])) {
 	?>
