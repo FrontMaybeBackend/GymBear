@@ -72,7 +72,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <?php echo $result['programms'] ?>
               </p>
               <div class="d-flex justify-content-between">
-                <a class="btn btn-link link-danger p-md-1 my-1" data-mdb-toggle="collapse" href="#collapseContent" role="button" aria-expanded="false" aria-controls="collapseContent">Read more</a>
+                <a id="readMore" class="btn btn-link link-danger p-md-1 my-1" data-mdb-toggle="collapse" href="#collapseContent" role="button" aria-expanded="false" aria-controls="collapseContent">Read more</a>
               </div>
             </div>
           </div>
@@ -80,11 +80,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </section>
       </div>
       </div>
-    <?php
+<?php
 
     }
   }
 }
+
 if (isset($_POST["send"])) {
 
   $idCards = $_POST['idCards'];
@@ -121,21 +122,7 @@ if (isset($_POST["send"])) {
 
 
 
-if (isset($_POST["prog"])) {
-  $row[`idCard`] = $idCards;
-  $sql = "SELECT `img`, `title`, `programms` FROM `recomennded` WHERE `idCard` = '$idCards'";
-  $rs =  mysqli_query($connection, $sql);
 
-  while ($row = mysqli_fetch_array($rs)) {
-    ?>
-    <img src="./images/<?php echo $row['img'] ?>" class="img-fluid">
-    <h1 class="text-primary"> <?php echo $row['title'] ?></h1>
-    <span class="wrap"><?php echo $row["programms"] ?> </span>
-
-<?php
-
-  }
-}
 ?>
 <?php if (isset($_POST["Carb"])) {
 ?>
@@ -193,7 +180,7 @@ if (isset($_POST["prog"])) {
               <?php echo $result['name'] ?>
             </p>
             <div class="d-flex justify-content-between">
-              <a class="btn btn-link link-danger p-md-1 my-1" data-mdb-toggle="collapse" href="#collapseContent" role="button" aria-expanded="false" aria-controls="collapseContent">Read more</a>
+              <a class="btn btn-link link-danger p-md-1 my-1" data-mdb-toggle="collapse" href="Diet.php?id=3" role="button" aria-expanded="false" aria-controls="collapseContent">Read more</a>
             </div>
           </div>
         </div>
@@ -203,6 +190,7 @@ if (isset($_POST["prog"])) {
     </div>
 
 <?php
+
   }
 }
 if (isset($_POST["sendDiet"])) {
