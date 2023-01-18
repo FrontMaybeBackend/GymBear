@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once("config.php");
-$connection = mysqli_connect("localhost", "root", "", "gymweb");
+
 
 
 
@@ -25,9 +25,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $password_error = "please enter password";
             $fail_form = true;
         }
-        $sql = "SELECT username FROM users WHERE username = '$user_name' AND password = '$password'";
-        $result = mysqli_query($connection, $sql);
-        if (mysqli_num_rows($result) === 1) {
+        $stmt = $conn->prepare("SELECT username, password FROM users where username =:username AND password =:password");
+        $stmt->bindParam(':username', $user_name);
+        $stmt->bindParam(':password', $password);
+        $stmt->execute();
+
+        if ($stmt->rowCount() === 1) {
             header("Location:Main.php");
         } else {
             $login_error = " we dont have this account in DB";
@@ -35,9 +38,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (!$fail_form) {
             $_SESSION["username"] = $user_name;
         }
-        $sql = "SELECT * FROM adminpanel WHERE admin  = '$user_name' AND admin  = '$password'";
-        $result = mysqli_query($connection, $sql);
-        if (mysqli_num_rows($result) === 1) {
+        $stmt = $conn->prepare("SELECT admin,password FROM adminpanel WHERE admin  = :admin AND password  = :password");
+        $stmt->bindParam('admin', $user_name);
+        $stmt->bindParam(':password', $password);
+        $stmt->execute();
+
+        if ($stmt->rowCount() === 1) {
             header("Location:MainAdmin.php");
         } else {
             $login_error = " we dont have this account in DB";

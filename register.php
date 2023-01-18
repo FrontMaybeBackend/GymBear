@@ -4,7 +4,7 @@ session_start();
 
 require_once "config.php";
 
-$connection = @mysqli_connect("localhost", "root", "", "gymweb");
+
 
 
 //errors
@@ -33,9 +33,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $user_error = "Name must have 8 length.";
       $fail_connect = true;
     }
-    $sql = "SELECT username FROM users WHERE username='{$user_name}'";
-    $result = mysqli_query($connection, $sql) or die("Query unsuccessful");
-    if (mysqli_num_rows($result) > 0) {
+    $stmt = $conn->prepare("SELECT username FROM users WHERE username = :username");
+    $stmt->bindParam(':username', $user_name);
+    $stmt->execute();
+    $result = $stmt->fetch();
+    if ($result > 0) {
       $user_error = "Username is already taken";
       $fail_connect = true;
     }
@@ -52,9 +54,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $email_error = "Bad format email !!";
       $fail_connect = true;
     }
-    $sql = "SELECT email FROM users where email = '{$email}'";
-    $result = mysqli_query($connection, $sql) or die("Query unseccesful");
-    if (mysqli_num_rows($result) > 0) {
+    $stmt = $conn->prepare("SELECT email FROM users where email =:email");
+    $stmt->bindParam(':email', $email);
+    $stmt->execute();
+    $result = $stmt->fetch();
+    if ($result > 0) {
       $email_error = " Email is already taken";
       $fail_connect = true;
     }
@@ -75,8 +79,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   if (!$fail_connect) {
     $registration = "welcome to gymbear!";
-    $sql = "INSERT INTO `users` (`id`, `username`, `password`, `email`) VALUES ('0', '$user_name', '$password', '$email')";
-    $rs = mysqli_query($connection, $sql);
+    $stmt = $conn->prepare("INSERT INTO `users` (`username`, `password`, `email`) VALUES (?,?,?)");
+    $stmt->bindParam(1, $user_name, PDO::PARAM_STR);
+    $stmt->bindParam(2, $password, PDO::PARAM_STR);
+    $stmt->bindParam(3, $email, PDO::PARAM_STR);
+    $stmt->execute();
     header("location:loginpanel.php");
     exit();
   }
@@ -99,7 +106,6 @@ function test_input($data)
 
 
 
-///POŁĄCZENIE Z BAZĄ DANYCH
 
 
 
