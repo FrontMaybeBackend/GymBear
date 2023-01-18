@@ -42,26 +42,46 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
     <?php
 
-    $sql = "SELECT * FROM `recomennded`";
-    $rs = mysqli_query($connection, $sql);
-    while ($row = mysqli_fetch_array($rs)) {
+    $stmt = $conn->prepare("SELECT * FROM recomennded");
+    $stmt->execute();
+    while ($result = $stmt->fetch()) {
     ?>
-      <div class="card text-center w-25 h-50 card-group p-2 m-5 " style="width: 18rem;">
-        <div class="card-header">
-          <img src="./images/<?php echo $row['img'] ?>" class="card-img-center img-fluid">
-          <p><?php echo $row['id'] ?> </p>
-        </div>
-        <div class="col-md-8 ">
-          <div class="card-body ">
-            <form method="POST" action="">
-              <input id="prog" name="prog" type="submit" class="btn btn-primary" value="<?php echo $row['title'] ?>"></input>
-            </form>
-            <p class="card-text text-warning"><?php echo substr($row['programms'], 0, 100) ?> ... </p>
 
+      <div class="container">
+        <section class="mx-auto my-5" style="max-width: 23rem;">
+          <div class="card">
+            <div class="card-body d-flex flex-row">
+              <img src="./images/admin.webp" class="rounded-circle me-3" height="50px" width="50px" alt="avatar" />
+              <div>
+                <h5 class="card-title font-weight-bold mb-2"></h5>
+                <p class="card-text"><i class="far fa-clock pe-2"></i>
+                  <?php
+                  echo $result['title'];
+                  ?>
+                </p>
+              </div>
+            </div>
+            <div class="bg-image hover-overlay ripple rounded-0" data-mdb-ripple-color="light">
+              <img class="img-fluid" src="./images/<?php echo $result['img'] ?>" width="100%" height="50%" alt="Card image cap" />
+              <a href="#!">
+                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+              </a>
+            </div>
+            <div class="card-body">
+              <p class="card-text collapse" id="collapseContent">
+                <?php echo $result['programms'] ?>
+              </p>
+              <div class="d-flex justify-content-between">
+                <a class="btn btn-link link-danger p-md-1 my-1" data-mdb-toggle="collapse" href="#collapseContent" role="button" aria-expanded="false" aria-controls="collapseContent">Read more</a>
+              </div>
+            </div>
           </div>
-        </div>
+
+        </section>
+      </div>
       </div>
     <?php
+
     }
   }
 }
@@ -75,10 +95,6 @@ if (isset($_POST["send"])) {
   if (empty($title)) {
     $errorTIT  = "tittle must be required";
     $fail_send = true;
-    if (!is_string($title)) {
-      echo  "title must be string";
-      $fail_send = true;
-    }
   }
 
   if (empty($programms)) {
@@ -96,7 +112,7 @@ if (isset($_POST["send"])) {
     echo "dodałes program !";
     $stmt = $conn->prepare("INSERT INTO `recomennded` (title,img, idCard, programms) VALUES (?, ?, ?,?)");
     $stmt->bindParam(1, $title, PDO::PARAM_STR);
-    $stmt->bindParam(2, $img, PDO::PARAM_BOOL);
+    $stmt->bindParam(2, $img, PDO::PARAM_LOB);
     $stmt->bindParam(3, $idCards, PDO::PARAM_INT);
     $stmt->bindParam(4, $programms, PDO::PARAM_STR);
     $stmt->execute();
@@ -123,9 +139,7 @@ if (isset($_POST["prog"])) {
 ?>
 <?php if (isset($_POST["Carb"])) {
 ?>
-  <?php
 
-  ?>
 
   <form method="POST">
     <button class="btn btn-primary m-4" type="button" id="button">AddDiet</button>
@@ -148,38 +162,85 @@ if (isset($_POST["prog"])) {
   </form>
   </div>
 
+
   <?php
-  if (isset($_POST["sendDiet"])) {
-    $titleDiet = $_POST['titleDiet'];
-    $imgDiet = $_POST['imgDiet'];
-    $diets = $_POST['diets'];
-    if (empty($titleDiet)) {
-      $errorTIT  = "tittle must be required";
-      $fail_sendDiet = true;
-    }
-
-    if (empty($diets)) {
-      $errorPRO = " programms must be required";
-      $fail_sendDiet = true;
-    }
-
-    if (empty($imgDiet)) {
-      $errorIMG = "img is required!";
-      $fail_sendDiet = true;
-    }
-
-    if (!$fail_sendDiet) {
-
-      echo "dodałes program !";
-      $sql = "INSERT INTO `recomennded` (`id`,`name`, `type`,`img`) VALUES ('', '$titleDiet', '$diets' , '$img')";
-      $rs = mysqli_query($connection, $sql);
-    }
-  }
+  $stmt = $conn->prepare("SELECT * FROM diets");
+  $stmt->execute();
+  while ($result = $stmt->fetch()) {
   ?>
+    <div class="container">
+      <section class="mx-auto my-5" style="max-width: 23rem;">
+        <div class="card">
+          <div class="card-body d-flex flex-row">
+            <img src="./images/admin.webp" class="rounded-circle me-3" height="50px" width="50px" alt="avatar" />
+            <div>
+              <h5 class="card-title font-weight-bold mb-2"></h5>
+              <p class="card-text"><i class="far fa-clock pe-2"></i>
+                <?php
+                echo $result['type'];
+                ?>
+              </p>
+            </div>
+          </div>
+          <div class="bg-image hover-overlay ripple rounded-0" data-mdb-ripple-color="light">
+            <img class="img-fluid" src="./images/<?php echo $result['img'] ?>" width="100%" height="50%" alt="Card image cap" />
+            <a href="#!">
+              <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+            </a>
+          </div>
+          <div class="card-body">
+            <p class="card-text collapse" id="collapseContent">
+              <?php echo $result['name'] ?>
+            </p>
+            <div class="d-flex justify-content-between">
+              <a class="btn btn-link link-danger p-md-1 my-1" data-mdb-toggle="collapse" href="#collapseContent" role="button" aria-expanded="false" aria-controls="collapseContent">Read more</a>
+            </div>
+          </div>
+        </div>
+
+      </section>
+    </div>
+    </div>
+
+<?php
+  }
+}
+if (isset($_POST["sendDiet"])) {
+
+  $titleDiet = $_POST['titleDiet'];
+  $imgDiet = $_POST['imgDiet'];
+  $diets = $_POST['diets'];
+
+  if (empty($titleDiet)) {
+    $errorTIT  = "tittle must be required";
+    $fail_sendDiet = true;
+  }
+
+  if (empty($diets)) {
+    $errorPRO = " programms must be required";
+    $fail_sendDiet = true;
+  }
+
+  if (empty($imgDiet)) {
+    $errorIMG = "img is required!";
+    $fail_sendDiet = true;
+  }
+
+  if (!$fail_sendDiet) {
+    echo "dodałes program !";
+    $stmt = $conn->prepare("INSERT INTO `diets` (name,type,img) VALUES (?, ?, ?)");
+    $stmt->bindParam(1, $titleDiet, PDO::PARAM_STR);
+    $stmt->bindParam(2, $diets, PDO::PARAM_STR);
+    $stmt->bindParam(3, $imgDiet, PDO::PARAM_LOB);
+    $stmt->execute();
+  }
+}
+
+?>
 
 
 <?php
-}
+
 ?>
 
 <?php
