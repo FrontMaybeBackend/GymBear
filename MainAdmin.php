@@ -164,7 +164,7 @@ if (isset($_POST["send"])) {
               <h5 class="card-title font-weight-bold mb-2"></h5>
               <p class="card-text"><i class="far fa-clock pe-2"></i>
                 <?php
-                echo $result['type'];
+                echo $result['title'];
                 ?>
               </p>
             </div>
@@ -177,10 +177,10 @@ if (isset($_POST["send"])) {
           </div>
           <div class="card-body">
             <p class="card-text collapse" id="collapseContent">
-              <?php echo $result['name'] ?>
+              <?php echo $result['diet'] ?>
             </p>
             <div class="d-flex justify-content-between">
-              <a class="btn btn-link link-danger p-md-1 my-1" data-mdb-toggle="collapse" href="Diet.php?id=3" role="button" aria-expanded="false" aria-controls="collapseContent">Read more</a>
+              <a class="btn btn-link link-danger p-md-1 my-1" data-mdb-toggle="collapse" href="Diet.php?id=<?php echo $result['id']?>" role="button" aria-expanded="false" aria-controls="collapseContent">Read more</a>
             </div>
           </div>
         </div>
@@ -216,13 +216,14 @@ if (isset($_POST["sendDiet"])) {
 
   if (!$fail_sendDiet) {
     echo "dodałes program !";
-    $stmt = $conn->prepare("INSERT INTO `diets` (name,type,img) VALUES (?, ?, ?)");
+    $stmt = $conn->prepare("INSERT INTO `diets` (title,diet,img) VALUES (?, ?, ?)");
     $stmt->bindParam(1, $titleDiet, PDO::PARAM_STR);
     $stmt->bindParam(2, $diets, PDO::PARAM_STR);
     $stmt->bindParam(3, $imgDiet, PDO::PARAM_LOB);
     $stmt->execute();
   }
 }
+
 
 ?>
 

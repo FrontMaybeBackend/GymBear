@@ -4,7 +4,15 @@ session_start();
 
 require_once "config.php";
 
+if(isset($_POST["Sign Up"])){
+    $username = $_POST["username"];
+    $password = $_POST["password"];
+    $email = $_POST["email"];
+    $repPassword = $_POST["passwordRepeat"];
 
+
+    $user = new LoginControl("$username","$email", "$password","$repPassword");
+}
 
 
 //errors
@@ -157,6 +165,12 @@ function test_input($data)
           <span class="error">* <?php echo $password_error; ?></span>
 
           <br><br>
+
+            <label for="passwordRepeat"> Repeat Password</label>
+            <input class="form-control" type="password" name="passwordRepeat"> </input>
+            <span class="error">* <?php echo $password_error; ?></span>
+
+            <br><br>
 
           <label for="email"> Email </label>
           <input class="form-control" type="email" name="email"> </input>

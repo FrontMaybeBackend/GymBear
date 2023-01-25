@@ -24,17 +24,20 @@ class Diets
         return $this->type;
     }
 }
-$id = $_GET['id'];
+
+$id = isset($_GET['id']) ? $_GET['id'] : 0;
 
 $stmt = $conn->prepare("SELECT * FROM diets where id = :id");
 $stmt->bindParam(':id', $id);
 $stmt->execute();
 while ($result = $stmt->fetch()) {
-    echo $result['name'];
-    echo $result['type'];
-?>
-    <img class="img-fluid" src="./images/<?php echo $result['img'] ?>" width="100%" height="50%" alt="Card image cap" />
-<?php
+  ?>
+    <p class="text-center"> <?php echo $result['title'] ?></p>
+    <?php
+    ?> <img class="img-fluid rounded mx-auto d-block" src="./images/<?php echo $result['img'] ?>" width="50%" height="50%" alt="Card image cap" />
+    <?php
+    echo $result['diet'];
+
 
 
 }
