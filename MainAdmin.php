@@ -4,7 +4,7 @@ session_start();
 
 //SPRAWDZA CZY ZMIENNA JEST W SESJI !
 include_once("Main.php");
-require_once('config.php');
+require_once('connect.php');
 $fail_send = false;
 $_SESSION["pplWorkout"] = $pplW;
 $errorTIT = "";

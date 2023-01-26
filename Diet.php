@@ -1,5 +1,5 @@
 <?php
-include("config.php");
+include("connect.php");
 include("navbar.php");
 
 session_start();

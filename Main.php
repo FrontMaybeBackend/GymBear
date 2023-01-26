@@ -10,7 +10,7 @@ session_start();
   }
 */
 include("navbar.php");
-require_once('config.php');
+require_once('connect.php');
 $connection = mysqli_connect("localhost", "root", "", "gymweb");
 $user_name = $_SESSION["username"];
 $pplW = $_SESSION["pplWorkout"];
