@@ -4,7 +4,7 @@
 
 
 
-if($_SERVER["REQUEST_METHOD"] == 'POST'){
+if(isset($_POST["create"])){
 
 
     include("SignupControl.php");
@@ -16,10 +16,13 @@ if($_SERVER["REQUEST_METHOD"] == 'POST'){
     $user = new SignupControl("$username","$email", "$password", "$repPassword");
 
 
-    $checkIt = $user->validation();
+    $checkIt = $user->  Validation();
     if($checkIt){
         echo '<div class="error">' . $checkIt . '</div>';
     }
+
+
+
 
 
 

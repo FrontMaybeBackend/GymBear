@@ -6,13 +6,16 @@ class SignupConfig extends connect
 
     public function checkUser($username)
     {
-        $stmt = $this->connected()->prepare("SELECT username FROM users WHERE username =:username");
+        $database = new connect();
+        $conn = $database->getConnection();
+        $stmt = $conn->prepare("SELECT username FROM users WHERE username =:username");
         $stmt->bindParam(':username', $username,);
         $stmt->execute();
         $result = $stmt->fetch();
-        if ($result > 0) {
+         while($result) {
             $stmt = null;
             exit();
+
         }
 
     }
@@ -20,13 +23,17 @@ class SignupConfig extends connect
 
 
 
-    protected function setUser($username,$password,$email){
-        $stmt = $this->connected()->prepare("INSERT INTO `users` (`username`, `password`, `email`) VALUES (?,?,?)");
+    public function setUser($username,$password,$email){
+        $database = new connect();
+        $conn = $database->getConnection();
+        $stmt = $conn->prepare("INSERT INTO users (`username`, `password`, `email`) VALUES (?,?,?)");
         $hashedPass = password_hash("$password", PASSWORD_DEFAULT);
-        $stmt->bindParam(1, $username, PDO::PARAM_STR);
-        $stmt->bindParam(2, $hashedPass, PDO::PARAM_STR);
-        $stmt->bindParam(3, $email, PDO::PARAM_STR);
+        $stmt->bindParam(1, $username, );
+        $stmt->bindParam(2, $hashedPass, );
+        $stmt->bindParam(3, $email, );
         $stmt->execute();
+        echo " zarejestrowałes się na gymBear!";
+        header("Location:loginpanel.php");
         exit();
     }
 

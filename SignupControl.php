@@ -31,7 +31,7 @@ class SignupControl extends SignupConfig
            "rePassword" =>"Password must be the same",
            "email" => "Email must be in good format",
            "empty" => "Inputs cant be empty",
-           "check" => "username and email are get"
+           "check" => "username already taken"
 
        );
 
@@ -56,17 +56,21 @@ class SignupControl extends SignupConfig
                $checkThisShit = false;
            }
            if($this->validationPassword() == false){
-               return $this->errorMessages["password"];
+               return $this->errorMessages["rePassword"];
                $checkThisShit = false;
            }
            if($this->check() == false){
                return $this->errorMessages["check"];
                $checkThisShit = false;
-           }if(!$checkThisShit){
+           }if($checkThisShit == true){
+
                $this->setUser("$this->username", "$this->password", "$this->email");
-               header("location:loginpanel.php");
+
+
            }
        }
+
+
 
       private function checkInput(){
 
@@ -86,7 +90,7 @@ class SignupControl extends SignupConfig
           function validationUser()
           {
               $result = true;
-              if (strlen($this->username < 8)) {
+              if (strlen($this->username) < 8) {
                   $result = false;
               } else {
                   $result = true;
@@ -111,9 +115,6 @@ class SignupControl extends SignupConfig
           function validationPassword()
           {
               $result = true;
-              if(strlen($this->password < 8)){
-                  $result = false;
-              }
               if ($this->password !== $this->repPassword) {
                   $result = false;
               } else {
@@ -135,7 +136,6 @@ class SignupControl extends SignupConfig
               return $result;
           }
 
-// COŚ Z BAZĄ JEST NIE TAK TRZEBA OGARNAC JUTRO !
 
 
 }

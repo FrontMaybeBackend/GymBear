@@ -3,21 +3,19 @@
 
 class connect
 {
-
-    protected function connected()
+    public function __construct()
     {
-
         try {
-            $host = "localhost";
-            $db_user = "root";
-            $db_password = "";
-            $db_name = "gymweb";
-            $conn = new PDO('mysql:host=localhost;dbname=gymweb', $db_user, $db_password);
-            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            echo "success";
+            $this->conn = new PDO('mysql:host=localhost;dbname=gymweb', 'root', '');
+            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (PDOException $e) {
-            echo "failed:" . $e->getMessage();
+            echo "Failed:" . $e->getMessage();
         }
+    }
+
+    public function getConnection()
+    {
+        return $this->conn;
     }
 
 
