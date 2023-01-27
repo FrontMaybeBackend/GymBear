@@ -30,44 +30,6 @@ if(isset($_POST["create"])){
 
 }
 
-//errors
-
-/*if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  $user_name = $_POST["username"];
-  $password = $_POST["password"];
-  $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-  $email = $_POST["email"];
-
-
-
-
-    }
-    $stmt = $conn->prepare("SELECT email FROM users where email =:email");
-    $stmt->bindParam(':email', $email);
-    $stmt->execute();
-    $result = $stmt->fetch();
-    if ($result > 0) {
-      $email_error = " Email is already taken";
-      $fail_connect = true;
-    }
-  }
-
-
-
-
-  /*if (!$fail_connect) {
-    $registration = "welcome to gymbear!";
-    $stmt = $conn->prepare("INSERT INTO `users` (`username`, `password`, `email`) VALUES (?,?,?)");
-    $stmt->bindParam(1, $user_name, PDO::PARAM_STR);
-    $stmt->bindParam(2, $password, PDO::PARAM_STR);
-    $stmt->bindParam(3, $email, PDO::PARAM_STR);
-    $stmt->execute();
-    header("location:loginpanel.php");
-    exit();
-  }
-}
-
-*/
 
 
 

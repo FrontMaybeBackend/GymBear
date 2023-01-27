@@ -1,53 +1,19 @@
 <?php
-session_start();
 
 
 
+if(isset($_POST["login"])) {
+
+    include("classes/LoginControl.php");
+    $usernameLogin = $_POST["username"];
+    $userPassword = $_POST["password"];
 
 
-$user_error = "";
-$password_error = "";
-$fail_form = false;
-$login_error = "";
+    $userLogin = new \classes\LoginControl("$usernameLogin", "$userPassword");
 
-// WALIDACJA, JEŚLI POLA SĄ PUSTE TO NIE PRZEJDZIE FORMULARZ, JEŚLI NIE MA DANYCH W BAZIE TO TEŻ NIE.
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $user_name = $_POST["username"];
-    $password = $_POST["password"];
-    if (isset($_POST["login"])) {
-
-        if (empty($user_name)) {
-            $user_error  = "please enter username.";
-            $fail_form = true;
-        }
-        if (empty($password)) {
-            $password_error = "please enter password";
-            $fail_form = true;
-        }
-        $stmt = $conn->prepare("SELECT username, password FROM users where username =:username AND password =:password");
-        $stmt->bindParam(':username', $user_name);
-        $stmt->bindParam(':password', $password);
-        $stmt->execute();
-
-        if ($stmt->rowCount() === 1) {
-            header("Location:Main.php");
-        } else {
-            $login_error = " we dont have this account in DB";
-        }
-        if (!$fail_form) {
-            $_SESSION["username"] = $user_name;
-        }
-        $stmt = $conn->prepare("SELECT admin,password FROM adminpanel WHERE admin  = :admin AND password  = :password");
-        $stmt->bindParam('admin', $user_name);
-        $stmt->bindParam(':password', $password);
-        $stmt->execute();
-
-        if ($stmt->rowCount() === 1) {
-            header("Location:MainAdmin.php");
-        } else {
-            $login_error = " we dont have this account in DB";
-        }
+    $checkLog = $userLogin->validationLogin();
+    if($checkLog){
+        echo '<div class="error">' . $checkLog . '</div>';
     }
 }
 
@@ -78,24 +44,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <body>
 
-    <form method="post" class="SignIt" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+    <form method="post" class="SignIt" action="">
         <div class="form_input-container">
 
             <input type="text" id="username" name="username" placeholder=" "> </input>
             <label for="Username"> Username</label>
-            <span class="error"> * <?php echo $user_error; ?></span>
         </div>
 
 
         <div class="form_input-container">
-
             <input type="password" id="password" name="password" placeholder=" ">
             <label for="Password"> Password </label>
-            <span class="error"> * <?php echo $password_error; ?></span>
-
-
         </div>
-        <span class="error"> * <?php echo $login_error; ?></span>
+
 
         <input class="btn btn-primary" type="submit" name="login" value="Login"> </input>
 

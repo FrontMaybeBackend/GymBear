@@ -20,10 +20,7 @@ class SignupControl extends SignupConfig
        }
 
 
-       public function errors($fieldName)
-       {
-           return "The $fieldName field is not properly filled.";
-       }
+
 
        private $errorMessages = array(
            "username" => "Username must have 8 length",
@@ -35,10 +32,7 @@ class SignupControl extends SignupConfig
 
        );
 
-       public function displayErrors($fieldName){
-           return $this->errorMessages[$fieldName];
 
-       }
 
 
        public function Validation(){
@@ -65,8 +59,6 @@ class SignupControl extends SignupConfig
            }if($checkThisShit == true){
 
                $this->setUser("$this->username", "$this->password", "$this->email");
-
-
            }
        }
 
@@ -128,7 +120,7 @@ class SignupControl extends SignupConfig
           function check()
           {
               $result = true;
-              if ($this->checkUser($this->username)) {
+              if ($this->checkUser("$this->username")) {
                   $result = false;
               } else {
                   $result = true;
