@@ -2,16 +2,10 @@
 session_start();
 
 
-//SPRAWDZA CZY ZMIENNA JEST W SESJI !
-/*if(isset($_SESSION["username"])) {
-	echo "istnieje sesja i username jest w tej sesji";
-  }else {
-	echo " nie ma";
-  }
-*/
+
 include("navbar.php");
-require_once('connect.php');
-$connection = mysqli_connect("localhost", "root", "", "gymweb");
+require_once('database/connect.php');
+
 $user_name = $_SESSION["username"];
 $pplW = $_SESSION["pplWorkout"];
 

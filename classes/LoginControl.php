@@ -33,8 +33,12 @@ public function __construct($usernameLogin, $passwordLogin){
             return $this->errorMessagesLogin["check"];
             $check = false;
 
+        }if($check = true){
+            $this->loginUser($this->usernameLogin, $this->passwordLogin);
         }
+        return $check;
     }
+
 private function checkFields (){
     $result = true;
     if(empty($this ->usernameLogin) || empty($this ->passwordLogin)){
@@ -47,15 +51,12 @@ private function checkFields (){
 
 private function compare(){
         $result = true;
-        if($this->compareUser("$this->usernameLogin")){
+        if(!$this->compareUser("$this->usernameLogin")){
             $result = false;
         }else{
             $result = true;
         }
         return $result;
-
 }
-
-
 
 }

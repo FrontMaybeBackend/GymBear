@@ -1,6 +1,7 @@
 <?php
 
 
+use classes\LoginControl;
 
 if(isset($_POST["login"])) {
 
@@ -9,7 +10,7 @@ if(isset($_POST["login"])) {
     $userPassword = $_POST["password"];
 
 
-    $userLogin = new \classes\LoginControl("$usernameLogin", "$userPassword");
+    $userLogin = new LoginControl("$usernameLogin", "$userPassword");
 
     $checkLog = $userLogin->validationLogin();
     if($checkLog){
