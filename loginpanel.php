@@ -12,10 +12,13 @@ if(isset($_POST["login"])) {
 
     $userLogin = new LoginControl("$usernameLogin", "$userPassword");
 
+
+
     $checkLog = $userLogin->validationLogin();
     if($checkLog){
         echo '<div class="error">' . $checkLog . '</div>';
     }
+
 }
 
 

@@ -4,6 +4,8 @@ include("connect.php");
 class SignupConfig extends connect
 {
 
+
+
     public function checkUser($username)
     {
         $database = new connect();
@@ -27,16 +29,14 @@ class SignupConfig extends connect
         $database = new connect();
         $conn = $database->getConnection();
         $stmt = $conn->prepare("INSERT INTO users (`username`, `password`, `email`) VALUES (?,?,?)");
-        $hashedPass = password_hash("$password", PASSWORD_DEFAULT);
+       $hashedPass = password_hash("$password", PASSWORD_DEFAULT);
         $stmt->bindParam(1, $username, );
         $stmt->bindParam(2, $hashedPass, );
         $stmt->bindParam(3, $email, );
         $stmt->execute();
-        echo " zarejestrowałes się na gymBear!";
         header("Location:loginpanel.php");
         exit();
     }
-
 
 }
 

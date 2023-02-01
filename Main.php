@@ -6,6 +6,7 @@ session_start();
 include("navbar.php");
 require_once('database/connect.php');
 
+
 $user_name = $_SESSION["username"];
 $pplW = $_SESSION["pplWorkout"];
 

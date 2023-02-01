@@ -5,19 +5,19 @@ include("database/LoginConfig.php");
 class LoginControl extends \LoginConfig
 {
 private $usernameLogin;
-private $passwordLogin;
+private $userPassword;
 
 
-public function __construct($usernameLogin, $passwordLogin){
+public function __construct($usernameLogin, $userPassword){
     $this->usernameLogin=$usernameLogin;
-    $this->passwordLogin=$passwordLogin;
+    $this->userPassword=$userPassword;
 }
 
 
 
     private array $errorMessagesLogin = array(
         "empty" => "Inputs cant be empty",
-        "check" => "We dont have this account",
+        "check" => "Login and password don't match",
     );
 
 
@@ -33,15 +33,16 @@ public function __construct($usernameLogin, $passwordLogin){
             return $this->errorMessagesLogin["check"];
             $check = false;
 
-        }if($check = true){
-            $this->loginUser($this->usernameLogin, $this->passwordLogin);
+        }if($check == true){
+            $this->compareUser($this->usernameLogin, $this->userPassword);
+
         }
         return $check;
     }
 
 private function checkFields (){
     $result = true;
-    if(empty($this ->usernameLogin) || empty($this ->passwordLogin)){
+    if(empty($this ->usernameLogin) || empty($this ->userPassword)){
         $result = false;
     }else{
         $result = true;
@@ -51,12 +52,14 @@ private function checkFields (){
 
 private function compare(){
         $result = true;
-        if(!$this->compareUser("$this->usernameLogin")){
+        if(!$this->compareUser("$this->usernameLogin", "$this->userPassword")){
             $result = false;
         }else{
             $result = true;
         }
         return $result;
 }
+
+
 
 }
