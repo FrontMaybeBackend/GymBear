@@ -4,7 +4,7 @@ session_start();
 
 //SPRAWDZA CZY ZMIENNA JEST W SESJI !
 include_once("Main.php");
-require_once('connect.php');
+require_once('database/connect.php');
 $fail_send = false;
 $_SESSION["pplWorkout"] = $pplW;
 $errorTIT = "";
@@ -41,7 +41,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </form>
     </div>
     <?php
-
+ $dataBase = new connect();
+ $conn = $dataBase ->getConnection();
     $stmt = $conn->prepare("SELECT * FROM recomennded");
     $stmt->execute();
     while ($result = $stmt->fetch()) {
@@ -81,7 +82,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       </div>
       </div>
 <?php
-
+exit();
     }
   }
 }
@@ -151,6 +152,8 @@ if (isset($_POST["send"])) {
 
 
   <?php
+    $dataBase = new connect();
+    $conn = $dataBase ->getConnection();
   $stmt = $conn->prepare("SELECT * FROM diets");
   $stmt->execute();
   while ($result = $stmt->fetch()) {
