@@ -11,18 +11,17 @@ class ProgrammsConfig extends connect
         $conn = $database->getConnection();
         $stmt = $conn ->prepare("SELECT * FROM recomennded");
         $stmt ->execute();
-          while($result = $stmt->fetch()){
-              $this->programms = $result['programms'];
-              $this->title = $result['title'];
-              $this->img = $result['img'];
-          }
+        $results = $stmt ->fetchAll();
+        $recommendeds = array();
+        foreach($results as $result){
+            $recommended = new self();
+            $recommended->programms = $result['programms'];
+            $recommended->img = $result['img'];
+            $recommended->title = $result['title'];
+            $recommendeds[] = $recommended;
+        }
+        return $recommendeds;
     }
-
-
-
-
-
-
 
 
 }
