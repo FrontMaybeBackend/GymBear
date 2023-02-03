@@ -236,7 +236,7 @@ if (isset($_POST["sendDiet"])) {
 ?>
 
 <?php
-//zrobic funkcje i oo
+
 
 
 ?>

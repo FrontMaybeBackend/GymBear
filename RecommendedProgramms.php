@@ -4,16 +4,33 @@ include("database/ProgrammsConfig.php");
 include("database/DietConfig.php");
 
 
+//Wyświetla treningi  z bazy
 $programms = new ProgrammsConfig();
 
 $display = $programms ->displayProgramms();
 
 
+//Wyświetla diety  z bazy
 $diets = new DietConfig();
 
 $displayDiet = $diets ->displayDiets();
 
+include("classes/FormControl.php");
+//Walidacja formularza
 
+
+if(isset($_POST['sendDiet'])){
+
+
+    $titlePrograms = $_POST['titlePrograms'];
+    $bodyPrograms = $_POST['bodyPrograms'];
+    $imgPrograms  = $_POST['imgPrograms'];
+
+    $recoPrograms = new \classes\FormControl("$titlePrograms", "$bodyPrograms", "$imgPrograms");
+
+    $checkForm = $recoPrograms ->formValidation();
+
+}
 
 
 
@@ -40,11 +57,12 @@ $displayDiet = $diets ->displayDiets();
 
 <body>
 
-<div class="container">
+<div class="container d-flex flex-row justify-content-between">
     <p>Recommended Programms for Training !</p>
     <?php foreach($display as $recommendeds): ?>
     <section class="mx-auto my-5" style="max-width: 23rem;">
-        <div class="card">
+        <div class="card"  style=" width: 250px;
+             height: 300px;">
             <div class="card-body d-flex flex-row">
                 <img src="./images/admin.webp" class="rounded-circle me-3" height="50px" width="50px" alt="avatar" />
                 <div>
@@ -58,7 +76,7 @@ $displayDiet = $diets ->displayDiets();
             </div>
             <div class="bg-image hover-overlay ripple rounded-0" data-mdb-ripple-color="light">
                 <img class="img-fluid" src="./images/<?php echo $recommendeds->img; ?>" width="100%" height="50%" alt="Card image cap" />
-                <a href="#!">
+                <a href="#">
                     <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
                 </a>
             </div>
@@ -73,16 +91,44 @@ $displayDiet = $diets ->displayDiets();
         </div>
 
     </section>
-</div>
+
 <?php endforeach; ?>
 </div>
 
-<div class="container">
+</div>
+<button type="button" id = "btn2" class="btn btn-secondary">AddWorkout</button>
 
-    <p>Recommended Diet!</p>
+<form id="form2" method="POST">
+    <?php
+    if($checkForm) {
+    echo  '<div class="error">' . $checkForm . '</div>';
+    }
+    ?>
+    <div id="titlePrograms" class="form-floating-mb-3" >
+        <input name="titlePrograms" type="text" class="form-control" id="titlePrograms" placeholder="Title" style="width:50%;">
+    </div>
+    <div id="imgPrograms" class="form-floating-mb-3" >
+        <input name="imgPrograms" type="file" class="form-control" id="imgPrograms" Value="upload" style="width:50%;">
+    </div>
+
+    <div id="bodyPrograms">
+        <label for="bodyPrograms"></label><br>
+        <textarea id="bodyPrograms" name="bodyPrograms" rows="15" cols="100" placeholder="Text"></textarea>
+
+        <form method="POST">
+            <input id="sendDiet" name="sendDiet" type="submit" value="sendDiet">
+        </form>
+
+    </div>
+</form>
+
+<div class="container d-flex flex-row justify-content-between  ">
+
+    <p class = "text-center">Recommended Diet!</p>
     <?php foreach($displayDiet as $diet): ?>
-        <section class="mx-auto my-5" style="max-width: 23rem;">
-            <div class="card">
+        <section class="mx-auto my-5 " style="max-width: 23rem;" >
+            <div class="card"  style=" width: 250px;
+             height: 300px;" >
                 <div class="card-body d-flex flex-row">
                     <img src="./images/admin.webp" class="rounded-circle me-3" height="50px" width="50px" alt="avatar" />
                     <div>
@@ -109,9 +155,37 @@ $displayDiet = $diets ->displayDiets();
             </div>
         </section>
     <?php endforeach; ?>
+
 </div>
+<button type="submit" name="addDietButton"  id ="btn" class="btn btn-secondary">AddDiet</button>
+
+<form id="form" method="POST">
+    <div id="title" class="form-floating-mb-3" >
+        <input name="titleDiet" type="text" class="form-control" id="titleDiet" placeholder="Title" style="width:50%;">
+    </div>
+    <div id="img" class="form-floating-mb-3" >
+        <input name="imgDiet" type="file" class="form-control" id="imgDiet" Value="upload" style="width:50%;">
+    </div>
+
+    <div id="text">
+        <label for="diets"></label><br>
+        <textarea id="diets" name="diets" rows="15" cols="100" placeholder="Text"></textarea>
+
+        <form method="POST">
+            <input id="sendDiet" name="sendDiet" type="submit" value="sendDiet">
+        </form>
+
+</div>
+</form>
+
+
+
 
 
 </body>
+<script
+
+    src="form.js">
+</script>
 
 </html>
