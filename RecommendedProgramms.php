@@ -2,6 +2,8 @@
 include_once("navbar.php");
 include("database/ProgrammsConfig.php");
 include("database/DietConfig.php");
+include_once("classes/DietFormControl.php");
+
 
 
 //Wyświetla treningi  z bazy
@@ -15,11 +17,11 @@ $diets = new DietConfig();
 
 $displayDiet = $diets ->displayDiets();
 
-include("classes/FormControl.php");
+
 //Walidacja formularza
 
 
-if(isset($_POST['sendDiet'])){
+if(isset($_POST['sendPrograms'])){
 
 
     $titlePrograms = $_POST['titlePrograms'];
@@ -32,8 +34,16 @@ if(isset($_POST['sendDiet'])){
 
 }
 
+if(isset($_POST['sendDiet'])) {
+    $titleDiet = $_POST['titleDiet'];
+    $bodyDiet = $_POST['bodyDiet'];
+    $imgDiet = $_POST['imgDiet'];
 
+    $recoDiets = new \classes\DietFormControl("$titleDiet", "$bodyDiet", $imgDiet);
 
+    $checkFormDiet = $recoDiets->formValidation();
+
+}
 
 ?>
 
@@ -56,9 +66,8 @@ if(isset($_POST['sendDiet'])){
 </head>
 
 <body>
-
-<div class="container d-flex flex-row justify-content-between">
-    <p>Recommended Programms for Training !</p>
+<h4 class="text-center">Recommended Programms for Training !</h4>
+<div class="container d-flex flex-row flex-wrap justify-content-between">
     <?php foreach($display as $recommendeds): ?>
     <section class="mx-auto my-5" style="max-width: 23rem;">
         <div class="card"  style=" width: 250px;
@@ -115,16 +124,14 @@ if(isset($_POST['sendDiet'])){
         <label for="bodyPrograms"></label><br>
         <textarea id="bodyPrograms" name="bodyPrograms" rows="15" cols="100" placeholder="Text"></textarea>
 
-        <form method="POST">
-            <input id="sendDiet" name="sendDiet" type="submit" value="sendDiet">
-        </form>
-
+            <input id="sendPrograms" name="sendPrograms" type="submit" value="sendPrograms">
     </div>
 </form>
 
-<div class="container d-flex flex-row justify-content-between  ">
+<h4 class = "text-center">Recommended Diet!</h4>
+<div class="container d-flex flex-row flex-wrap justify-content-between  ">
 
-    <p class = "text-center">Recommended Diet!</p>
+
     <?php foreach($displayDiet as $diet): ?>
         <section class="mx-auto my-5 " style="max-width: 23rem;" >
             <div class="card"  style=" width: 250px;
@@ -158,18 +165,22 @@ if(isset($_POST['sendDiet'])){
 
 </div>
 <button type="submit" name="addDietButton"  id ="btn" class="btn btn-secondary">AddDiet</button>
-
+<?php
+if($checkFormDiet) {
+    echo  '<div class="error">' . $checkFormDiet . '</div>';
+}
+?>
 <form id="form" method="POST">
-    <div id="title" class="form-floating-mb-3" >
+    <div id="titleDiet" class="form-floating-mb-3" >
         <input name="titleDiet" type="text" class="form-control" id="titleDiet" placeholder="Title" style="width:50%;">
     </div>
-    <div id="img" class="form-floating-mb-3" >
+    <div id="imgDiet" class="form-floating-mb-3" >
         <input name="imgDiet" type="file" class="form-control" id="imgDiet" Value="upload" style="width:50%;">
     </div>
 
     <div id="text">
-        <label for="diets"></label><br>
-        <textarea id="diets" name="diets" rows="15" cols="100" placeholder="Text"></textarea>
+        <label for="bodyDiet"></label><br>
+        <textarea id="bodyDiet" name="bodyDiet" rows="15" cols="100" placeholder="Text"></textarea>
 
         <form method="POST">
             <input id="sendDiet" name="sendDiet" type="submit" value="sendDiet">

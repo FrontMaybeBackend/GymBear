@@ -20,7 +20,7 @@ class FormControl extends FormConfig
         $this->img=$img;
     }
 
-    private $errorForm = array(
+    public  $errorForm = array(
         "inputs" => "inputs are required"
     );
 
