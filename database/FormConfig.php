@@ -27,6 +27,17 @@ class FormConfig extends connect
        exit();
    }
 
+   public function addSupplementsToDataBase($titleForm, $body, $img){
+       $database = new connect();
+       $conn = $database ->getConnection();
+       $stmt = $conn->prepare("INSERT INTO supplements(`title`, `body`, `img`)VALUES (?,?,?)");
+       $stmt->bindParam(1,$titleForm,PDO::PARAM_STR);
+       $stmt->bindParam(2,$body,PDO::PARAM_STR);
+       $stmt->bindParam(3,$img, PDO::PARAM_LOB);
+       $stmt->execute();
+       exit();
+   }
+
 
 
 }

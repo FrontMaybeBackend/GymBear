@@ -1,25 +1,29 @@
 <?php
+
 include_once("navbar.php");
-include("database/ProgrammsConfig.php");
-include("database/DietConfig.php");
+include_once("database/DisplayRecomennded.php");
 include_once("classes/DietFormControl.php");
+include_once("classes/SupplementsFormControl.php");
 
 
 
 //Wyświetla treningi  z bazy
-$programms = new ProgrammsConfig();
+$programms = new DisplayRecomennded();
 
 $display = $programms ->displayProgramms();
 
 
 //Wyświetla diety  z bazy
-$diets = new DietConfig();
+$diets = new DisplayRecomennded();
 
 $displayDiet = $diets ->displayDiets();
 
 
 //Walidacja formularza
 
+$supplements = new DisplayRecomennded();
+
+$displaySupp = $supplements ->displaySupplements();
 
 if(isset($_POST['sendPrograms'])){
 
@@ -43,6 +47,16 @@ if(isset($_POST['sendDiet'])) {
 
     $checkFormDiet = $recoDiets->formValidation();
 
+}
+
+if(isset($_POST['sendSupp'])){
+    $titleSupp = $_POST['titleSupp'];
+    $bodySupp = $_POST['bodySupp'];
+    $imgSupp = $_POST['imgSupp'];
+
+    $recoSupp = new \classes\SupplementsFormControl("$titleSupp", $bodySupp, $imgSupp);
+
+    $checkFormSupp = $recoSupp->formValidation();
 }
 
 ?>
@@ -128,6 +142,8 @@ if(isset($_POST['sendDiet'])) {
     </div>
 </form>
 
+<hr>
+
 <h4 class = "text-center">Recommended Diet!</h4>
 <div class="container d-flex flex-row flex-wrap justify-content-between  ">
 
@@ -165,12 +181,12 @@ if(isset($_POST['sendDiet'])) {
 
 </div>
 <button type="submit" name="addDietButton"  id ="btn" class="btn btn-secondary">AddDiet</button>
-<?php
-if($checkFormDiet) {
-    echo  '<div class="error">' . $checkFormDiet . '</div>';
-}
-?>
 <form id="form" method="POST">
+    <?php
+    if($checkFormDiet) {
+        echo  '<div class="error">' . $checkFormDiet . '</div>';
+    }
+    ?>
     <div id="titleDiet" class="form-floating-mb-3" >
         <input name="titleDiet" type="text" class="form-control" id="titleDiet" placeholder="Title" style="width:50%;">
     </div>
@@ -191,8 +207,27 @@ if($checkFormDiet) {
 
 
 
+<hr>
+<h4 class = "text-center"> Recomennded Supplements</h4>
+<button type="submit" name="addSuppButton"  id ="btn3" class="btn btn-secondary">AddSupp</button>
 
+<form id="form3" method="POST">
+    <div id="titleSupp" class="form-floating-mb-3" >
+        <input name="titleSupp" type="text" class="form-control" id="titleSupp" placeholder="Title" style="width:50%;">
+    </div>
+    <div id="imgSupp" class="form-floating-mb-3" >
+        <input name="imgSupp" type="file" class="form-control" id="imgSupp" Value="upload" style="width:50%;">
+    </div>
 
+    <div id="text">
+        <label for="bodySupp"></label><br>
+        <textarea id="bodySupp" name="bodySupp" rows="15" cols="100" placeholder="Text"></textarea>
+
+        <form method="POST">
+            <input id="sendSupp" name="sendSupp" type="submit" value="sendSupp">
+        </form>
+    </div>
+</form>
 </body>
 <script
 
