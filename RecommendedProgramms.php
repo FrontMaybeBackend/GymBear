@@ -59,6 +59,8 @@ if(isset($_POST['sendSupp'])){
     $checkFormSupp = $recoSupp->formValidation();
 }
 
+
+
 ?>
 
 <!DOCTYPE html>
@@ -208,10 +210,15 @@ if(isset($_POST['sendSupp'])){
 
 
 <hr>
-<h4 class = "text-center"> Recomennded Supplements</h4>
+<h4 class = "text-center"> Recommended Supplements</h4>
 <button type="submit" name="addSuppButton"  id ="btn3" class="btn btn-secondary">AddSupp</button>
 
 <form id="form3" method="POST">
+    <?php
+    if($checkFormSupp) {
+        echo  '<div class="error">' . $checkFormSupp . '</div>';
+    }
+    ?>
     <div id="titleSupp" class="form-floating-mb-3" >
         <input name="titleSupp" type="text" class="form-control" id="titleSupp" placeholder="Title" style="width:50%;">
     </div>
@@ -228,6 +235,44 @@ if(isset($_POST['sendSupp'])){
         </form>
     </div>
 </form>
+
+
+<div class="container d-flex flex-row flex-wrap justify-content-between">
+    <?php foreach($displaySupp as $supplementss): ?>
+        <section class="mx-auto my-5" style="max-width: 23rem;">
+            <div class="card"  style=" width: 250px;
+             height: 300px;">
+                <div class="card-body d-flex flex-row">
+                    <img src="./images/admin.webp" class="rounded-circle me-3" height="50px" width="50px" alt="avatar" />
+                    <div>
+                        <h5 class="card-title font-weight-bold mb-2"></h5>
+                        <p class="card-text"><i class="far fa-clock pe-2"></i>
+                            <?php
+                            echo $supplementss->titleSupp;
+                            ?>
+                        </p>
+                    </div>
+                </div>
+                <div class="bg-image hover-overlay ripple rounded-0" data-mdb-ripple-color="light">
+                    <img class="img-fluid" src="./images/<?php echo $supplementss->imgSupp; ?>" width="100%" height="50%" alt="Card image cap" />
+                    <a href="#">
+                        <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                    </a>
+                </div>
+                <div class="card-body">
+                    <p class="card-text collapse" id="collapseContent">
+                        <?php echo $supplementss->bodySupp ?>
+                    </p>
+                    <div class="d-flex justify-content-between">
+                        <a id="readMore" class="btn btn-link link-danger p-md-1 my-1" data-mdb-toggle="collapse" href="#collapseContent" role="button" aria-expanded="false" aria-controls="collapseContent">Read more</a>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+    <?php endforeach; ?>
+</div>
 </body>
 <script
 

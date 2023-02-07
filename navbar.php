@@ -35,12 +35,13 @@
                         <a class="nav-link" href="register.php">Register</a>
                     </li>
                     <li class ="nav-item">
-                        <a class="nav-link" href="#">Programms</a>
+                        <a class="nav-link" href="RecommendedProgramms.php">Programms</a>
                     </li>
 
                 </ul>
             </div>
         </div>
+
     </nav>
 
 
@@ -53,10 +54,10 @@
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img class="d-block w-100" src="images/gymMain.jpg" alt="First slide">
+                <img class="d-block w-100 h-80" src="images/gymMain.jpg" alt="First slide">
                 <div class="carousel-caption d-none d-md-block">
                     <h5>Training!</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, nulla, tempore. Deserunt excepturi quas vero.</p>
+                    <p>Get your Training to the NEXT LEVEL !</p>
                 </div>
             </div>
             <div class="carousel-item">

@@ -4,16 +4,28 @@ session_start();
 
 
 include("navbar.php");
-require_once('database/connect.php');
+
+include("database/DisplayRecomennded.php");
+include("classes/Calculator.php");
 
 
-$user_name = $_SESSION["username"];
-$pplW = $_SESSION["pplWorkout"];
+
+
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$monday = $_POST["monday"];
 	$ppl = $_POST["ppl"];
 }
+
+if(isset($_POST['Calculate'])){
+    $weight = $_POST['Weight'];
+    $reps = $_POST['Reps'];
+    $OneRepMax = new \classes\Calculator("$weight", "$reps");
+    $Calculate = $OneRepMax ->OneRepMax();
+}
+
+
+
 
 
 ?>
@@ -36,15 +48,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <body>
 
-
-
-
-
-
-
-
-
-
 	<form method="POST" action="" ;>
 		<div class="dropdown ">
 
@@ -53,9 +56,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			</button>
 
 			<ul class=" dropdown-menu text-center btn-sm bg-dark" aria-labelledby="dropdownMenu2">
-				<form method="POST" action="<?php $_SERVER["PHP_SELF"] ?>" ;>
+
 					<li><input class="dropdown-item text-uppercase" type="submit" name="pplR" style="color:white" value="Push Pull Legs"></input></li>
-				</form>
+
 
 				<form method="POST" action="<?php $_SERVER["PHP_SELF"] ?>" ;>
 					<li><input class="dropdown-item text-uppercase" type="submit" name="upl" style="color:white" value="Upper Lower"></input></li>
@@ -98,15 +101,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 				Calculator
 			</button>
 			<ul class="dropdown-menu text-center btn-sm bg-dark " aria-labelledby="dropdownMenu5">
-				<li><button class="dropdown-item text-uppercase" type="button" style="color:white">Maxes </button> </li>
-				<li><button class="dropdown-item text-uppercase" type="button" style="color:white">Squat </button> </li>
-				<li><button class="dropdown-item text-uppercase" type="button" style="color:white">Bench Press</button> </li>
-				<li><button class="dropdown-item text-uppercase" type="button" style="color:white"> Dead Lift </button> </li>
-
+				<li><button class="dropdown-item text-uppercase" id="1RM" name="1RM" type="submit" style="color:white">1RM </button> </li>
+				<li><button class="dropdown-item text-uppercase" type="button" style="color:white">BMI </button> </li>
 			</ul>
-
 		</div>
 	</form>
+
+
 
 	<form id="days" method="POST" action="<?php $_SERVER["PHP_SELF"] ?>">
 		<div class="  d-flex justify-content-between m-3 " role="group">
@@ -128,7 +129,78 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	</form>
 
 
+    <?php
 
+    if(isset($_POST["pplR"])){
+
+    $display = new DisplayRecomennded();
+
+    $displayPPL = $display ->displayPPL();
+    ?>
+    <h4 class="text-center">Recommended Programms for Training !</h4>
+    <div class="container d-flex flex-row flex-wrap justify-content-between">
+        <?php foreach($displayPPL as $recommendeds): ?>
+            <section class="mx-auto my-5" style="max-width: 23rem;">
+                <div class="card"  style=" width: 250px;
+             height: 300px;">
+                    <div class="card-body d-flex flex-row">
+                        <img src="./images/admin.webp" class="rounded-circle me-3" height="50px" width="50px" alt="avatar" />
+                        <div>
+                            <h5 class="card-title font-weight-bold mb-2"></h5>
+                            <p class="card-text"><i class="far fa-clock pe-2"></i>
+                                <?php
+                                echo $recommendeds->title;
+                                ?>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="bg-image hover-overlay ripple rounded-0" data-mdb-ripple-color="light">
+                        <img class="img-fluid" src="./images/<?php echo $recommendeds->img; ?>" width="100%" height="50%" alt="Card image cap" />
+                        <a href="#">
+                            <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text collapse" id="collapseContent">
+                            <?php echo $recommendeds->programms ?>
+                        </p>
+                        <div class="d-flex justify-content-between">
+                            <a id="readMore" class="btn btn-link link-danger p-md-1 my-1" data-mdb-toggle="collapse" href="#collapseContent" role="button" aria-expanded="false" aria-controls="collapseContent">Read more</a>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+        <?php endforeach; ?>
+    </div>
+
+    </div>
+    <?php
+
+}
+?>
+    <?php
+
+    if(isset($_POST["1RM"])) {
+        ?>
+        <form id = "4" >
+            <div class="mb-3" >
+                <label for="Weight" class="form-label" > Weight</label >
+                <input type = "text" class="form-control" name="Weight" id = "Weight" >
+            </div >
+            <div class="mb-3" >
+                <label for="Reps" class="form-label" > Reps</label >
+                <input type = "text" class="form-control" name="Reps" id = "Reps" >
+            </div >
+
+            <button type="button" id="Calculate" name="Calculate">Calculate</button>
+            <label for="Score" class="form-label center" > Your One Rep Max: <?php echo $Calculate ?></label>
+
+        </form >
+    <?php
+        }
+?>
 	<?php
 	if (isset($monday)) {
 	?>
@@ -136,10 +208,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			<ul class="d-grid gap-2  list-group ">
 				<form id="formMonday" action='' method='post'>
 					<button name="ppl" type="submit" class="btn  text-uppercase text-center badge  text-wrap"> Push Pull Legs</button>
-
-
 					<button name="ul" type="button" class="btn  text-uppercase text-center badge  text-wrap">Upper Lower</button>
-
 					<button name="brs" type="button" class="btn  text-uppercase text-center badge  text-wrap">Bro Split</button>
 					<button name="fbw" type="button" class="btn  text-uppercase text-center badge  text-wrap">Full body workout</button>
 				</form>
@@ -168,192 +237,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	?>
 
 	<?php
-
-	?>
-
-
-	<?php if (isset($_POST["upl"])) {
-	?>
-		<p class=" text-center" id="pplWorkout"> <b>Upper Lower </b> :</p>
-
-		<img class="img-fluid rounded mx-auto d-block" src="images/upperLower.jpg" alt="upper lower img" ;> </img>
-
-
-		<p class="text-center text-wrap p-3"> <b>An upper/lower split program is a way of organizing your training into upper and lower body workouts, performed on separate days. On the upper-body days, you work muscles such as your chest, back, shoulders, biceps, and triceps. On the lower days, you work muscles such as your quads, glutes, hamstrings, and calves.</b></p>
-
-		<ul class="text-center" style="list-style:none">
-			<li><b> Workout 1 - Upper </b> </li>
-			<li>Bench Press 3 X 5 - 7 </li>
-			<li>Barbell Bent Over Rows 3 X 6 - 8</li>
-			<li>Seated Dumbbell Shoulder Press 3 X 8 - 10</li>
-			<li>Lat Pulldowns 2 X 10 - 12</li>
-			<li>Low Cable Chest Flyes 2 X 8 - 10</li>
-			<li>Dumbbell Curl 2 X 12-15</li>
-			<li>Overhead Dumbbell Tricep Extensions 2 X 12 - 15</li>
-			<li>Rope Cable Face Pulls 2 X 15 - 25</li>
-		</ul>
-		</p>
-		<p>
-		<ul class="text-center" style="list-style:none">
-			<li><b> Workout 2 - Lower</b></li>
-			<li>Back Squats 3 X 6 - 10</li>
-			<li>Glute Ham Raises 3 X 8 - 12</li>
-			<li>Alternating Forward Lunges 3 X 10 - 15</li>
-			<li>Lying Hamstring Curls 2 X 12 - 15</li>
-			<li>Standing Smith Machine Calf Raises 3 X 8 - 12</li>
-			</p>
-		</ul>
-
-		<p>
-		<ul class="text-center" style="list-style:none">
-			<li><b> Workout 3 - Upper </b></li>
-			<li>Pull Ups 3 X 5 - 10 </li>
-			<li>Incline Dumbbell Bench Press 3 x 8 - 10</li>
-			<li>Standing Barbell Push Press 3 X 8 - 12</li>
-			<li>Cable Lat Pullovers 3 X 10 - 15</li>
-			<li>Push-Ups 2 X 10 - 20</li>
-			<li>EZ-bar Bicep Curl 3 X 10 - 15</li>
-			<li>Dumbbell Tricep Kickbacks 3 X 12 - 15</li>
-		</ul>
-
-		<ul class="text-center" style="list-style:none">
-			<li><b> Workout 4 - Lower</b></li>
-			<li>Leg Press 3 X 8 - 12</li>
-			<li>Romanian Deadlift 3 X 8 - 10 </li>
-			<li>Unilateral Dumbbell Shrug 3 X 8 - 15</li>
-			<li>Leg Extensions 3 X 12 - 15</li>
-			<li>Seated Machine Calf Raises 4 X 12 - 20</li>
-			<li>Hanging Leg Raises 4 X 10 - 20</li>
-			</p>
-		</ul>
-
-		<p class="p-3 text-center">
-			<b>The sets listed are your work sets. Always warm up properly first in order to prepare your body for the heavier work, and to help prevent injury. However another advantage of this split routine is that fewer warm-up sets are required as training each exercise/body part warms you up for the next.</b>
-
-		</p>
-		</p>
-		</p>
-	<?php
-	}
-	?>
-
-	<?php if (isset($_POST["fbw"])) {
-	?>
-		<p class=" text-center" id="pplWorkout"> <b>Full Body Workout</b> :</p>
-
-		<img class="img-fluid rounded mx-auto d-block" src="images/fullbodyworkout.jpg" alt="full body workout img" ;> </img>
-
-
-		<p class="text-center text-wrap p-3"> <b>If you want to learn an effective full body workout routine optimized for muscle growth, then you need to read this article.
-				Full body workouts are one of the best workout splits for muscle growth and strength regardless of your training experience. They not only enable you to optimize your training frequency and recovery throughout the week but are also time efficient - and in this case requiring only 3 workouts per week.</b></p>
-
-		<ul class="text-center" style="list-style:none">
-			<li><b> Workout 1 </b> </li>
-			<li>Bench Press 3 X 5 - 7 </li>
-			<li>Barbell Back Squat 3 X 6 - 8</li>
-			<li>Pull Ups 3 X 8 - 10</li>
-			<li>Lying Hamstring Dumbbell Curls 3 X 10 - 12</li>
-			<li>Standing Overhead Press 3 X 6 - 10</li>
-			<li>Face Pulls 3 X 12-15</li>
-			<li>Drag Curls 3 X 12 - 15</li>
-
-		</ul>
-		</p>
-		<p>
-		<ul class="text-center" style="list-style:none">
-			<li><b> Workout 2 </b></li>
-			<li>Barbell Deadlift 3 X 6 - 10</li>
-			<li>Incline Dumbbel Press 3 X 6 - 12</li>
-			<li>Bulgarian Split Squat 3 X 10 - 15</li>
-			<li>Chest Supported Row 3 X 12 - 15</li>
-			<li>Dumbbell Lateral Raises 3 X 8 - 12</li>
-			<li>Incline Dumbbell Kickbacks 3 X 8 - 12</li>
-			<li>High To Low Chest Cable Flies 3 X 10 - 12</li>
-			</p>
-		</ul>
-
-		<p class="p-3 text-center">
-			<b>The sets listed are your work sets. Always warm up properly first in order to prepare your body for the heavier work, and to help prevent injury. However another advantage of this split routine is that fewer warm-up sets are required as training each exercise/body part warms you up for the next.</b>
-
-		</p>
-		</p>
-		</p>
-	<?php
-	}
-	?>
-
-	<?php if (isset($_POST["split"])) {
-	?>
-		<p class=" text-center" id="pplWorkout"> <b>Bro Split</b> :</p>
-
-		<img class="img-fluid rounded mx-auto d-block" src="images/brosplit.jpg" alt="full body workout img" ;> </img>
-
-
-		<p class="text-center text-wrap p-3"> <b>A workout split is how you divide up your workouts throughout the week either by body region, movement, specific body part, or by lift. This divide-and-conquer approach to exercise allows bodybuilders and general gym-goers to focus their efforts in a way that optimizes results.</b></p>
-
-		<ul class="text-center" style="list-style:none">
-			<li><b> Workout 1 - Chest </b> </li>
-			<li>Bench Press 3 X 5 - 7 </li>
-			<li>Dumbbell Chest Press 3 X 6 - 8</li>
-			<li>Dumbbell Flye 3 X 8 - 10</li>
-			<li>Dips 3 X 10 - 12</li>
-			<li>Triceps Extensions 3 X 6 - 10</li>
-
-		</ul>
-		</p>
-		<p>
-		<ul class="text-center" style="list-style:none">
-			<li><b> Workout 2 - Back </b></li>
-			<li>Barbell Deadlift 3 X 6 - 10</li>
-			<li>Pull Ups 3 X 6 - 12</li>
-			<li>Bulgarian Split Squat 3 X 10 - 15</li>
-			<li>Chest Supported Row 3 X 12 - 15</li>
-			<li>Dumbbell Lateral Raises 3 X 8 - 12</li>
-			<li>Incline Dumbbell Kickbacks 3 X 8 - 12</li>
-			<li>High To Low Chest Cable Flies 3 X 10 - 12</li>
-			</p>
-		</ul>
-
-		<ul class="text-center" style="list-style:none">
-			<li><b> Workout 2 - Legs</b></li>
-			<li>Back Squats 3 X 6 - 10</li>
-			<li>Glute Ham Raises 3 X 8 - 12</li>
-			<li>Alternating Forward Lunges 3 X 10 - 15</li>
-			<li>Lying Hamstring Curls 2 X 12 - 15</li>
-			<li>Standing Smith Machine Calf Raises 3 X 8 - 12</li>
-			</p>
-		</ul>
-
-		<p class="p-3 text-center">
-			<b>The sets listed are your work sets. Always warm up properly first in order to prepare your body for the heavier work, and to help prevent injury. However another advantage of this split routine is that fewer warm-up sets are required as training each exercise/body part warms you up for the next.</b>
-
-		</p>
-		</p>
-		</p>
-	<?php
-	}
-	?>
-
-
-
-
-	</section>
-
-	<section>
-		<?php if (isset($_POST["Carb"])) {
-		?>
-
-
-
-
-
-		<?php
-		}
-		?>
-	</section>
-
-
-	<?php
 	if (isset($ppl)) {
 	?>
 		<div class=" d-flex justify-content-end" style="display:none">
@@ -364,6 +247,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	}
 	?>
 
+    <?php
+
+
+    ?>
 
 
 	<script>
