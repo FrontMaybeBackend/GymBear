@@ -142,4 +142,94 @@ class DisplayRecomennded extends connect
         return $recommendeds;
     }
 
+    public function displayCarbs()
+    {
+        $database = new connect();
+        $conn = $database->getConnection();
+        $stmt = $conn->prepare("SELECT * FROM diets WHERE title ='Carbs'");
+        $stmt->execute();
+        $results = $stmt->fetchAll();
+        $diets = array();
+        foreach ($results as $result) {
+            //Tworzy obiekt nowej klasy w tym wypadku obiekt klasy DietConfig.
+            $diet = new self();
+            $diet->titleDiet = $result['title'];
+            $diet->imgDiet = $result['img'];
+            $diet->mainDiet = $result['diet'];
+            $diets[] = $diet;
+        }
+        return $diets;
+
+    }
+
+    public function displayFats()
+    {
+        $database = new connect();
+        $conn = $database->getConnection();
+        $stmt = $conn->prepare("SELECT * FROM diets WHERE title ='Fats'");
+        $stmt->execute();
+        $results = $stmt->fetchAll();
+        $diets = array();
+        foreach ($results as $result) {
+            //Tworzy obiekt nowej klasy w tym wypadku obiekt klasy DietConfig.
+            $diet = new self();
+            $diet->titleDiet = $result['title'];
+            $diet->imgDiet = $result['img'];
+            $diet->mainDiet = $result['diet'];
+            $diets[] = $diet;
+        }
+        return $diets;
+
+    }
+
+    public function displayCreatine(){
+        $database = new connect();
+        $conn = $database->getConnection();
+        $stmt = $conn ->prepare("SELECT * FROM supplements WHERE title ='Creatine'");
+        $stmt ->execute();
+        $results = $stmt ->fetchAll();
+        $supplementss = array();
+        foreach($results as $result){
+            $supplements = new self();
+            $supplements->bodySupp = $result['body'];
+            $supplements->imgSupp = $result['img'];
+            $supplements->titleSupp = $result['title'];
+            $supplementss[] = $supplements;
+        }
+        return $supplementss;
+    }
+
+    public function displayProtein(){
+        $database = new connect();
+        $conn = $database->getConnection();
+        $stmt = $conn ->prepare("SELECT * FROM supplements WHERE title ='Protein'");
+        $stmt ->execute();
+        $results = $stmt ->fetchAll();
+        $supplementss = array();
+        foreach($results as $result){
+            $supplements = new self();
+            $supplements->bodySupp = $result['body'];
+            $supplements->imgSupp = $result['img'];
+            $supplements->titleSupp = $result['title'];
+            $supplementss[] = $supplements;
+        }
+        return $supplementss;
+    }
+
+    public function displayVitamins(){
+        $database = new connect();
+        $conn = $database->getConnection();
+        $stmt = $conn ->prepare("SELECT * FROM supplements WHERE title ='Vitamins'");
+        $stmt ->execute();
+        $results = $stmt ->fetchAll();
+        $supplementss = array();
+        foreach($results as $result){
+            $supplements = new self();
+            $supplements->bodySupp = $result['body'];
+            $supplements->imgSupp = $result['img'];
+            $supplements->titleSupp = $result['title'];
+            $supplementss[] = $supplements;
+        }
+        return $supplementss;
+    }
 }

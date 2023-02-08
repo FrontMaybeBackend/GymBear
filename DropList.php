@@ -39,8 +39,8 @@
             Diet
         </button>
         <ul class="dropdown-menu text-center btn-sm bg-dark " aria-labelledby="dropdownMenu3">
-                <li><a class="dropdown-item text-uppercase" style="color:white" value=" Carbs"> Carbs </a></li>
-                <li><a class="dropdown-item text-uppercase"  style="color:white" value=" Fats">Fats </a></li>
+                <li><a class="dropdown-item text-uppercase" href="Carbs.php" style="color:white" value=" Carbs"> Carbs </a></li>
+                <li><a class="dropdown-item text-uppercase" href="Fats.php" style="color:white" value=" Fats">Fats </a></li>
         </ul>
 
 
@@ -48,9 +48,9 @@
             Supplements
         </button>
         <ul class="dropdown-menu text-center btn-sm bg-dark" aria-labelledby="dropdownMenu4">
-            <li><a class="dropdown-item text-uppercase" type="button" style="color:white"> Creatine</a></li>
-            <li><a class="dropdown-item text-uppercase" type="button" style="color:white"> Whey</a></li>
-            <li><a class="dropdown-item text-uppercase" type="button" style="color:white"> Vitamins</a></li>
+            <li><a class="dropdown-item text-uppercase" href="Creatine.php" style="color:white"> Creatine</a></li>
+            <li><a class="dropdown-item text-uppercase" href="Protein.php" style="color:white"> Whey</a></li>
+            <li><a class="dropdown-item text-uppercase" href="Vitamin.php" style="color:white"> Vitamins</a></li>
         </ul>
 
         <button class=" btn  dropdown-toggle-split m-3 text-center text-nowrap" style="width:10 rem;" type="button" id="dropdownMenu5" data-bs-toggle="dropdown" aria-expanded="false">
