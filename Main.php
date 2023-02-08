@@ -17,14 +17,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$ppl = $_POST["ppl"];
 }
 
-if(isset($_POST['Calculate'])){
-    $weight = $_POST['Weight'];
-    $reps = $_POST['Reps'];
-    $OneRepMax = new \classes\Calculator("$weight", "$reps");
-    $Calculate = $OneRepMax ->OneRepMax();
-}
 
-
+//WYKONUJE SIE TYLKO ELSE WIEC JEST COS NEI TAK, TRZEBA OGARNAC !
 
 
 
@@ -101,7 +95,7 @@ if(isset($_POST['Calculate'])){
 				Calculator
 			</button>
 			<ul class="dropdown-menu text-center btn-sm bg-dark " aria-labelledby="dropdownMenu5">
-				<li><button class="dropdown-item text-uppercase" id="1RM" name="1RM" type="submit" style="color:white">1RM </button> </li>
+				<li><a class="dropdown-item text-uppercase" id="1RM" href="Calculator.php" type="submit" style="color:white">1RM </a> </li>
 				<li><button class="dropdown-item text-uppercase" type="button" style="color:white">BMI </button> </li>
 			</ul>
 		</div>
@@ -179,28 +173,9 @@ if(isset($_POST['Calculate'])){
     <?php
 
 }
-?>
-    <?php
+    ?>
 
-    if(isset($_POST["1RM"])) {
-        ?>
-        <form id = "4" >
-            <div class="mb-3" >
-                <label for="Weight" class="form-label" > Weight</label >
-                <input type = "text" class="form-control" name="Weight" id = "Weight" >
-            </div >
-            <div class="mb-3" >
-                <label for="Reps" class="form-label" > Reps</label >
-                <input type = "text" class="form-control" name="Reps" id = "Reps" >
-            </div >
 
-            <button type="button" id="Calculate" name="Calculate">Calculate</button>
-            <label for="Score" class="form-label center" > Your One Rep Max: <?php echo $Calculate ?></label>
-
-        </form >
-    <?php
-        }
-?>
 	<?php
 	if (isset($monday)) {
 	?>
