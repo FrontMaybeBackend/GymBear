@@ -91,6 +91,55 @@ class DisplayRecomennded extends connect
 
 
 
+    public function displayUL(){
+        $database = new connect();
+        $conn = $database->getConnection();
+        $stmt = $conn ->prepare("SELECT * FROM recomennded WHERE title ='Upper Lower'");
+        $stmt ->execute();
+        $results = $stmt ->fetchAll();
+        $recommendeds = array();
+        foreach($results as $result){
+            $recommended = new self();
+            $recommended->programms = $result['programms'];
+            $recommended->img = $result['img'];
+            $recommended->title = $result['title'];
+            $recommendeds[] = $recommended;
+        }
+        return $recommendeds;
+    }
 
+    public function displayFBW(){
+        $database = new connect();
+        $conn = $database->getConnection();
+        $stmt = $conn ->prepare("SELECT * FROM recomennded WHERE title ='Full Body Workout'");
+        $stmt ->execute();
+        $results = $stmt ->fetchAll();
+        $recommendeds = array();
+        foreach($results as $result){
+            $recommended = new self();
+            $recommended->programms = $result['programms'];
+            $recommended->img = $result['img'];
+            $recommended->title = $result['title'];
+            $recommendeds[] = $recommended;
+        }
+        return $recommendeds;
+    }
+
+    public function displayBSL(){
+        $database = new connect();
+        $conn = $database->getConnection();
+        $stmt = $conn ->prepare("SELECT * FROM recomennded WHERE title ='Split'");
+        $stmt ->execute();
+        $results = $stmt ->fetchAll();
+        $recommendeds = array();
+        foreach($results as $result){
+            $recommended = new self();
+            $recommended->programms = $result['programms'];
+            $recommended->img = $result['img'];
+            $recommended->title = $result['title'];
+            $recommendeds[] = $recommended;
+        }
+        return $recommendeds;
+    }
 
 }

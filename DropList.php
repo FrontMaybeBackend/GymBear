@@ -28,20 +28,10 @@
         </button>
 
         <ul class=" dropdown-menu text-center btn-sm bg-dark" aria-labelledby="dropdownMenu2">
-
-            <li><input class="dropdown-item text-uppercase" type="submit" name="pplR" style="color:white" value="Push Pull Legs"></input></li>
-
-
-            <form method="POST" action="<?php $_SERVER["PHP_SELF"] ?>" ;>
-                <li><input class="dropdown-item text-uppercase" type="submit" name="upl" style="color:white" value="Upper Lower"></input></li>
-            </form>
-
-            <form method="POST" action="<?php $_SERVER["PHP_SELF"] ?>" ;>
-                <li><input class="dropdown-item text-uppercase" type="submit" name="fbw" style="color:white" value="Full Body Workout"></input></li>
-            </form>
-
-            <form method="POST" action="<?php $_SERVER["PHP_SELF"] ?>" ;>
-                <li><input class="dropdown-item text-uppercase" type="submit" name="split" style="color:white" value="Bro Split"></input></li>
+            <li><a class="dropdown-item text-uppercase"  style="color:white" href="PushPullLegs.php" value="Push Pull Legs">Push Pull Legs</a></li>
+                <li><a class="dropdown-item text-uppercase"  href="UpperLower.php" style="color:white" value="Upper Lower">Upper Lower</a></li>
+                <li><a class="dropdown-item text-uppercase" href="FullBodyWorkout.php" style="color:white" value="Full Body Workout"> Full Body Workout</a></li>
+                <li><a class="dropdown-item text-uppercase"  href="Split.php" style="color:white" value="Bro Split"> Bro Split</a></li>
         </ul>
 
 
@@ -49,14 +39,8 @@
             Diet
         </button>
         <ul class="dropdown-menu text-center btn-sm bg-dark " aria-labelledby="dropdownMenu3">
-
-            <form method="POST" action="<?php $_SERVER["PHP_SELF"] ?>" ;>
-                <li><input class="dropdown-item text-uppercase" type="submit" name="Carb" style="color:white" value=" Carbs"> </input></li>
-            </form>
-
-            <form method="POST" action="<?php $_SERVER["PHP_SELF"] ?>" ;>
-                <li><input class="dropdown-item text-uppercase" name="Fats" type="submit" style="color:white" value=" Fats"> </input></li>
-            </form>
+                <li><a class="dropdown-item text-uppercase" style="color:white" value=" Carbs"> Carbs </a></li>
+                <li><a class="dropdown-item text-uppercase"  style="color:white" value=" Fats">Fats </a></li>
         </ul>
 
 
@@ -64,17 +48,17 @@
             Supplements
         </button>
         <ul class="dropdown-menu text-center btn-sm bg-dark" aria-labelledby="dropdownMenu4">
-            <li><button class="dropdown-item text-uppercase" type="button" style="color:white"> Creatine</button></li>
-            <li><button class="dropdown-item text-uppercase" type="button" style="color:white"> Whey</button></li>
-            <li><button class="dropdown-item text-uppercase" type="button" style="color:white"> Vitamins</button></li>
+            <li><a class="dropdown-item text-uppercase" type="button" style="color:white"> Creatine</a></li>
+            <li><a class="dropdown-item text-uppercase" type="button" style="color:white"> Whey</a></li>
+            <li><a class="dropdown-item text-uppercase" type="button" style="color:white"> Vitamins</a></li>
         </ul>
 
         <button class=" btn  dropdown-toggle-split m-3 text-center text-nowrap" style="width:10 rem;" type="button" id="dropdownMenu5" data-bs-toggle="dropdown" aria-expanded="false">
             Calculator
         </button>
         <ul class="dropdown-menu text-center btn-sm bg-dark " aria-labelledby="dropdownMenu5">
-            <li><button class="dropdown-item text-uppercase" id="1RM" name="1RM" type="submit" style="color:white">1RM </button> </li>
-            <li><button class="dropdown-item text-uppercase" type="button" style="color:white">BMI </button> </li>
+            <li><a class="dropdown-item text-uppercase" id="1RM" href="Calculator.php"  style="color:white">1RM </a> </li>
+            <li><a class="dropdown-item text-uppercase" href="#" style="color:white">BMI </a> </li>
         </ul>
     </div>
 </form>
