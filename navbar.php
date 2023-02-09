@@ -1,3 +1,10 @@
+<?php
+
+session_start();
+
+$username = $_SESSION["username"];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,14 +15,12 @@
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="navbar.css">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-
-
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="MainAdmin.php">GymBear</a>
+            <a class="navbar-brand" href="Main.php">GymBear</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -37,6 +42,17 @@
                     <li class ="nav-item">
                         <a class="nav-link" href="RecommendedProgramms.php">Programms</a>
                     </li>
+                    <div class="dropdown">
+                        <a class="btn btn-secondary dropdown-toggle" href="Userpanel.php" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                            <?php echo  $username ?>
+                        </a>
+                    <ul class ="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <li><a class="dropdown-item" href="#">User Panel</a></li>
+                        <li><a class="dropdown-item" href="#">Training</a></li>
+                        <li><a class="dropdown-item" href="#">Diets</a></li>
+                        <li><a class="dropdown-item" href="#">Progres</a></li>
+                    </ul>
+                    </div>
 
                 </ul>
             </div>
@@ -90,3 +106,4 @@
 <script type="text/javascript" src="Scripts/bootstrap.min.js"></script>
 
 </html>
+

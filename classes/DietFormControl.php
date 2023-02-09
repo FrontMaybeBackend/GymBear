@@ -27,6 +27,7 @@ public function formValidation()
         return $this->errorForm['inputs'];
     }if($send == true){
     $this->addDietToDataBase("$this->title", "$this->body", $this->img);
+
 }
     return $send;
 }

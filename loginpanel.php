@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 
 use classes\LoginControl;
 
@@ -8,6 +8,7 @@ if(isset($_POST["login"])) {
     include("classes/LoginControl.php");
     $usernameLogin = $_POST["username"];
     $userPassword = $_POST["password"];
+    $_SESSION["username"] = $usernameLogin;
 
 
     $userLogin = new LoginControl("$usernameLogin", "$userPassword");
