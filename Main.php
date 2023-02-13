@@ -39,7 +39,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <body>
 
-
 	<form id="days" method="POST" action="<?php $_SERVER["PHP_SELF"] ?>">
 		<div class="  d-flex justify-content-between m-3 " role="group">
 
@@ -66,17 +65,51 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	<?php
 	if (isset($monday)) {
 	?>
+    <div class ="container-fluid d-flex justify-content-center">
+    <p class="text-uppercase">Compose Your Workout</p>
+    </div>
 		<div id="monday" class="d-flex m-4 p-2">
-			<ul class="d-grid gap-2  list-group ">
-				<form id="formMonday" action='' method='post'>
-					<button name="ppl" type="submit" class="btn  text-uppercase text-center badge  text-wrap"> Push Pull Legs</button>
-					<button name="ul" type="button" class="btn  text-uppercase text-center badge  text-wrap">Upper Lower</button>
-					<button name="brs" type="button" class="btn  text-uppercase text-center badge  text-wrap">Bro Split</button>
-					<button name="fbw" type="button" class="btn  text-uppercase text-center badge  text-wrap">Full body workout</button>
-				</form>
-			</ul>
-		</div>
-	<?php
+                <div class ="container-fluid d-flex " style="border: solid 2px">
+                    <img src="images/Chest.jpg" class="img-fluid" alt="chest" style="width:50px">
+                <a class="secondary-link d-flex" href="Chest.php">  Chest </a>
+                </div>
+
+            <div class ="container-fluid d-flex " style="border: solid 2px">
+                <img src="images/Back2.jpg" class="img-fluid" alt="back" style="width:50px">
+                <a class="secondary-link d-flex" href="Back.php">  Back  </a>
+            </div>
+
+            <div class ="container-fluid d-flex " style="border: solid 2px">
+                <img src="images/Legs.jpg" class="img-fluid" alt="legs" style="width:50px">
+                <a class="secondary-link d-flex" href="Legs.php">  Legs  </a>
+            </div>
+
+                <div class ="container-fluid d-flex " style="border: solid 2px">
+                    <img src="images/Abs.jpg" class="img-fluid" alt="abs" style="width:50px">
+                <a class="secondary-link d-flex" href="Legs.php">  Abs  </a>
+                </div>
+
+                    <div class ="container-fluid d-flex " style="border: solid 2px">
+                        <img src="images/Shouderls.jpg" class="img-fluid" alt="abs" style="width:50px">
+                <a class="secondary-link d-flex" href="Legs.php">  Shoulders </a>
+                    </div>
+
+                        <div class ="container-fluid d-flex " style="border: solid 2px">
+                            <img src="images/Glutes.jpg" class="img-fluid" alt="abs" style="width:50px">
+                            <a class="secondary-link d-flex" href="Legs.php">  Glutes </a>
+                        </div>
+
+                            <div class ="container-fluid d-flex " style="border: solid 2px">
+                                <img src="images/Triceps.jpg" class="img-fluid" alt="abs" style="width:50px">
+                <a class="secondary-link d-flex" href="Legs.php"> Triceps </a>
+                            </div>
+
+                                <div class ="container-fluid d-flex  " style="border: solid 2px">
+                                    <img src="images/Biceps.jpg" class="img-fluid" alt="abs" style="width:50px">
+                                    <a class="secondary-link d-flex" href="Legs.php">  Biceps </a>
+                                </div></div>
+
+        <?php
 	}
 	?>
 
