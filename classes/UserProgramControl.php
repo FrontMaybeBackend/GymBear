@@ -14,11 +14,14 @@ class UserProgramControl extends \UserProgramConfig
 
     public $repUser;
 
-    public function __construct($name, $exercises,$repUser,$nameExc){
+    public $dayTrain;
+
+    public function __construct($name, $exercises,$repUser,$nameExc,$dayTrain){
         $this->name=$name;
         $this->exercises=$exercises;
         $this->repUser=$repUser;
         $this->nameExc=$nameExc;
+        $this->dayTrain=$dayTrain;
     }
 
     private $errorMessages = array(
@@ -38,7 +41,7 @@ class UserProgramControl extends \UserProgramConfig
             $result = false;
     */
         }if($result == true){
-            $this->addUserPrograms($this->name,$this->exercises,$this->repUser,$this->nameExc);
+            $this->addUserPrograms($this->name,$this->exercises,$this->repUser,$this->nameExc,$this->dayTrain);
 
         }
     }

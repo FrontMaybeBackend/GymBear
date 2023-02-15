@@ -18,7 +18,7 @@ $username = $_SESSION["username"];
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <nav class="navbar navbar-expand-md navbar-light fixed-top">
         <div class="container">
             <a class="navbar-brand" href="Main.php">GymBear</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,13 +42,16 @@ $username = $_SESSION["username"];
                     <li class ="nav-item">
                         <a class="nav-link" href="RecommendedProgramms.php">Programms</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Logout.php">Logout</a>
+                    </li>
                     <div class="dropdown">
                         <a class="btn btn-secondary dropdown-toggle" href="Userpanel.php" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                             <?php echo  $username ?>
                         </a>
                     <ul class ="dropdown-menu" aria-labelledby="dropdownMenuLink">
                         <li><a class="dropdown-item" href="#">User Panel</a></li>
-                        <li><a class="dropdown-item" href="#">Training</a></li>
+                        <li><a class="dropdown-item" href="Training.php">Training</a></li>
                         <li><a class="dropdown-item" href="#">Diets</a></li>
                         <li><a class="dropdown-item" href="#">Progres</a></li>
                     </ul>
