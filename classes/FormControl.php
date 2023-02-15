@@ -5,7 +5,8 @@ namespace classes;
 use FormConfig;
 
 include("database/FormConfig.php");
-class FormControl extends FormConfig
+class
+FormControl extends FormConfig
 {
 
     public $title;
