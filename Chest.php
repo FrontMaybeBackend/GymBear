@@ -12,16 +12,17 @@ include("classes/UserProgramControl.php");
 
 
 $type = $_GET['type'];
-$exercise = new \classes\Exercises($type);
-$data = $exercise->getChest($type);
+$exercised = new \classes\Exercises($type);
+$data = $exercised->getChest($type);
 
 if(isset($_POST['Compose'])){
 
 $name  = $_POST['nameTrain'];
-$programUser = $_POST['programUser'];
+$programUser = implode(",", $_POST['exercise_series']);
+$repUser = implode(",",$_POST["exercise_rep"]);
+$nameExc = implode("," ,$_POST['exercise']);
 
-
-$program = new \classes\UserProgramControl("$name","$programUser");
+$program = new \classes\UserProgramControl("$name","$programUser", $repUser, $nameExc);
 
 $validation = $program ->ValidationTraining();
 if($validation){
@@ -30,8 +31,7 @@ if($validation){
 
 }
 
-
-
+print_r($_POST['exercise']);
 ?>
 
 

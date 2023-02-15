@@ -10,11 +10,15 @@ class UserProgramControl extends \UserProgramConfig
 
     public $radioInput;
 
-    public $exercises;
+    public $exercises = [];
 
-    public function __construct($name, $exercises){
+    public $repUser;
+
+    public function __construct($name, $exercises,$repUser,$nameExc){
         $this->name=$name;
         $this->exercises=$exercises;
+        $this->repUser=$repUser;
+        $this->nameExc=$nameExc;
     }
 
     private $errorMessages = array(
@@ -34,7 +38,7 @@ class UserProgramControl extends \UserProgramConfig
             $result = false;
     */
         }if($result == true){
-            $this->addUserPrograms("$this->exercises");
+            $this->addUserPrograms($this->name,$this->exercises,$this->repUser,$this->nameExc);
 
         }
     }
