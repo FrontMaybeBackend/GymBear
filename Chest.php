@@ -18,9 +18,17 @@ $data = $exercised->getChest($type);
 if(isset($_POST['Compose'])){
 
 $name  = $_POST['nameTrain'];
-$programUser = implode(",", $_POST['exercise_series']);
-$repUser = implode(",",$_POST["exercise_rep"]);
-$nameExc = implode("," ,$_POST['exercise']);
+    $programUser = '';
+    $repUser = '';
+    $nameExc = '';
+    foreach ($_POST['exercise'] as $exerciseName) {
+        $programUser .= $_POST['exercise_series'][$exerciseName] . ',';
+        $repUser .= $_POST['exercise_rep'][$exerciseName] . ',';
+        $nameExc .= $exerciseName . ',';
+    }
+    $programUser = rtrim($programUser, ',');
+    $repUser = rtrim($repUser, ',');
+    $nameExc = rtrim($nameExc, ',');
 
 $program = new \classes\UserProgramControl("$name","$programUser", $repUser, $nameExc);
 
