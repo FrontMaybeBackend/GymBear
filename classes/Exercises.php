@@ -7,7 +7,7 @@ include("database/connect.php");
 
 class Exercises extends connect
 {
-public $exercises;
+
     public function getChest($type)
     {
         $muscle = 'chest';
@@ -52,34 +52,10 @@ public $exercises;
 
         if ($status_code == 200) {
             $exercises = json_decode($response, true);
-
-            ?>
-            <table class="table">
-            <thead>
-            <tr>
-                <th>Name</th>
-                <th>Type</th>
-                <th>Muscle</th>
-                <th>Equipment</th>
-                <th>Difficulty</th>
-                <th>AddExercise</th>
-            </tr>
-            </thead>
-            <tbody>
-            <?php foreach ($exercises as $exercise) { ?>
-                <tr>
-                    <td><?php echo $exercise['name']; ?></td>
-                    <td><?php echo $exercise['type']; ?></td>
-                    <td><?php echo $exercise['muscle']; ?></td>
-                    <td><?php echo $exercise['equipment']; ?></td>
-                    <td><?php echo $exercise['difficulty']; ?></td>
-                    <td><input type="checkbox"></td>
-
-                </tr>
-            <?php }}?>
-        </tbody>
-        </table>
-        <?php
+            return $exercises;
+        } else {
+            return array();
+        }
     }
 
 
@@ -101,34 +77,11 @@ public $exercises;
 
         if ($status_code == 200) {
             $exercises = json_decode($response, true);
+            return $exercises;
+        } else {
+            return array();
+        }
 
-            ?>
-            <table class="table">
-            <thead>
-            <tr>
-                <th>Name</th>
-                <th>Type</th>
-                <th>Muscle</th>
-                <th>Equipment</th>
-                <th>Difficulty</th>
-                <th>AddExercise</th>
-            </tr>
-            </thead>
-            <tbody>
-            <?php foreach ($exercises as $exercise) { ?>
-                <tr>
-                    <td><?php echo $exercise['name']; ?></td>
-                    <td><?php echo $exercise['type']; ?></td>
-                    <td><?php echo $exercise['muscle']; ?></td>
-                    <td><?php echo $exercise['equipment']; ?></td>
-                    <td><?php echo $exercise['difficulty']; ?></td>
-                    <td><input type="checkbox"></td>
-
-                </tr>
-            <?php }}?>
-        </tbody>
-        </table>
-        <?php
     }
 
     public function getAbs($type){
@@ -149,34 +102,11 @@ public $exercises;
 
         if ($status_code == 200) {
             $exercises = json_decode($response, true);
+            return $exercises;
+        } else {
+            return array();
+        }
 
-            ?>
-            <table class="table">
-            <thead>
-            <tr>
-                <th>Name</th>
-                <th>Type</th>
-                <th>Muscle</th>
-                <th>Equipment</th>
-                <th>Difficulty</th>
-                <th>AddExercise</th>
-            </tr>
-            </thead>
-            <tbody>
-            <?php foreach ($exercises as $exercise) { ?>
-                <tr>
-                    <td><?php echo $exercise['name']; ?></td>
-                    <td><?php echo $exercise['type']; ?></td>
-                    <td><?php echo $exercise['muscle']; ?></td>
-                    <td><?php echo $exercise['equipment']; ?></td>
-                    <td><?php echo $exercise['difficulty']; ?></td>
-                    <td><input type="checkbox"></td>
-
-                </tr>
-            <?php }}?>
-        </tbody>
-        </table>
-        <?php
     }
 
     public function getShoulders($type){
@@ -197,34 +127,11 @@ public $exercises;
 
         if ($status_code == 200) {
             $exercises = json_decode($response, true);
+            return $exercises;
+        } else {
+            return array();
+        }
 
-            ?>
-            <table class="table">
-            <thead>
-            <tr>
-                <th>Name</th>
-                <th>Type</th>
-                <th>Muscle</th>
-                <th>Equipment</th>
-                <th>Difficulty</th>
-                <th>AddExercise</th>
-            </tr>
-            </thead>
-            <tbody>
-            <?php foreach ($exercises as $exercise) { ?>
-                <tr>
-                    <td><?php echo $exercise['name']; ?></td>
-                    <td><?php echo $exercise['type']; ?></td>
-                    <td><?php echo $exercise['muscle']; ?></td>
-                    <td><?php echo $exercise['equipment']; ?></td>
-                    <td><?php echo $exercise['difficulty']; ?></td>
-                    <td><input type="checkbox"></td>
-
-                </tr>
-            <?php }}?>
-        </tbody>
-        </table>
-        <?php
     }
 
     public function getGlutes($type){
@@ -245,34 +152,12 @@ public $exercises;
 
         if ($status_code == 200) {
             $exercises = json_decode($response, true);
+            return $exercises;
+        } else {
+            return array();
+        }
 
-            ?>
-            <table class="table">
-            <thead>
-            <tr>
-                <th>Name</th>
-                <th>Type</th>
-                <th>Muscle</th>
-                <th>Equipment</th>
-                <th>Difficulty</th>
-                <th>AddExercise</th>
-            </tr>
-            </thead>
-            <tbody>
-            <?php foreach ($exercises as $exercise) { ?>
-                <tr>
-                    <td><?php echo $exercise['name']; ?></td>
-                    <td><?php echo $exercise['type']; ?></td>
-                    <td><?php echo $exercise['muscle']; ?></td>
-                    <td><?php echo $exercise['equipment']; ?></td>
-                    <td><?php echo $exercise['difficulty']; ?></td>
-                    <td><input type="checkbox"></td>
 
-                </tr>
-            <?php }}?>
-        </tbody>
-        </table>
-        <?php
     }
 
     public function getTriceps($type){
@@ -293,34 +178,11 @@ public $exercises;
 
         if ($status_code == 200) {
             $exercises = json_decode($response, true);
+            return $exercises;
+        } else {
+            return array();
+        }
 
-            ?>
-            <table class="table">
-            <thead>
-            <tr>
-                <th>Name</th>
-                <th>Type</th>
-                <th>Muscle</th>
-                <th>Equipment</th>
-                <th>Difficulty</th>
-                <th>AddExercise</th>
-            </tr>
-            </thead>
-            <tbody>
-            <?php foreach ($exercises as $exercise) { ?>
-                <tr>
-                    <td><?php echo $exercise['name']; ?></td>
-                    <td><?php echo $exercise['type']; ?></td>
-                    <td><?php echo $exercise['muscle']; ?></td>
-                    <td><?php echo $exercise['equipment']; ?></td>
-                    <td><?php echo $exercise['difficulty']; ?></td>
-                    <td><input type="checkbox"></td>
-
-                </tr>
-            <?php }}?>
-        </tbody>
-        </table>
-        <?php
     }
 
     public function getBiceps($type){
@@ -341,34 +203,11 @@ public $exercises;
 
         if ($status_code == 200) {
             $exercises = json_decode($response, true);
+            return $exercises;
+        } else {
+            return array();
+        }
 
-            ?>
-            <table class="table">
-            <thead>
-            <tr>
-                <th>Name</th>
-                <th>Type</th>
-                <th>Muscle</th>
-                <th>Equipment</th>
-                <th>Difficulty</th>
-                <th>AddExercise</th>
-            </tr>
-            </thead>
-            <tbody>
-            <?php foreach ($exercises as $exercise) { ?>
-                <tr>
-                    <td><?php echo $exercise['name']; ?></td>
-                    <td><?php echo $exercise['type']; ?></td>
-                    <td><?php echo $exercise['muscle']; ?></td>
-                    <td><?php echo $exercise['equipment']; ?></td>
-                    <td><?php echo $exercise['difficulty']; ?></td>
-                    <td><input type="checkbox"></td>
-
-                </tr>
-            <?php }}?>
-        </tbody>
-        </table>
-        <?php
     }
 
 

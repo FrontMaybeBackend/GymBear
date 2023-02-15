@@ -59,6 +59,12 @@
             <li><a class="dropdown-item text-uppercase" id="1RM" href="Calculator.php"  style="color:white">1RM </a> </li>
             <li><a class="dropdown-item text-uppercase" href="#" style="color:white">BMI </a> </li>
         </ul>
+        <button class=" btn dropdown-toggle-split m-3 text-center text-nowrap " style="width:10 rem;" type="button"  aria-expanded="false">
+            <a class="dropdown-item " id="1RM" href="ComposeWorkout.php"  style="color:black"> Compose</a>
+        </button>
+
+
+
     </div>
 </form>
 

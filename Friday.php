@@ -1,11 +1,12 @@
 <?php
+
 include("navbar.php");
 include("DropList.php");
 include("database/DisplayUserProgram.php");
 
-$displayMonday = new DisplayUserProgram();
+$displayFriday = new DisplayUserProgram();
 
-$disMonday = $displayMonday->displayMondayProgram();
+$disFriday = $displayFriday->displayFridayProgram();
 ?>
 
 
@@ -22,10 +23,10 @@ $disMonday = $displayMonday->displayMondayProgram();
 
 
 
-<p class="text-uppercase d-flex justify-content-center"> Monday Training:</p>
+<p class="text-uppercase d-flex justify-content-center"> Tuesday Training:</p>
 
 <div class="container d-flex flex-row flex-wrap justify-content-between"">
-<?php foreach($disMonday as $mondayPrograms): ?>
+<?php foreach($disFriday as $fridayPrograms): ?>
     <table class="table table-dark table-bordered  table-responsive " ">
     <thead >
     <tr >
@@ -37,20 +38,20 @@ $disMonday = $displayMonday->displayMondayProgram();
     </thead>
     <tbody>
     <tr>
-        <td  class="text-center" ><?php echo $mondayPrograms->nameTrain; ?></td>
+        <td  class="text-center" ><?php echo $fridayPrograms->nameTrain; ?></td>
         <td class="text-center"><?php
-            $excNameArray = explode(',', $mondayPrograms->excName);
+            $excNameArray = explode(',', $fridayPrograms->excName);
             foreach ($excNameArray as $excValue){
                 echo $excValue . '<br/>';
             }?></td>
         <td class="text-center"><?php
-            $seriesArray = explode(",", $mondayPrograms->excSeries);
+            $seriesArray = explode(",", $fridayPrograms->excSeries);
             foreach($seriesArray as $seriesValue){
                 echo $seriesValue . '<br/>';
             }?>
         <td class="text-center">
             <?php
-            $repsArray = explode(',', $mondayPrograms->excReps);
+            $repsArray = explode(',', $fridayPrograms->excReps);
             foreach ($repsArray as $repsValue) {
                 echo $repsValue . '<br/>';
             }
@@ -66,5 +67,3 @@ $disMonday = $displayMonday->displayMondayProgram();
 
 
 </body>
-
-

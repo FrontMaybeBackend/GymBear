@@ -1,7 +1,8 @@
 <?php
 
 
-
+use classes\Exercises;
+use classes\UserProgramControl;
 
 include("navbar.php");
 include("DropList.php");
@@ -12,28 +13,26 @@ include("classes/UserProgramControl.php");
 
 
 $type = $_GET['type'];
-$exercised = new \classes\Exercises($type);
+$exercised = new Exercises($type);
 $data = $exercised->getChest($type);
 
 if(isset($_POST['Compose'])){
 
-$name  = $_POST['nameTrain'];
+    $name  = $_POST['nameTrain'];
     $programUser = '';
     $repUser = '';
     $nameExc = '';
-    $dayTrain = '';
+    $dayTrain = $_POST['day'];
     foreach ($_POST['exercise'] as $exerciseName) {
         $programUser .= $_POST['exercise_series'][$exerciseName] . ',';
         $repUser .= $_POST['exercise_rep'][$exerciseName] . ',';
         $nameExc .= $exerciseName . ',';
-        $dayTrain .=$_POST['exercise_days'][$exerciseName]. ',';
     }
     $programUser = rtrim($programUser, ',');
     $repUser = rtrim($repUser, ',');
     $nameExc = rtrim($nameExc, ',');
-    $dayTrain = rtrim($dayTrain, ',');
 
-$program = new \classes\UserProgramControl("$name","$programUser", $repUser, $nameExc,$dayTrain);
+$program = new UserProgramControl("$name","$programUser", $repUser, $nameExc,$dayTrain);
 
 $validation = $program ->ValidationTraining();
 if($validation){
@@ -63,13 +62,21 @@ if($validation){
             <th>Difficulty</th>
             <th>Series</th>
             <th>Repetition</th>
-            <th>Day</th>
             <th>AddExercise</th>
 
         </tr>
         </thead>
         <tbody>
-
+        <label for="days"></label>
+        <select name="day" id="day">
+            <option value="monday">Monday</option>
+            <option value="tuesday">Tuesday</option>
+            <option value="wednesday">Wednesday</option>
+            <option value="thursday">Thursday</option>
+            <option value="friday">Friday</option>
+            <option value="saturday">Saturday</option>
+            <option value="sunday">Sunday</option>
+        </select>
         <?php foreach ($data as $exercise) { ?>
         <tr>
             <td><?php echo $exercise['name']; ?></td>
@@ -92,16 +99,6 @@ if($validation){
                     <option value="8-12">8-12</option>
                     <option value="12-15">12-15</option>
                     <option value="15-25">15-25</option>
-                </select></td>
-            <td><label for="days"></label>
-            <select name="exercise_days[<?php echo $exercise['name'];?>] id="days">
-                <option value="monday">Monday</option>
-                <option value="tuesday">Tuesday</option>
-                <option value="wednesday">Wednesday</option>
-                <option value="thursday">Thursday</option>
-                <option value="friday">Friday</option>
-                <option value="saturday">Saturday</option>
-                <option value="sunday">Sunday</option>
                 </select></td>
             <td>
                 <input type="checkbox"  name="exercise[]" value="<?php echo $exercise['name']; ?>">

@@ -1,6 +1,6 @@
 <?php
-include("navbar.php");
-include("DropList.php");
+include("NavAndDrop/navbar.php");
+include("NavAndDrop/DropList.php");
 include("database/DisplayRecomennded.php");
 
 $displayCarbs = new DisplayRecomennded();
