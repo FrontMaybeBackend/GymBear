@@ -1,8 +1,9 @@
 <?php
 include("database/connect.php");
 include("navbar.php");
+include("DropList.php");
 
-session_start();
+
 
 
 $id = isset($_GET['id']) ? $_GET['id'] : 0;
@@ -13,12 +14,13 @@ $stmt->bindParam(':id', $id);
 $stmt->execute();
 while ($result = $stmt->fetch()) {
   ?>
-    <p class="text-center"> <?php echo $result['title'] ?></p>
+    <br> <p style="font-family: 'PT Serif', serif;" class="text-center"> <?php echo $result['title'] ?></p> </br>
     <?php
-    ?> <img class="img-fluid rounded mx-auto d-block" src="./images/<?php echo $result['img'] ?>" width="50%" height="50%" alt="Card image cap" />
-    <?php
-    echo $result['diet'];
-
+    ?> <img class="img-fluid rounded mx-auto d-block h-100 w-75" src="./images/<?php echo $result['img'] ?>" alt="Card image cap" />
+<?php
+?>
+    <p class="text-start p-2 m-3 " style="font-family: 'PT Serif', serif;" ><?php echo nl2br($result['diet']); ?></p>
+<?php
 
 
 }

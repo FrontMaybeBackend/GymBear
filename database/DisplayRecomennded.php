@@ -31,6 +31,7 @@ class DisplayRecomennded extends connect
             $diet->titleDiet = $result['title'];
             $diet->imgDiet = $result['img'];
             $diet->mainDiet = $result['diet'];
+            $diet->idDiet = $result['id'];
             $diets[] = $diet;
         }
         return $diets;
@@ -49,6 +50,7 @@ class DisplayRecomennded extends connect
             $recommended->programms = $result['programms'];
             $recommended->img = $result['img'];
             $recommended->title = $result['title'];
+            $recommended->idReco = $result['id'];
             $recommendeds[] = $recommended;
         }
         return $recommendeds;
@@ -84,6 +86,7 @@ class DisplayRecomennded extends connect
             $recommended->programms = $result['programms'];
             $recommended->img = $result['img'];
             $recommended->title = $result['title'];
+            $recommended->idReco = $result['id'];
             $recommendeds[] = $recommended;
         }
         return $recommendeds;

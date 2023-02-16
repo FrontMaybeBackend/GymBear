@@ -24,9 +24,9 @@ $disMonday = $displayMonday->displayMondayProgram();
 
 <p class="text-uppercase d-flex justify-content-center"> Monday Training:</p>
 
-<div class="container d-flex flex-row flex-wrap justify-content-between"">
+<div class="container d-flex flex-row flex-wrap justify-content-between" >
 <?php foreach($disMonday as $mondayPrograms): ?>
-    <table class="table table-dark table-bordered  table-responsive " ">
+    <table class="table table-dark table-bordered  table-responsive">
     <thead >
     <tr >
         <th scope="col" class="text-center" style="width: 20%">Name</th>

@@ -87,9 +87,15 @@ if(isset($_POST['sendSupp'])){
 <div class="container d-flex flex-row flex-wrap justify-content-between">
     <?php foreach($display as $recommendeds): ?>
     <section class="mx-auto my-5" style="max-width: 23rem;">
-        <div class="card"  style=" width: 250px;
+        <div class="card h-100"  style=" width: 250px;
              height: 300px;">
+            <?php
+            if($_SESSION['username'] === 'adminadmin'){
+            echo  '<button><a href="EditProgram.php?id=' . $recommendeds->idReco . '">Edytuj</a></button>';
+            }
+            ?>
             <div class="card-body d-flex flex-row">
+
                 <img src="./images/admin.webp" class="rounded-circle me-3" height="50px" width="50px" alt="avatar" />
                 <div>
                     <h5 class="card-title font-weight-bold mb-2"></h5>
@@ -110,9 +116,9 @@ if(isset($_POST['sendSupp'])){
                 <p class="card-text collapse" id="collapseContent">
                     <?php echo $recommendeds->programms ?>
                 </p>
-                <div class="d-flex justify-content-between">
-                    <a id="readMore" class="btn btn-link link-danger p-md-1 my-1" data-mdb-toggle="collapse" href="#collapseContent" role="button" aria-expanded="false" aria-controls="collapseContent">Read more</a>
-                </div>
+            </div>
+            <div class="card-footer">
+                <a id="readMore" class="btn btn-link link-danger p-md-1 my-1" data-mdb-toggle="collapse" href="ReadPPL.php?id=<?php echo $recommendeds->idReco; ?>" role="button" aria-expanded="false" aria-controls="collapseContent">Read more</a>
             </div>
         </div>
 
@@ -153,7 +159,7 @@ if(isset($_POST['sendSupp'])){
 
     <?php foreach($displayDiet as $diet): ?>
         <section class="mx-auto my-5 " style="max-width: 23rem;" >
-            <div class="card"  style=" width: 250px;
+            <div class="card h-100"  style=" width: 250px;
              height: 300px;" >
                 <div class="card-body d-flex flex-row">
                     <img src="./images/admin.webp" class="rounded-circle me-3" height="50px" width="50px" alt="avatar" />
@@ -174,9 +180,10 @@ if(isset($_POST['sendSupp'])){
                     <p class="card-text collapse" id="collapseContent">
                         <?php echo $diet->mainDiet ?>
                     </p>
-                    <div class="d-flex justify-content-between">
-                        <a id="readMore" class="btn btn-link link-danger p-md-1 my-1" data-mdb-toggle="collapse" href="#collapseContent" role="button" aria-expanded="false" aria-controls="collapseContent">Read more</a>
-                    </div>
+
+                </div>
+                <div class="card-footer">
+                    <a id="readMore" class="btn btn-link link-danger p-md-1 my-1" data-mdb-toggle="collapse" href="Diet.php?id=<?php echo $diet->idDiet; ?>" role="button" aria-expanded="false" aria-controls="collapseContent">Read more</a>
                 </div>
             </div>
         </section>
@@ -241,7 +248,7 @@ if(isset($_POST['sendSupp'])){
 <div class="container d-flex flex-row flex-wrap justify-content-between">
     <?php foreach($displaySupp as $supplementss): ?>
         <section class="mx-auto my-5" style="max-width: 23rem;">
-            <div class="card"  style=" width: 250px;
+            <div class="card h-100"  style=" width: 250px;
              height: 300px;">
                 <div class="card-body d-flex flex-row">
                     <img src="./images/admin.webp" class="rounded-circle me-3" height="50px" width="50px" alt="avatar" />
@@ -264,9 +271,9 @@ if(isset($_POST['sendSupp'])){
                     <p class="card-text collapse" id="collapseContent">
                         <?php echo $supplementss->bodySupp ?>
                     </p>
-                    <div class="d-flex justify-content-between">
-                        <a id="readMore" class="btn btn-link link-danger p-md-1 my-1" data-mdb-toggle="collapse" href="#collapseContent" role="button" aria-expanded="false" aria-controls="collapseContent">Read more</a>
-                    </div>
+            </div>
+                <div class="card-footer">
+                    <a id="readMore" class="btn btn-link link-danger p-md-1 my-1" data-mdb-toggle="collapse" href="#collapseContent" role="button" aria-expanded="false" aria-controls="collapseContent">Read more</a>
                 </div>
             </div>
 

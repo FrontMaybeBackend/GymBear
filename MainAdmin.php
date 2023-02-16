@@ -25,7 +25,15 @@ require_once('database/connect.php');
 </head>
 
 <body>
-
+<div class="container-fluid d-flex justify-content-between p-2" >
+    <button type="button"  class="btn btn-dark "> <a class="text-decoration-none text-light" href="Monday.php" >Monday</a></button>
+    <button type="button" class="btn btn-dark "> <a class="text-decoration-none text-light" href="Tuesday.php" >Tuesday</a></button>
+    <button type="button" class="btn btn-dark "> <a  class="text-decoration-none text-light"href="Wednesday.php" >Wednesday</a></button>
+    <button type="button" class="btn btn-dark "> <a class="text-decoration-none text-light" href="Thursday.php" >Thursday</a></button>
+    <button type="button" class="btn btn-dark "> <a class="text-decoration-none text-light" href="Friday.php" >Friday</a></button>
+    <button type="button" class="btn btn-dark "> <a class="text-decoration-none text-light" href="Saturday.php" >Saturday</a></button>
+    <button type="button" class="btn btn-dark "><a class="text-decoration-none text-light" href="Sunday.php" >Sunday</a></button>
+</div>
 </body>
 
 </html>

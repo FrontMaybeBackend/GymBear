@@ -85,7 +85,7 @@ class DisplayUserProgram extends connect
     {
         $database = new connect();
         $conn = $database->getConnection();
-        $stmt = $conn->prepare("SELECT * FROM users_plans WHERE username =:username  AND day ='tuesday'");
+        $stmt = $conn->prepare("SELECT * FROM users_plans WHERE username =:username  AND day ='wednesday'");
         $stmt->bindParam(":username", $_SESSION['username']);
         $stmt->execute();
         $results = $stmt->fetchAll();
