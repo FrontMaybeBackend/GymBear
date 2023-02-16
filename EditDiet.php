@@ -2,8 +2,8 @@
 include_once("navbar.php");
 include_once("DropList.php");
 include_once("database/EditProgramConfig.php");
- $training = new EditProgramConfig();
-$training_id  =$training->showProgramToEdit();
+$diet = new EditProgramConfig();
+$diet_id  = $diet->showDietToEdit();
 
 
 
@@ -12,9 +12,10 @@ $training_id  =$training->showProgramToEdit();
 
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
     $title = $_POST['title'];
-    $programs = $_POST['programs'];
+    $diet_text = $_POST['diet'];
 
-   $edit_Training = $training->editProgram($title, $programs);
+
+    $edit_diet = $diet->editDiet($title, $diet_text);
 }
 
 
@@ -31,11 +32,11 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 </head>
 <body>
 <div class="form-outline">
-    <form method="POST">
-    <label class="form-label p-3" for="textAreaExample1"><strong>Title</strong></label>
-    <textarea class="form-control p-4" id="textAreaExample1" rows="5" name="title"><?php echo $training_id['title'] ?></textarea>
-    <label class="form-label p-3 " for="textAreaExample2"><strong>Content:</strong></label>
-    <textarea class="form-control p-4 w-100" id="textAreaExample2" rows="15" name="programs"><?php echo $training_id['programms'] ?></textarea>
+    <form method="POST" >
+        <label class="form-label p-3" for="textAreaExample1"><strong>Title</strong></label>
+        <textarea class="form-control p-4" id="textAreaExample1" rows="5" name="title"><?php echo $diet_id['title'] ?></textarea>
+        <label class="form-label p-3 " for="textAreaExample2"><strong>Content:</strong></label>
+        <textarea class="form-control p-4 w-100" id="textAreaExample2" rows="15" name="diet"><?php echo $diet_id['diet'] ?></textarea>
         <button class="p-2  m-3 align-content-end d-flex" type="submit">Accept Changes</button>
     </form>
 </div>

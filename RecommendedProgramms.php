@@ -194,6 +194,12 @@ if(isset($_POST['sendSupp'])){
                 </div>
                 <div class="card-footer">
                     <a id="readMore" class="btn btn-link link-danger p-md-1 my-1" data-mdb-toggle="collapse" href="Diet.php?id=<?php echo $diet->idDiet; ?>" role="button" aria-expanded="false" aria-controls="collapseContent">Read more</a>
+                    <?php
+                    if($_SESSION['username'] === 'adminadmin'){
+                        echo  '<button class="btn btn-danger btn-block"><a href="EditDiet.php?id=' . $diet->idDiet . '">Edit</a></button>';
+                        echo '<button class="btn btn-danger btn-block"><a href="DeleteDiet.php?id=' . $diet->idDiet . '">Delete</a></button>';
+                    }
+                    ?>
                 </div>
             </div>
         </section>
@@ -284,6 +290,12 @@ if(isset($_POST['sendSupp'])){
             </div>
                 <div class="card-footer">
                     <a id="readMore" class="btn btn-link link-danger p-md-1 my-1" data-mdb-toggle="collapse" href="#collapseContent" role="button" aria-expanded="false" aria-controls="collapseContent">Read more</a>
+                    <?php
+                    if($_SESSION['username'] === 'adminadmin'){
+                        echo  '<button class="btn btn-danger btn-block"><a href="EditSupplements.php?id=' . $supplementss->idSupp . '">Edit</a></button>';
+                        echo '<button class="btn btn-danger btn-block"><a href="DeleteSupp.php?id=' . $supplementss ->idSupp . '">Delete</a></button>';
+                    }
+                    ?>
                 </div>
             </div>
 

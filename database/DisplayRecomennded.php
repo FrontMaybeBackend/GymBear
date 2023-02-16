@@ -69,6 +69,7 @@ class DisplayRecomennded extends connect
             $supplements->bodySupp = $result['body'];
             $supplements->imgSupp = $result['img'];
             $supplements->titleSupp = $result['title'];
+            $supplements->idSupp = $result['id'];
             $supplementss[] = $supplements;
         }
         return $supplementss;

@@ -15,4 +15,26 @@ class DeleteProgramConfig extends connect
         echo "Succeded in removing the program";
         exit();
     }
+
+    public function deleteDiet(){
+        $diet_id = isset($_GET['id']) ? $_GET['id'] : 0;
+        $dataBase = new connect();
+        $conn = $dataBase->getConnection();
+        $stmt = $conn->prepare("DELETE FROM diets WHERE id = :id");
+        $stmt->bindParam(':id', $diet_id);
+        $stmt->execute();
+        echo "Succeded in removing the program";
+        exit();
+    }
+
+    public function deleteSupplements(){
+        $diet_id = isset($_GET['id']) ? $_GET['id'] : 0;
+        $dataBase = new connect();
+        $conn = $dataBase->getConnection();
+        $stmt = $conn->prepare("DELETE FROM supplements WHERE id = :id");
+        $stmt->bindParam(':id', $diet_id);
+        $stmt->execute();
+        echo "Succeded in removing the program";
+        exit();
+    }
 }

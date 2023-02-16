@@ -3,8 +3,8 @@
 include_once("navbar.php");
 include_once("DropList.php");
 include_once("database/DeleteProgramConfig.php");
- $delete = new DeleteProgramConfig();
-$delete_train  =$delete->deleteProgram();
+$delete = new DeleteProgramConfig();
+$delete_diet  =$delete->deleteDiet();
 
 
 
