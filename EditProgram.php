@@ -1,29 +1,23 @@
 <?php
 include_once("navbar.php");
 include_once("DropList.php");
-include_once("database/connect.php");
+include_once("database/EditProgramConfig.php");
+ $training = new EditProgramConfig();
+$training_id  =$training->showProgramToEdit();
 
-$training_id = isset($_GET['id']) ? $_GET['id'] : 0;
 
-// Pobierz dane treningu z bazy danych
-$dataBase = new connect();
-$conn = $dataBase ->getConnection();
-$stmt = $conn->prepare("SELECT * FROM recomennded WHERE id = :id");
-$stmt->bindParam(':id', $training_id);
-$stmt->execute();
-$training = $stmt->fetch();
+
+
+
 
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
     $title = $_POST['title'];
     $programs = $_POST['programs'];
+    $img = $_POST['img'];
 
-    $stmt = $conn->prepare("UPDATE recomennded SET title = :title, programms = :programs WHERE id = :id");
-    $stmt->bindParam(':title', $title);
-    $stmt->bindParam(':programs', $programs);
-    $stmt->bindParam(':id', $training_id);
-    $stmt->execute();
-    exit();
+   $edit_Training = $training->editProgram($title, $programs,$img);
 }
+
 
 ?>
 
@@ -40,9 +34,14 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 <div class="form-outline">
     <form method="POST">
     <label class="form-label p-3" for="textAreaExample1"><strong>Title</strong></label>
-    <textarea class="form-control" id="textAreaExample1" rows="5" name="title"><?php echo $training['title'] ?></textarea>
+    <textarea class="form-control p-4" id="textAreaExample1" rows="5" name="title"><?php echo $training_id['title'] ?></textarea>
     <label class="form-label p-3 " for="textAreaExample2"><strong>Content:</strong></label>
-    <textarea class="form-control p-4 w-100" id="textAreaExample2" rows="15" name="programs"><?php echo $training['programms'] ?></textarea>
+    <textarea class="form-control p-4 w-100" id="textAreaExample2" rows="15" name="programs"><?php echo $training_id['programms'] ?></textarea>
+        <label class="form-label p-3 " for="textAreaExample2"><strong>Image:</strong></label>
+        <div class="mb-3" style="border:solid 2px black">
+            <image class="h-25 w-25" src="images/<?php echo $training_id['img']?>"></image>
+            <input class="form-control w-25" name="img" type="file" id="formFile">
+        </div>
         <button class="p-2  m-3 align-content-end d-flex" type="submit">Accept Changes</button>
     </form>
 </div>

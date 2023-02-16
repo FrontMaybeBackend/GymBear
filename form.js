@@ -7,7 +7,7 @@ const btn3 = document.getElementById('btn3');
 btn.addEventListener('click', () => {
     const form = document.getElementById('form');
 
-    if (form.style.display === 'none') {
+    if (form.style.display == 'none') {
         // 👇️ this SHOWS the form
         form.style.display = 'block';
     } else {

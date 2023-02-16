@@ -71,12 +71,20 @@ if(isset($_POST['sendSupp'])){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="rp.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <title>LoginPanel</title>
 
 
     <style>
         .error {
             color: red;
+
+        }
+
+        a{
+            text-decoration:none;
+            color:inherit;
 
         }
     </style>
@@ -89,11 +97,7 @@ if(isset($_POST['sendSupp'])){
     <section class="mx-auto my-5" style="max-width: 23rem;">
         <div class="card h-100"  style=" width: 250px;
              height: 300px;">
-            <?php
-            if($_SESSION['username'] === 'adminadmin'){
-            echo  '<button><a href="EditProgram.php?id=' . $recommendeds->idReco . '">Edytuj</a></button>';
-            }
-            ?>
+
             <div class="card-body d-flex flex-row">
 
                 <img src="./images/admin.webp" class="rounded-circle me-3" height="50px" width="50px" alt="avatar" />
@@ -119,6 +123,12 @@ if(isset($_POST['sendSupp'])){
             </div>
             <div class="card-footer">
                 <a id="readMore" class="btn btn-link link-danger p-md-1 my-1" data-mdb-toggle="collapse" href="ReadPPL.php?id=<?php echo $recommendeds->idReco; ?>" role="button" aria-expanded="false" aria-controls="collapseContent">Read more</a>
+                <?php
+                if($_SESSION['username'] === 'adminadmin'){
+                    echo  '<button class="btn btn-danger btn-block"><a href="EditProgram.php?id=' . $recommendeds->idReco . '">Edit</a></button>';
+                    echo '<button class="btn btn-danger btn-block"><a href="DeleteProgram.php?id=' . $recommendeds->idReco . '">Delete</a></button>';
+                }
+                ?>
             </div>
         </div>
 
