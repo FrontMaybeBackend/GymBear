@@ -10,7 +10,7 @@
 <body>
 <?php include("navbar.php"); ?>
 <?php include("DropList.php"); ?>
-<p class=" text-center">Wylogowałeś się pomyślnie!</p>
+<p class=" text-center">Logout successful!</p>
 </body>
 </html>
 

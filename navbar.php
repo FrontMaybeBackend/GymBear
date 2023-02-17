@@ -35,17 +35,19 @@ if(isset($_POST["logout"])){
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
+                        <a class="nav-link" href="About.php">About</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Contact</a>
                     </li>
+                    <?php if(!isset($_SESSION["username"])){ ?>
                     <li class="nav-item">
                         <a class="nav-link" href="loginpanel.php">Login</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="register.php">Register</a>
                     </li>
+                    <?php } ?>
                     <li class="nav-item">
                         <a class="nav-link" href="RecommendedProgramms.php">Programms</a>
                     </li>
