@@ -70,3 +70,4 @@ include("database/DisplayUserProgram.php");
 </body>
 
 </html>
+<?php include("footer.php");?>

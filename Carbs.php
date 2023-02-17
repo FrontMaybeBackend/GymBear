@@ -54,7 +54,7 @@ $displayCarb = $displayCarbs->displayCarbs();
                         <?php echo $diet->mainDiet ?>
                     </p>
                     <div class="d-flex justify-content-between">
-                        <a id="readMore" class="btn btn-link link-danger p-md-1 my-1" data-mdb-toggle="collapse" href="#collapseContent" role="button" aria-expanded="false" aria-controls="collapseContent">Read more</a>
+                        <a id="readMore" class="btn btn-link link-dark p-md-1 my-1" data-mdb-toggle="collapse" href="ReadDIET.php?id=<?php echo $diet->idCARB; ?>" role="button" aria-expanded="false" aria-controls="collapseContent">Read more</a>
                     </div>
                 </div>
             </div>
@@ -65,3 +65,4 @@ $displayCarb = $displayCarbs->displayCarbs();
 
 </body>
 </html>
+<?php include("footer.php");?>

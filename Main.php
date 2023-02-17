@@ -33,13 +33,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	<title>Document</title>
 	<meta name=”viewport” content="width=device-width, initial-scale=1.0">
 
+
 </head>
 
 <body>
 
 
 
-    <div class="container-fluid d-flex justify-content-between p-2" >
+    <div class="container-fluid d-flex justify-content-between p-2 row w-25" >
         <button type="button"  class="btn btn-dark "> <a class="text-decoration-none text-light" href="Monday.php" >Monday</a></button>
         <button type="button" class="btn btn-dark "> <a class="text-decoration-none text-light" href="Tuesday.php" >Tuesday</a></button>
         <button type="button" class="btn btn-dark "> <a  class="text-decoration-none text-light"href="Wednesday.php" >Wednesday</a></button>
@@ -55,9 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 
-
-
 </body>
-
+<?php include("footer.php");?>
 </html>
 

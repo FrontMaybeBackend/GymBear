@@ -67,3 +67,4 @@ $disFriday = $displayFriday->displayFridayProgram();
 
 
 </body>
+<?php include("footer.php");?>

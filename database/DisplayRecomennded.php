@@ -107,6 +107,7 @@ class DisplayRecomennded extends connect
             $recommended->programms = $result['programms'];
             $recommended->img = $result['img'];
             $recommended->title = $result['title'];
+            $recommended->idUPL = $result['id'];
             $recommendeds[] = $recommended;
         }
         return $recommendeds;
@@ -124,6 +125,7 @@ class DisplayRecomennded extends connect
             $recommended->programms = $result['programms'];
             $recommended->img = $result['img'];
             $recommended->title = $result['title'];
+            $recommended->idFBW = $result['id'];
             $recommendeds[] = $recommended;
         }
         return $recommendeds;
@@ -141,6 +143,7 @@ class DisplayRecomennded extends connect
             $recommended->programms = $result['programms'];
             $recommended->img = $result['img'];
             $recommended->title = $result['title'];
+            $recommended->idSPL = $result['id'];
             $recommendeds[] = $recommended;
         }
         return $recommendeds;
@@ -160,6 +163,7 @@ class DisplayRecomennded extends connect
             $diet->titleDiet = $result['title'];
             $diet->imgDiet = $result['img'];
             $diet->mainDiet = $result['diet'];
+            $diet->idCARB = $result['id'];
             $diets[] = $diet;
         }
         return $diets;
@@ -180,6 +184,7 @@ class DisplayRecomennded extends connect
             $diet->titleDiet = $result['title'];
             $diet->imgDiet = $result['img'];
             $diet->mainDiet = $result['diet'];
+            $diet->idFAT = $result['id'];
             $diets[] = $diet;
         }
         return $diets;
@@ -198,6 +203,7 @@ class DisplayRecomennded extends connect
             $supplements->bodySupp = $result['body'];
             $supplements->imgSupp = $result['img'];
             $supplements->titleSupp = $result['title'];
+            $supplements->idCRE = $result['id'];
             $supplementss[] = $supplements;
         }
         return $supplementss;
@@ -215,6 +221,7 @@ class DisplayRecomennded extends connect
             $supplements->bodySupp = $result['body'];
             $supplements->imgSupp = $result['img'];
             $supplements->titleSupp = $result['title'];
+            $supplements->idPRO = $result['id'];
             $supplementss[] = $supplements;
         }
         return $supplementss;
@@ -232,8 +239,11 @@ class DisplayRecomennded extends connect
             $supplements->bodySupp = $result['body'];
             $supplements->imgSupp = $result['img'];
             $supplements->titleSupp = $result['title'];
+            $supplements->idVIT = $result['id'];
             $supplementss[] = $supplements;
         }
         return $supplementss;
     }
+
+
 }

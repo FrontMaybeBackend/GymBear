@@ -51,7 +51,7 @@ $displaySPL = $display->displayBSL();
                         <?php echo $recommendeds->programms ?>
                     </p>
                     <div class="d-flex justify-content-between">
-                        <a id="readMore" class="btn btn-link link-danger p-md-1 my-1" data-mdb-toggle="collapse" href="PushPullLegs.php" role="button" aria-expanded="false" aria-controls="collapseContent">Read more</a>
+                        <a id="readMore" class="btn btn-link link-dark p-md-1 my-1" data-mdb-toggle="collapse" href="ReadTRAINING.php?id=<?php echo $recommendeds->idSPL; ?>" role="button" aria-expanded="false" aria-controls="collapseContent">Read more</a>
                     </div>
                 </div>
             </div>
@@ -67,3 +67,4 @@ $displaySPL = $display->displayBSL();
 
 </body>
 </html>
+<?php include("footer.php");?>

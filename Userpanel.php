@@ -20,3 +20,4 @@ include("DropList.php");
 
 </body>
 </html>
+<?php include("footer.php");?>

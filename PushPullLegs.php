@@ -57,7 +57,7 @@ include("database/DisplayRecomennded.php");
                     </p>
                 </div>
                 <div class="card-footer">
-                    <a id="readMore" class="btn btn-link link-danger p-md-1 my-1" data-mdb-toggle="collapse" href="ReadPPL.php?id=<?php echo $recommendeds->idReco; ?>" role="button" aria-expanded="false" aria-controls="collapseContent">Read more</a>
+                    <a id="readMore" class="btn btn-link link-dark p-md-1 my-1" data-mdb-toggle="collapse" href="ReadTRAINING.php?id=<?php echo $recommendeds->idReco; ?>" role="button" aria-expanded="false" aria-controls="collapseContent">Read more</a>
                 </div>
             </div>
         </section>
@@ -67,3 +67,4 @@ include("database/DisplayRecomennded.php");
 
 </body>
 </html>
+<?php include("footer.php");?>

@@ -25,3 +25,4 @@ $delete_diet  =$delete->deleteDiet();
 </html>
 
 ?>
+<?php include("footer.php");?>

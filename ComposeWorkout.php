@@ -2,8 +2,12 @@
 include("navbar.php");
 include("DropList.php");
 
-?>
 
+
+
+
+?>
+<html>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,47 +17,120 @@ include("DropList.php");
 
 </head>
 <body>
-<div class ="container-fluid d-flex justify-content-center">
-    <p class="text-uppercase">Compose Your Workout</p>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-lg-3 p-2">
+            <div class="card h-100" style="max-width: 18rem;">
+                <img src="images/Biceps.jpg" class="card-img-top mx-auto d-block h-50 w-50 m-2 img-fluid" alt="...">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Get your Biceps workout to the next level !</h5>
+                    <p class="card-text"></p>
+                </div>
+                    <footer class="card-footer">
+                    <a class="secondary-link d-flex btn btn-dark align-items-center justify-content-center" href="Biceps.php?type=biceps">Biceps</a>
+                    </footer>
+            </div>
+        </div>
+        <div class="col-md-4 col-lg-3 p-2">
+            <div class="card h-100" style="max-width: 18rem;">
+                <img src="images/triceps2.jpg" class="card-img-top mx-auto d-block h-50 w-50 m-2 img-fluid" alt="...">
+                <div class="card-body text-center ">
+                    <h5 class="card-title">Get your Triceps workout to the next level ! </h5>
+                    <p class="card-text"> </p>
+                </div>
+                    <footer class="card-footer" >
+                    <a class="secondary-link d-flex btn btn-dark align-items-center justify-content-center" href="Triceps.php?type=triceps">Triceps</a>
+                    </footer>
+            </div>
+        </div>
+        <div class="col-md-4 col-lg-3 p-2">
+            <div class="card h-100" style="max-width: 18rem;">
+                <img src="images/Chest.jpg" class="card-img-top mx-auto d-block h-50 w-50 m-2 img-fluid" alt="...">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Get your Chest workout to the next level !</h5>
+                    <p class="card-text"></p>
+                </div>
+                    <footer class="card-footer">
+                    <a class="secondary-link d-flex btn btn-dark align-items-center justify-content-center" href="chest.php?type=chest">Klatka piersiowa</a>
+                    </footer>
+
+            </div>
+        </div>
+        <div class="col-md-4 col-lg-3 p-2">
+            <div class="card h-100" style="max-width: 18rem;">
+                <img src="images/Abs.jpg" class="card-img-top mx-auto d-block h-50 w-50 m-2 img-fluid" alt="...">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Get your ABS workout to the next level !</h5>
+                    <p class="card-text"></p>
+                </div>
+                    <footer class="card-footer">
+                    <a class="secondary-link d-flex btn btn-dark align-items-center justify-content-center" href="Abs.php?type=abdominus">Brzuch</a>
+                    </footer>
+
+            </div>
+        </div>
+        <div class="col-md-4 col-lg-3 p-2">
+            <div class="card h-100" style="max-width: 18rem;">
+                <img src="images/Back2.jpg" class="card-img-top mx-auto d-block h-50 w-50 m-2 img-fluid" alt="...">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Get your Back workout to the next level !</h5>
+                    <p class="card-text"></p>
+                </div>
+                    <footer class="card-footer">
+                    <a class="secondary-link d-flex btn btn-dark align-items-center justify-content-center" href="Back.php?type=middle-back">Back</a>
+                    </footer>
+
+            </div>
+        </div>
+
+            <div class="col-md-4 col-lg-3 p-2">
+                <div class="card h-100" style="max-width: 18rem;">
+                    <img src="images/glutes2.jpg" class="card-img-top mx-auto d-block h-50 w-50 m-2 img-fluid" alt="...">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Get your Glutes workout to the next level !</h5>
+                        <p class="card-text"></p>
+                    </div>
+                        <footer class="card-footer">
+                        <a class="secondary-link d-flex btn btn-dark align-items-center justify-content-center" href="Glutes.php?type=glutes">Glutes</a>
+                        </footer>
+
+                </div>
+            </div>
+
+                <div class="col-md-4 col-lg-3 p-2">
+                    <div class="card h-100" style="max-width: 18rem;">
+                        <img src="images/Legs.jpg" class="card-img-top mx-auto d-block h-50 w-50 m-2 img-fluid" alt="...">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Get your Legs workout to the next level !</h5>
+                            <p class="card-text"></p>
+                        </div>
+                            <footer class="card-footer">
+                            <a class="secondary-link d-flex btn btn-dark align-items-center justify-content-center" href="Legs.php?type=quadriceps"">Legs</a>
+                            </footer>
+
+                    </div>
+                </div>
+
+                    <div class="col-md-4 col-lg-3 p-2">
+                        <div class="card h-100" style="max-width: 18rem;">
+                            <img src="images/Shouderls.jpg" class="card-img-top mx-auto d-block h-50 w-50 m-2 img-fluid" alt="...">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Get your Shoulders workout to the next level !</h5>
+                                <p class="card-text"></p>
+                            </div>
+                                <footer class="card-footer">
+                                <a class="secondary-link d-flex btn btn-dark align-items-center justify-content-center" href="Shoulders.php?type=shoulders">Shoulders</a>
+                                </footer>
+
+                        </div>
+                    </div>
+
+
 </div>
-<div id="monday" class="d-flex m-4 p-2">
-    <div class ="container-fluid d-flex " style="border: solid 2px ">
-        <img src="images/Chest.jpg" class="img-fluid" alt="chest" style="width:50px">
-        <a class="secondary-link d-flex" href="Chest.php?type=chest">  Chest </a>
-    </div>
-
-    <div class ="container-fluid d-flex " style="border: solid 2px">
-        <img src="images/Back2.jpg" class="img-fluid" alt="back" style="width:50px">
-        <a class="secondary-link d-flex" href="Back.php?type=middle_back">  Back  </a>
-    </div>
-
-    <div class ="container-fluid d-flex " style="border: solid 2px">
-        <img src="images/Legs.jpg" class="img-fluid" alt="legs" style="width:50px">
-        <a class="secondary-link d-flex" href="Legs.php?type=quadriceps">  Legs  </a>
-    </div>
-
-    <div class ="container-fluid d-flex " style="border: solid 2px">
-        <img src="images/Abs.jpg" class="img-fluid" alt="abs" style="width:50px">
-        <a class="secondary-link d-flex" href="Abs.php?type=abdominals">  Abs  </a>
-    </div>
-
-    <div class ="container-fluid d-flex " style="border: solid 2px">
-        <img src="images/Shouderls.jpg" class="img-fluid" alt="abs" style="width:50px">
-        <a class="secondary-link d-flex" href="Shoulders.php?type=shoulders">  Shoulders </a>
-    </div>
-
-    <div class ="container-fluid d-flex " style="border: solid 2px">
-        <img src="images/Glutes.jpg" class="img-fluid" alt="abs" style="width:50px">
-        <a class="secondary-link d-flex" href="Glutes.php?type=glutes">  Glutes </a>
-    </div>
-
-    <div class ="container-fluid d-flex " style="border: solid 2px">
-        <img src="images/Triceps.jpg" class="img-fluid" alt="abs" style="width:50px">
-        <a class="secondary-link d-flex" href="Triceps.php?type=triceps"> Triceps </a>
-    </div>
-
-    <div class ="container-fluid d-flex  " style="border: solid 2px">
-        <img src="images/Biceps.jpg" class="img-fluid" alt="abs" style="width:50px">
-        <a class="secondary-link d-flex" href="Biceps.php?type=biceps">  Biceps </a>
-    </div></div>
+</div>
 </body>
+</html>
+
+<?php include("footer.php");?>

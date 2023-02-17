@@ -24,4 +24,4 @@ $delete_train  =$delete->deleteProgram();
 </body>
 </html>
 
-?>
+<?php include("footer.php");?>

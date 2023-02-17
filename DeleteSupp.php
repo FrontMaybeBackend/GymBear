@@ -24,4 +24,4 @@ $delete_supp =$delete->deleteSupplements();
 </body>
 </html>
 
-?>
+<?php include("footer.php");?>

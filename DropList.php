@@ -19,10 +19,9 @@
 
 <body>
 
-<form method="POST" action="" ;>
-    <div class="dropdown ">
+    <div class="dropdown bg-dark " >
 
-        <button id="recPrograms" class="btn  dropdown-toggle-split m-3 text-center text-nowrap" style="width: 12rem;" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+        <button id="recPrograms" class="btn  dropdown-toggle-split m-3 text-center text-nowrap" style="width: 12rem; color:white" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
             Recomended Programs
         </button>
 
@@ -34,7 +33,7 @@
         </ul>
 
 
-        <button class="btn  dropdown-toggle-split m-3 text-center text-nowrap" style="width: 10rem;" type="button" id="dropdownMenu3" data-bs-toggle="dropdown" aria-expanded="false">
+        <button class="btn  dropdown-toggle-split m-3 text-center text-nowrap" style="width: 10rem; color:white" type="button" id="dropdownMenu3" data-bs-toggle="dropdown" aria-expanded="false">
             Diet
         </button>
         <ul class="dropdown-menu text-center btn-sm bg-dark " aria-labelledby="dropdownMenu3">
@@ -43,7 +42,7 @@
         </ul>
 
 
-        <button class=" btn  dropdown-toggle-split m-3 text-center text-nowrap " style="width: 10rem;" type="button" id="dropdownMenu4" data-bs-toggle="dropdown" aria-expanded="false">
+        <button class=" btn  dropdown-toggle-split m-3 text-center text-nowrap " style="width: 10rem; color:white" type="button" id="dropdownMenu4" data-bs-toggle="dropdown" aria-expanded="false">
             Supplements
         </button>
         <ul class="dropdown-menu text-center btn-sm bg-dark" aria-labelledby="dropdownMenu4">
@@ -52,7 +51,7 @@
             <li><a class="dropdown-item text-uppercase" href="Vitamin.php" style="color:white"> Vitamins</a></li>
         </ul>
 
-        <button class=" btn  dropdown-toggle-split m-3 text-center text-nowrap" style="width:10 rem;" type="button" id="dropdownMenu5" data-bs-toggle="dropdown" aria-expanded="false">
+        <button class=" btn  dropdown-toggle-split m-3 text-center text-nowrap" style="width:10 rem; color:white" type="button" id="dropdownMenu5" data-bs-toggle="dropdown" aria-expanded="false">
             Calculator
         </button>
         <ul class="dropdown-menu text-center btn-sm bg-dark " aria-labelledby="dropdownMenu5">
@@ -60,13 +59,11 @@
             <li><a class="dropdown-item text-uppercase" href="#" style="color:white">BMI </a> </li>
         </ul>
         <button class=" btn dropdown-toggle-split m-3 text-center text-nowrap " style="width:10 rem;" type="button"  aria-expanded="false">
-            <a class="dropdown-item " id="1RM" href="ComposeWorkout.php"  style="color:black"> Compose</a>
+            <a class="dropdown-item " id="1RM" href="ComposeWorkout.php"  style="color:white"> Compose</a>
         </button>
 
-
-
     </div>
-</form>
+
 
 </body>
 

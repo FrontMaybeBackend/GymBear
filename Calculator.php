@@ -43,8 +43,8 @@ if(isset($_POST['Calculate'])){
         <label for="Reps" class="form-label" > Reps</label >
         <input type = "text" class="form-control" name="Reps" id = "Reps" >
     </div >
-
-    <button type="submit" id="Calculate" name="Calculate">Calculate</button>
+    <button class="p-2  m-3 align-content-end d-flex" id="Calculate" type="submit" name="Calculate">Calculate</button>
     <label for="Score" class="form-label center" > Your One Rep Max: <?php if(isset($Calculate)){ echo $Calculate;} ?></label>
 
 </form >
+<?php include("footer.php");?>

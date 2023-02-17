@@ -107,7 +107,8 @@ if($validation){
         <?php  } ?>
         </tbody>
     </table>
-    <button type="submit" name="Compose">Compose Workout</button>
+    <button class="p-2  m-3 align-content-end d-flex" type="submit" name="Compose" >Compose Workout</button>
 </form>
 </Body>
 </html>
+<?php include("footer.php");?>

@@ -41,3 +41,4 @@ while ($result = $stmt->fetch()) {
 
 
 </html>
+<?php include("footer.php");?>
