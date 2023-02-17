@@ -56,7 +56,7 @@
         </button>
         <ul class="dropdown-menu text-center btn-sm bg-dark " aria-labelledby="dropdownMenu5">
             <li><a class="dropdown-item text-uppercase" id="1RM" href="Calculator.php"  style="color:white">1RM </a> </li>
-            <li><a class="dropdown-item text-uppercase" href="#" style="color:white">BMI </a> </li>
+            <li><a class="dropdown-item text-uppercase" href="CalculactorBMI.php" style="color:white">BMI </a> </li>
         </ul>
         <button class=" btn dropdown-toggle-split m-3 text-center text-nowrap " style="width:10 rem;" type="button"  aria-expanded="false">
             <a class="dropdown-item " id="1RM" href="ComposeWorkout.php"  style="color:white"> Compose</a>

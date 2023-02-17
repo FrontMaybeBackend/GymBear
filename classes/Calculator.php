@@ -8,6 +8,7 @@ class Calculator
 
     public $reps;
 
+    public $height;
     public int $score;
 
     public function __construct($weight, $reps)
@@ -39,6 +40,23 @@ class Calculator
         }
 
     }
+
+    public function calcBMI(){
+        $checkThis = true;
+        if($this->ValidationCalc() == false){
+            return  $this->errorCalc["empty"];
+            $checkThis = false;
+        }
+        if($this->ValIsNumeric() == false){
+            return $this->errorCalc['numeric'];
+            $checkThis = false;
+        }if($checkThis = true) {
+            $this ->height = $this->reps / 100;
+            $this->score = $this->weight / pow($this->height, 2);
+            return $this->score;
+        }
+    }
+
 
     public function ValidationCalc(){
         $calc = true;
