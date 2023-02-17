@@ -27,3 +27,11 @@ user can read recomended programs,diets,supplements and make training program fo
 Can use calculators to check One Rep Max in exercises and BMI calculator.
 
 Admin can Add/Delete/Edit programs,diets,supplements. 
+
+Live: https://substitute-hardness.000webhostapp.com/Main.php 
+
+user: login-> useruser
+user: password ->user
+
+admin: login-> adminadmin
+admin: password -> admin
