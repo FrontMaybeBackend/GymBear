@@ -32,6 +32,7 @@ FormControl extends FormConfig
            return $this->errorForm['inputs'];
        }if($send == true){
            $this->addFormToDatabase("$this->title", "$this->body", $this->img);
+
        }
        return $send;
     }

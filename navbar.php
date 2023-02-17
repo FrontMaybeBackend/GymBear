@@ -2,7 +2,13 @@
 
 session_start();
 
-$username = $_SESSION["username"];
+$username = isset($_SESSION["username"]) ? $_SESSION["username"] : null;
+
+if(isset($_POST["logout"])){
+    unset($_SESSION["username"]);
+    header("Location: Logout.php");
+    exit;
+}
 ?>
 
 <!DOCTYPE html>
@@ -15,6 +21,7 @@ $username = $_SESSION["username"];
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="navbar.css">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
 </head>
 
 <body>
@@ -42,19 +49,18 @@ $username = $_SESSION["username"];
                     <li class="nav-item">
                         <a class="nav-link" href="RecommendedProgramms.php">Programms</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="Logout.php">Logout</a>
-                    </li>
-                    <div class="dropdown">
-                        <a class="btn btn-secondary dropdown-toggle" href="Userpanel.php" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                            <?php echo  $username ?>
-                        </a>
-                    <ul class ="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <li><a class="dropdown-item" href="#">User Panel</a></li>
-                        <li><a class="dropdown-item" href="Training.php">Training</a></li>
-                        <li><a class="dropdown-item" href="#">Diets</a></li>
-                        <li><a class="dropdown-item" href="#">Progres</a></li>
-                    </ul>
+                    <div class="dropdown bg-dark">
+                        <?php if(isset($_SESSION["username"])){ ?>
+                            <form method="post" class="SignIt" action="">
+                                <a  class="btn btn-dark dropdown-toggle " href="Userpanel.php" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <?php echo  $username ?>
+                                </a>
+                                <ul class ="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <li><a class="dropdown-item" href="Training.php">Training</a></li>
+                                <input class="btn dropdown-item" type="submit" name="logout" value="Logout">
+                                </ul>
+                            </form>
+                        <?php } ?>
                     </div>
 
                 </ul>

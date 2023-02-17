@@ -1,12 +1,16 @@
 <?php
-include("navbar.php");
-include("DropList.php");
-session_destroy();
+
 ?>
 
+<!DOCTYPE html>
 <html>
+<head>
+    <title>Wylogowano</title>
+</head>
 <body>
-<p class=" text-center"> Wylogowałes się pomyślnie !</p>
+<?php include("navbar.php"); ?>
+<?php include("DropList.php"); ?>
+<p class=" text-center">Wylogowałeś się pomyślnie!</p>
 </body>
 </html>
 

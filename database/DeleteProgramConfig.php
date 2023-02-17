@@ -13,6 +13,9 @@ class DeleteProgramConfig extends connect
         $stmt->bindParam(':id', $training_id);
         $stmt->execute();
         echo "Succeded in removing the program";
+        ?>
+        <a class="text-decoration-none" href="/xampp/GymBear/RecommendedProgramms.php" style="color:black">  <p class ="text-uppercase"> Click here to back :)</a></p>
+        <?php
         exit();
     }
 
@@ -24,6 +27,10 @@ class DeleteProgramConfig extends connect
         $stmt->bindParam(':id', $diet_id);
         $stmt->execute();
         echo "Succeded in removing the program";
+        ?>
+        <a class="text-decoration-none" href="/xampp/GymBear/RecommendedProgramms.php" style="color:black">  <p class ="text-uppercase"> Click here to back :)</a></p>
+        <?php
+
         exit();
     }
 
@@ -35,6 +42,10 @@ class DeleteProgramConfig extends connect
         $stmt->bindParam(':id', $diet_id);
         $stmt->execute();
         echo "Succeded in removing the program";
+        echo "Succeded in removing the program";
+        ?>
+        <a class="text-decoration-none" href="/xampp/GymBear/RecommendedProgramms.php" style="color:black">  <p class ="text-uppercase"> Click here to back :)</a></p>
+        <?php
         exit();
     }
 }

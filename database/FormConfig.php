@@ -13,6 +13,10 @@ class FormConfig extends connect
        $stmt->bindParam(2,$titleForm,PDO::PARAM_STR);
        $stmt->bindParam(3,$img, PDO::PARAM_LOB);
        $stmt->execute();
+       echo "You added the program to the base :)"
+       ?>
+       <a class="text-decoration-none" href="/xampp/GymBear/RecommendedProgramms.php" style="color:black">  <p class ="text-uppercase"> Click here to back :)</a></p>
+       <?php
        exit();
    }
 
@@ -24,7 +28,10 @@ class FormConfig extends connect
        $stmt->bindParam(2,$body,PDO::PARAM_STR);
        $stmt->bindParam(3,$img, PDO::PARAM_LOB);
        $stmt->execute();
-       echo "dodałes program do bazy :)";
+       echo "You added the program to the base :)"
+       ?>
+       <a class="text-decoration-none" href="/xampp/GymBear/RecommendedProgramms.php" style="color:black">  <p class ="text-uppercase"> Click here to back :)</a></p>
+       <?php
        exit();
    }
 
@@ -36,6 +43,10 @@ class FormConfig extends connect
        $stmt->bindParam(2,$body,PDO::PARAM_STR);
        $stmt->bindParam(3,$img, PDO::PARAM_LOB);
        $stmt->execute();
+       echo "You added the program to the base :)"
+       ?>
+       <a class="text-decoration-none" href="/xampp/GymBear/RecommendedProgramms.php" style="color:black">  <p class ="text-uppercase"> Click here to back :)</a></p>
+       <?php
        exit();
    }
 

@@ -71,6 +71,10 @@ class EditProgramConfig extends connect
         $stmt->bindParam(':body', $supp);
         $stmt->bindParam(':id', $supp_id);
         $stmt->execute();
+        echo "Good job, you edit this program :)";
+        ?>
+        <a class="text-decoration-none" href="/xampp/GymBear/RecommendedProgramms.php" style="color:black">  <p class ="text-uppercase"> Click here to back :)</a></p>
+        <?php
         exit();
     }
 

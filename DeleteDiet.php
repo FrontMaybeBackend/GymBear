@@ -2,9 +2,14 @@
 
 include_once("navbar.php");
 include_once("DropList.php");
+
 include_once("database/DeleteProgramConfig.php");
+
+
 $delete = new DeleteProgramConfig();
 $delete_diet  =$delete->deleteDiet();
+
+
 
 
 
@@ -20,9 +25,9 @@ $delete_diet  =$delete->deleteDiet();
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 </head>
 <body>
-
+<?php include("footer.php"); ?>
 </body>
+
 </html>
 
-?>
-<?php include("footer.php");?>
+

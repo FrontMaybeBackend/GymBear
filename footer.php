@@ -33,9 +33,7 @@
                         GymBear
                     </h6>
                     <p>
-                        Here you can use rows and columns to organize your footer
-                        content. Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit.
+                        App for beginners, to learn how to train :)
                     </p>
                 </div>
                 <!-- Grid column -->
@@ -46,7 +44,7 @@
                 <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
                     <h6 class="text-uppercase mb-4 font-weight-bold">What i used to write this app</h6>
                     <p>
-                        <a class="text-white">PHP 8.0 +</a>
+                        <a class="text-white">PHP </a>
                     </p>
                     <p>
                         <a class="text-white">MySQL</a>
@@ -70,38 +68,7 @@
                 <!-- Grid column -->
 
                 <!-- Grid column -->
-                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
-                    <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
 
-                    <!-- Facebook -->
-
-                    <!-- Twitter -->
-
-
-                    <!-- Google -->
-
-
-                    <!-- Instagram -->
-
-
-                    <!-- Linkedin -->
-                    <a
-                        class="btn btn-primary btn-floating m-1"
-                        style="background-color: #0082ca"
-                        href="#!"
-                        role="button"
-                    ><i class="fab fa-linkedin-in"></i
-                        ></a>
-                    <!-- Github -->
-                    <a
-                        class="btn btn-primary btn-floating m-1"
-                        style="background-color: #333333"
-                        href="#!"
-                        role="button"
-                    ><i class="fab fa-github"></i
-                        ></a>
-                </div>
-            </div>
             <!--Grid row-->
         </section>
         <!-- Section: Links -->

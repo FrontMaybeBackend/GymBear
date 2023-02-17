@@ -23,5 +23,6 @@ $delete_train  =$delete->deleteProgram();
 
 </body>
 </html>
-
-<?php include("footer.php");?>
+<?php
+include_once("footer.php");
+?>

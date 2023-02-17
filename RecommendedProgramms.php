@@ -124,8 +124,8 @@ if(isset($_POST['sendSupp'])){
             <div class="card-footer">
                 <a id="readMore" class="btn btn-link link-dark p-md-1 my-1" data-mdb-toggle="collapse" href="ReadTRAINING.php?id=<?php echo $recommendeds->idReco; ?>" role="button" aria-expanded="false" aria-controls="collapseContent">Read more</a>
                 <?php
-                if($_SESSION['username'] === 'adminadmin'){
-                    echo  '<button class="btn btn-dark btn-block"><a href="EditProgram.php?id=' . $recommendeds->idReco . '">Edit</a></button>';
+                if (isset($_SESSION["username"]) && $_SESSION["username"] === 'adminadmin') {
+                    echo '<button class="btn btn-dark btn-block"><a href="EditProgram.php?id=' . $recommendeds->idReco . '">Edit</a></button>';
                     echo '<button class="btn btn-dark btn-block"><a href="DeleteProgram.php?id=' . $recommendeds->idReco . '">Delete</a></button>';
                 }
                 ?>
@@ -138,11 +138,14 @@ if(isset($_POST['sendSupp'])){
 </div>
 
 </div>
-<button type="button" id = "btn2" class="btn btn-secondary">AddWorkout</button>
 
+<?php if (isset($_SESSION["username"]) && $_SESSION["username"] === 'adminadmin') {
+
+?>
+<button type="button" id = "btn2" class="btn btn-secondary">AddWorkout</button>
 <form id="form2" method="POST">
     <?php
-    if($checkForm) {
+    if(isset($checkForm)) {
     echo  '<div class="error">' . $checkForm . '</div>';
     }
     ?>
@@ -160,7 +163,7 @@ if(isset($_POST['sendSupp'])){
             <input id="sendPrograms" name="sendPrograms" type="submit" value="sendPrograms">
     </div>
 </form>
-
+<?php } ?>
 <hr>
 
 <h4 class = "text-center">Recommended Diet!</h4>
@@ -195,10 +198,11 @@ if(isset($_POST['sendSupp'])){
                 <div class="card-footer">
                     <a id="readMore" class="btn btn-link link-dark p-md-1 my-1" data-mdb-toggle="collapse" href="Diet.php?id=<?php echo $diet->idDiet; ?>" role="button" aria-expanded="false" aria-controls="collapseContent">Read more</a>
                     <?php
-                    if($_SESSION['username'] === 'adminadmin'){
-                        echo  '<button class="btn btn-dark btn-block"><a href="EditDiet.php?id=' . $diet->idDiet . '">Edit</a></button>';
+                    if (isset($_SESSION["username"]) && $_SESSION["username"] === 'adminadmin') {
+                        echo '<button class="btn btn-dark btn-block" > <a href="EditDiet.php?id=' . $diet->idDiet . '">Edit</a></button>';
                         echo '<button class="btn btn-dark btn-block"><a href="DeleteDiet.php?id=' . $diet->idDiet . '">Delete</a></button>';
                     }
+
                     ?>
                 </div>
             </div>
@@ -206,10 +210,13 @@ if(isset($_POST['sendSupp'])){
     <?php endforeach; ?>
 
 </div>
+<?php if (isset($_SESSION["username"]) && $_SESSION["username"] === 'adminadmin') {
+
+    ?>
 <button type="submit" name="addDietButton"  id ="btn" class="btn btn-secondary">AddDiet</button>
 <form id="form" method="POST">
     <?php
-    if($checkFormDiet) {
+    if(isset($checkFormDiet)) {
         echo  '<div class="error">' . $checkFormDiet . '</div>';
     }
     ?>
@@ -230,16 +237,20 @@ if(isset($_POST['sendSupp'])){
 
 </div>
 </form>
-
+<?php } ?>
 
 
 <hr>
 <h4 class = "text-center"> Recommended Supplements</h4>
+
+<?php if (isset($_SESSION["username"]) && $_SESSION["username"] === 'adminadmin') {
+
+    ?>
 <button type="submit" name="addSuppButton"  id ="btn3" class="btn btn-secondary">AddSupp</button>
 
 <form id="form3" method="POST">
     <?php
-    if($checkFormSupp) {
+    if(isset($checkFormSupp))  {
         echo  '<div class="error">' . $checkFormSupp . '</div>';
     }
     ?>
@@ -259,7 +270,7 @@ if(isset($_POST['sendSupp'])){
         </form>
     </div>
 </form>
-
+<?php } ?>
 
 <div class="container d-flex flex-row flex-wrap justify-content-between">
     <?php foreach($displaySupp as $supplementss): ?>
@@ -289,11 +300,11 @@ if(isset($_POST['sendSupp'])){
                     </p>
             </div>
                 <div class="card-footer">
-                    <a id="readMore" class="btn btn-link link-dark p-md-1 my-1" data-mdb-toggle="collapse" href="#collapseContent" role="button" aria-expanded="false" aria-controls="collapseContent">Read more</a>
+                    <a id="readMore" class="btn btn-link link-dark p-md-1 my-1" data-mdb-toggle="collapse" href="ReadSUPP.php?id=<?php echo $supplementss->idSupp; ?>"" role="button" aria-expanded="false" aria-controls="collapseContent">Read more</a>
                     <?php
-                    if($_SESSION['username'] === 'adminadmin'){
-                        echo  '<button class="btn btn-dark btn-block"><a href="EditSupplements.php?id=' . $supplementss->idSupp . '">Edit</a></button>';
-                        echo '<button class="btn btn-dark btn-block"><a href="DeleteSupp.php?id=' . $supplementss ->idSupp . '">Delete</a></button>';
+                    if (isset($_SESSION["username"]) && $_SESSION["username"] === 'adminadmin') {
+                        echo '<button class="btn btn-dark btn-block"><a href="EditSupplements.php?id=' . $supplementss->idSupp . '">Edit</a></button>';
+                        echo '<button class="btn btn-dark btn-block"><a href="DeleteSupp.php?id=' . $supplementss->idSupp . '">Delete</a></button>';
                     }
                     ?>
                 </div>
