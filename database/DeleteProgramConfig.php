@@ -12,6 +12,7 @@ class DeleteProgramConfig extends connect
         $stmt = $conn->prepare("DELETE FROM recomennded WHERE id = :id");
         $stmt->bindParam(':id', $training_id);
         $stmt->execute();
+        $dataBase->closeConnection();
         echo "Succeded in removing the program";
         ?>
         <a class="text-decoration-none" href="/xampp/GymBear/RecommendedProgramms.php" style="color:black">  <p class ="text-uppercase"> Click here to back :)</a></p>
@@ -26,6 +27,7 @@ class DeleteProgramConfig extends connect
         $stmt = $conn->prepare("DELETE FROM diets WHERE id = :id");
         $stmt->bindParam(':id', $diet_id);
         $stmt->execute();
+        $dataBase->closeConnection();
         echo "Succeded in removing the program";
         ?>
         <a class="text-decoration-none" href="/xampp/GymBear/RecommendedProgramms.php" style="color:black">  <p class ="text-uppercase"> Click here to back :)</a></p>
@@ -41,6 +43,7 @@ class DeleteProgramConfig extends connect
         $stmt = $conn->prepare("DELETE FROM supplements WHERE id = :id");
         $stmt->bindParam(':id', $diet_id);
         $stmt->execute();
+        $dataBase->closeConnection();
         echo "Succeded in removing the program";
         echo "Succeded in removing the program";
         ?>

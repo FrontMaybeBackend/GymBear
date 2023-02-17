@@ -19,6 +19,7 @@ class DisplayUserProgram extends connect
         $stmt ->bindParam(":username", $_SESSION['username']);
         $stmt ->execute();
         $results = $stmt ->fetchAll();
+        $database->closeConnection();
 
         $userprograms = array();
         foreach($results as $result){
@@ -42,7 +43,7 @@ class DisplayUserProgram extends connect
         $stmt ->bindParam(":username", $_SESSION['username']);
         $stmt ->execute();
         $results = $stmt ->fetchAll();
-
+        $database->closeConnection();
         $mondayPrograms = array();
         foreach($results as $result){
             $mondayProgram = new self();
@@ -65,7 +66,7 @@ class DisplayUserProgram extends connect
         $stmt ->bindParam(":username", $_SESSION['username']);
         $stmt ->execute();
         $results = $stmt ->fetchAll();
-
+        $database->closeConnection();
         $tuesdayPrograms = array();
         foreach($results as $result){
             $tuesdayProgram = new self();
@@ -89,7 +90,7 @@ class DisplayUserProgram extends connect
         $stmt->bindParam(":username", $_SESSION['username']);
         $stmt->execute();
         $results = $stmt->fetchAll();
-
+        $database->closeConnection();
         $wednesdayPrograms = array();
         foreach ($results as $result) {
             $wednesdayProgram = new self();
@@ -112,7 +113,7 @@ class DisplayUserProgram extends connect
             $stmt->bindParam(":username", $_SESSION['username']);
             $stmt->execute();
             $results = $stmt->fetchAll();
-
+            $database->closeConnection();
             $thursdayPrograms = array();
             foreach ($results as $result) {
                 $thursdayProgram = new self();
@@ -135,7 +136,7 @@ class DisplayUserProgram extends connect
                 $stmt->bindParam(":username", $_SESSION['username']);
                 $stmt->execute();
                 $results = $stmt->fetchAll();
-
+                $database->closeConnection();
                 $fridayPrograms = array();
                 foreach ($results as $result) {
                     $fridayProgram = new self();
@@ -158,7 +159,7 @@ class DisplayUserProgram extends connect
                     $stmt->bindParam(":username", $_SESSION['username']);
                     $stmt->execute();
                     $results = $stmt->fetchAll();
-
+                    $database->closeConnection();
                     $saturdayPrograms = array();
                     foreach ($results as $result) {
                         $saturdayProgram = new self();
@@ -181,7 +182,7 @@ class DisplayUserProgram extends connect
                         $stmt->bindParam(":username", $_SESSION['username']);
                         $stmt->execute();
                         $results = $stmt->fetchAll();
-
+                        $database->closeConnection();
                         $sundayPrograms = array();
                         foreach ($results as $result) {
                             $sundayProgram = new self();
@@ -194,6 +195,7 @@ class DisplayUserProgram extends connect
 
                         }
                         return $sundayPrograms;
+
 
     }
 

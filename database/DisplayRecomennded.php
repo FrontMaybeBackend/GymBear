@@ -23,7 +23,7 @@ class DisplayRecomennded extends connect
         $stmt = $conn ->prepare("SELECT * FROM diets");
         $stmt ->execute();
         $results = $stmt ->fetchAll();
-
+        $database->closeConnection();
         $diets = array();
         foreach($results as $result){
             //Tworzy obiekt nowej klasy w tym wypadku obiekt klasy DietConfig.
@@ -44,6 +44,7 @@ class DisplayRecomennded extends connect
         $stmt = $conn ->prepare("SELECT * FROM recomennded");
         $stmt ->execute();
         $results = $stmt ->fetchAll();
+        $database->closeConnection();
         $recommendeds = array();
         foreach($results as $result){
             $recommended = new self();
@@ -63,6 +64,7 @@ class DisplayRecomennded extends connect
         $stmt = $conn ->prepare("SELECT * FROM supplements");
         $stmt ->execute();
         $results = $stmt ->fetchAll();
+        $database->closeConnection();
         $supplementss = array();
         foreach($results as $result){
             $supplements = new self();
@@ -81,6 +83,7 @@ class DisplayRecomennded extends connect
         $stmt = $conn ->prepare("SELECT * FROM recomennded WHERE title ='Push Pull Legs'");
         $stmt ->execute();
         $results = $stmt ->fetchAll();
+        $database->closeConnection();
         $recommendeds = array();
         foreach($results as $result){
             $recommended = new self();
@@ -101,6 +104,7 @@ class DisplayRecomennded extends connect
         $stmt = $conn ->prepare("SELECT * FROM recomennded WHERE title ='Upper Lower'");
         $stmt ->execute();
         $results = $stmt ->fetchAll();
+        $database->closeConnection();
         $recommendeds = array();
         foreach($results as $result){
             $recommended = new self();
@@ -119,6 +123,7 @@ class DisplayRecomennded extends connect
         $stmt = $conn ->prepare("SELECT * FROM recomennded WHERE title ='Full Body Workout'");
         $stmt ->execute();
         $results = $stmt ->fetchAll();
+        $database->closeConnection();
         $recommendeds = array();
         foreach($results as $result){
             $recommended = new self();
@@ -137,6 +142,7 @@ class DisplayRecomennded extends connect
         $stmt = $conn ->prepare("SELECT * FROM recomennded WHERE title ='Split'");
         $stmt ->execute();
         $results = $stmt ->fetchAll();
+        $database->closeConnection();
         $recommendeds = array();
         foreach($results as $result){
             $recommended = new self();
@@ -156,6 +162,7 @@ class DisplayRecomennded extends connect
         $stmt = $conn->prepare("SELECT * FROM diets WHERE title ='Carbs'");
         $stmt->execute();
         $results = $stmt->fetchAll();
+        $database->closeConnection();
         $diets = array();
         foreach ($results as $result) {
             //Tworzy obiekt nowej klasy w tym wypadku obiekt klasy DietConfig.
@@ -177,6 +184,7 @@ class DisplayRecomennded extends connect
         $stmt = $conn->prepare("SELECT * FROM diets WHERE title ='Fats'");
         $stmt->execute();
         $results = $stmt->fetchAll();
+        $database->closeConnection();
         $diets = array();
         foreach ($results as $result) {
             //Tworzy obiekt nowej klasy w tym wypadku obiekt klasy DietConfig.
@@ -197,6 +205,7 @@ class DisplayRecomennded extends connect
         $stmt = $conn ->prepare("SELECT * FROM supplements WHERE title ='Creatine'");
         $stmt ->execute();
         $results = $stmt ->fetchAll();
+        $database->closeConnection();
         $supplementss = array();
         foreach($results as $result){
             $supplements = new self();
@@ -215,6 +224,7 @@ class DisplayRecomennded extends connect
         $stmt = $conn ->prepare("SELECT * FROM supplements WHERE title ='Protein'");
         $stmt ->execute();
         $results = $stmt ->fetchAll();
+        $database->closeConnection();
         $supplementss = array();
         foreach($results as $result){
             $supplements = new self();
@@ -233,6 +243,7 @@ class DisplayRecomennded extends connect
         $stmt = $conn ->prepare("SELECT * FROM supplements WHERE title ='Vitamins'");
         $stmt ->execute();
         $results = $stmt ->fetchAll();
+        $database->closeConnection();
         $supplementss = array();
         foreach($results as $result){
             $supplements = new self();

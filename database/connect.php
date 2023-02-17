@@ -19,6 +19,11 @@ class connect
     }
 
 
+    public function closeConnection()
+    {
+        $this->conn = null;
+    }
+
 
 
 
