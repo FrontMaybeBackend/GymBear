@@ -5,7 +5,7 @@ class DisplayPPL extends connect
 {
     public function displayPPL(){
 
-        $stmt = $this->conn ->prepare("SELECT * FROM recomennded WHERE title ='Push Pull Legs'");
+        $stmt = $this->conn ->prepare("SELECT programms,img,title,id FROM recomennded WHERE title ='Push Pull Legs'");
         $stmt ->execute();
         $results = $stmt ->fetchAll();
         $recommendeds = array();

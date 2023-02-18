@@ -15,7 +15,7 @@ class DisplayUserProgram extends connect
     public function displayUserProgram(){
         $database = new connect();
         $conn = $database->getConnection();
-        $stmt = $conn ->prepare("SELECT * FROM users_plans WHERE username =:username");
+        $stmt = $conn ->prepare("SELECT exc_name,exc_series,exc_reps,name_train,day FROM users_plans WHERE username =:username");
         $stmt ->bindParam(":username", $_SESSION['username']);
         $stmt ->execute();
         $results = $stmt ->fetchAll();
@@ -39,7 +39,7 @@ class DisplayUserProgram extends connect
     public function displayMondayProgram(){
         $database = new connect();
         $conn = $database->getConnection();
-        $stmt = $conn ->prepare("SELECT * FROM users_plans WHERE username =:username  AND day ='monday'");
+        $stmt = $conn ->prepare("SELECT exc_name, exc_series,exc_reps,name_train,day  FROM users_plans WHERE username =:username  AND day ='monday'");
         $stmt ->bindParam(":username", $_SESSION['username']);
         $stmt ->execute();
         $results = $stmt ->fetchAll();
@@ -62,7 +62,7 @@ class DisplayUserProgram extends connect
     public function displayTuesdayProgram(){
         $database = new connect();
         $conn = $database->getConnection();
-        $stmt = $conn ->prepare("SELECT * FROM users_plans WHERE username =:username  AND day ='tuesday'");
+        $stmt = $conn ->prepare("SELECT exc_name, exc_series,exc_reps,name_train,day FROM users_plans WHERE username =:username  AND day ='tuesday'");
         $stmt ->bindParam(":username", $_SESSION['username']);
         $stmt ->execute();
         $results = $stmt ->fetchAll();
@@ -86,7 +86,7 @@ class DisplayUserProgram extends connect
     {
         $database = new connect();
         $conn = $database->getConnection();
-        $stmt = $conn->prepare("SELECT * FROM users_plans WHERE username =:username  AND day ='wednesday'");
+        $stmt = $conn->prepare("SELECT  exc_name, exc_series,exc_reps,name_train,day FROM users_plans WHERE username =:username  AND day ='wednesday'");
         $stmt->bindParam(":username", $_SESSION['username']);
         $stmt->execute();
         $results = $stmt->fetchAll();
@@ -109,7 +109,7 @@ class DisplayUserProgram extends connect
         {
             $database = new connect();
             $conn = $database->getConnection();
-            $stmt = $conn->prepare("SELECT * FROM users_plans WHERE username =:username  AND day ='thursday'");
+            $stmt = $conn->prepare("SELECT exc_name, exc_series,exc_reps,name_train,day  FROM users_plans WHERE username =:username  AND day ='thursday'");
             $stmt->bindParam(":username", $_SESSION['username']);
             $stmt->execute();
             $results = $stmt->fetchAll();
@@ -132,7 +132,7 @@ class DisplayUserProgram extends connect
             {
                 $database = new connect();
                 $conn = $database->getConnection();
-                $stmt = $conn->prepare("SELECT * FROM users_plans WHERE username =:username  AND day ='friday'");
+                $stmt = $conn->prepare("SELECT exc_name, exc_series,exc_reps,name_train,day FROM users_plans WHERE username =:username  AND day ='friday'");
                 $stmt->bindParam(":username", $_SESSION['username']);
                 $stmt->execute();
                 $results = $stmt->fetchAll();
@@ -155,7 +155,7 @@ class DisplayUserProgram extends connect
                 {
                     $database = new connect();
                     $conn = $database->getConnection();
-                    $stmt = $conn->prepare("SELECT * FROM users_plans WHERE username =:username  AND day ='saturday'");
+                    $stmt = $conn->prepare("SELECT exc_name, exc_series,exc_reps,name_train,day FROM users_plans WHERE username =:username  AND day ='saturday'");
                     $stmt->bindParam(":username", $_SESSION['username']);
                     $stmt->execute();
                     $results = $stmt->fetchAll();
@@ -178,7 +178,7 @@ class DisplayUserProgram extends connect
                     {
                         $database = new connect();
                         $conn = $database->getConnection();
-                        $stmt = $conn->prepare("SELECT * FROM users_plans WHERE username =:username  AND day ='sunday'");
+                        $stmt = $conn->prepare("SELECT exc_name, exc_series,exc_reps,name_train,day FROM users_plans WHERE username =:username  AND day ='sunday'");
                         $stmt->bindParam(":username", $_SESSION['username']);
                         $stmt->execute();
                         $results = $stmt->fetchAll();

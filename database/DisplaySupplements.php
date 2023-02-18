@@ -6,7 +6,7 @@ class DisplaySupplements extends connect
 
     public function displayCreatine(){
 
-        $stmt = $this->conn ->prepare("SELECT * FROM supplements WHERE title ='Creatine'");
+        $stmt = $this->conn ->prepare("SELECT body,img,title,id FROM supplements WHERE title ='Creatine'");
         $stmt ->execute();
         $results = $stmt ->fetchAll();
         $supplementss = array();
@@ -23,7 +23,7 @@ class DisplaySupplements extends connect
 
     public function displayProtein(){
 
-        $stmt = $this->conn ->prepare("SELECT * FROM supplements WHERE title ='Protein'");
+        $stmt = $this->conn ->prepare("SELECT body,img,title,id FROM supplements WHERE title ='Protein'");
         $stmt ->execute();
         $results = $stmt ->fetchAll();
         $supplementss = array();
@@ -40,7 +40,7 @@ class DisplaySupplements extends connect
 
     public function displayVitamins(){
 
-        $stmt = $this->conn ->prepare("SELECT * FROM supplements WHERE title ='Vitamins'");
+        $stmt = $this->conn ->prepare("SELECT body,img,title,id FROM supplements WHERE title ='Vitamins'");
         $stmt ->execute();
         $results = $stmt ->fetchAll();
         $supplementss = array();

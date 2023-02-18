@@ -7,7 +7,7 @@ class DisplayDiets extends connect
     public function displayCarbs()
     {
 
-        $stmt = $this->conn->prepare("SELECT * FROM diets WHERE title ='Carbs'");
+        $stmt = $this->conn->prepare("SELECT title,img,diet,id FROM diets WHERE title ='Carbs'");
         $stmt->execute();
         $results = $stmt->fetchAll();
         $diets = array();
@@ -26,7 +26,7 @@ class DisplayDiets extends connect
 
     public function displayFats()
     {
-        $stmt = $this->conn->prepare("SELECT * FROM diets WHERE title ='Fats'");
+        $stmt = $this->conn->prepare("SELECT title,img,diet,id FROM diets WHERE title ='Fats'");
         $stmt->execute();
         $results = $stmt->fetchAll();
         $diets = array();

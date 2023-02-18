@@ -6,7 +6,7 @@ class DisplayFBW extends connect
 
 public function displayFBW(){
 
-    $stmt = $this->conn ->prepare("SELECT * FROM recomennded WHERE title ='Full Body Workout'");
+    $stmt = $this->conn ->prepare("SELECT programms,img,title,id FROM recomennded WHERE title ='Full Body Workout'");
     $stmt ->execute();
     $results = $stmt ->fetchAll();
     $recommendeds = array();

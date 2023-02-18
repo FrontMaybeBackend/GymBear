@@ -5,7 +5,7 @@ class DisplayUPL extends connect
 {
     public function displayUL(){
 
-        $stmt = $this->conn ->prepare("SELECT * FROM recomennded WHERE title ='Upper Lower'");
+        $stmt = $this->conn ->prepare("SELECT programms,img,title,id FROM recomennded WHERE title ='Upper Lower'");
         $stmt ->execute();
         $results = $stmt ->fetchAll();
         $recommendeds = array();

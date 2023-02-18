@@ -5,7 +5,7 @@ class DisplayBSL extends connect
 {
     public function displayBSL(){
 
-        $stmt = $this->conn ->prepare("SELECT * FROM recomennded WHERE title ='Split'");
+        $stmt = $this->conn ->prepare("SELECT programms,img,title,id FROM recomennded WHERE title ='Split'");
         $stmt ->execute();
         $results = $stmt ->fetchAll();
         $recommendeds = array();

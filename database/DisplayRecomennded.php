@@ -19,7 +19,7 @@ class DisplayRecomennded extends connect
     //Funkcja, która pobiera dane z bazy, foreach  przeglada kazdy element tablicy diets.
 
     public function displayDiets(){
-        $stmt = $this->conn ->prepare("SELECT * FROM diets");
+        $stmt = $this->conn ->prepare("SELECT title,img,diet,id FROM diets");
         $stmt ->execute();
         $results = $stmt ->fetchAll();
         $diets = array();
@@ -38,7 +38,7 @@ class DisplayRecomennded extends connect
 
     public function displayProgramms(){
 
-        $stmt = $this->conn ->prepare("SELECT * FROM recomennded");
+        $stmt = $this->conn ->prepare("SELECT programms,img,title,id FROM recomennded");
         $stmt ->execute();
         $results = $stmt ->fetchAll();
         $recommendeds = array();
@@ -56,7 +56,7 @@ class DisplayRecomennded extends connect
 
     public function displaySupplements(){
 
-        $stmt = $this->conn ->prepare("SELECT * FROM supplements");
+        $stmt = $this->conn ->prepare("SELECT body,img,title,id FROM supplements");
         $stmt ->execute();
         $results = $stmt ->fetchAll();
 
