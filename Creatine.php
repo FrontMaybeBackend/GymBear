@@ -1,9 +1,9 @@
 <?php
 include("navbar.php");
 include("DropList.php");
-include("database/DisplayRecomennded.php");
+include("database/DisplaySupplements.php");
 
-$displayCreatine = new DisplayRecomennded();
+$displayCreatine = new DisplaySupplements();
 
 $displayCreat = $displayCreatine->displayCreatine();
 
@@ -22,7 +22,7 @@ $displayCreat = $displayCreatine->displayCreatine();
 </head>
 <body>
 
-<h4 class="text-center">Vitamins!</h4>
+<h4 class="text-center">Creatine!</h4>
 <div class="container d-flex flex-row flex-wrap justify-content-between  ">
 
 

@@ -1,9 +1,9 @@
 <?php
 include("navbar.php");
 include("DropList.php");
-include("database/DisplayRecomennded.php");
+include("database/DisplayFBW.php");
 
-$display = new DisplayRecomennded();
+$display = new DisplayFBW();
 
 $displayFBW = $display->displayFBW();
 

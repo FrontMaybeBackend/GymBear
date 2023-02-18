@@ -1,9 +1,9 @@
 <?php
 include("navbar.php");
 include("DropList.php");
-include("database/DisplayRecomennded.php");
+include("database/DisplaySupplements.php");
 
-$displayVitamins = new DisplayRecomennded();
+$displayVitamins = new DisplaySupplements();
 
 $displayVitamin = $displayVitamins->displayVitamins();
 

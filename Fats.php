@@ -1,9 +1,9 @@
 <?php
 include("navbar.php");
 include("DropList.php");
-include("database/DisplayRecomennded.php");
+include("database/DisplayDiets.php");
 
-$displayFats = new DisplayRecomennded();
+$displayFats = new DisplayDiets();
 
 $displayFat = $displayFats->displayFats();
 

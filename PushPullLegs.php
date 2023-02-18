@@ -2,7 +2,7 @@
 
 include("navbar.php");
 include("DropList.php");
-include("database/DisplayRecomennded.php");
+include("database/DisplayPPL.php");
 
 ?>
 
@@ -19,7 +19,7 @@ include("database/DisplayRecomennded.php");
 
 <?php
 
-    $display = new DisplayRecomennded();
+    $display = new DisplayPPL();
 
     $displayPPL = $display ->displayPPL();
 

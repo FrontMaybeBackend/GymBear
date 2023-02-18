@@ -1,9 +1,9 @@
 <?php
 include("navbar.php");
 include("DropList.php");
-include("database/DisplayRecomennded.php");
+include("database/DisplayDiets.php");
 
-$displayCarbs = new DisplayRecomennded();
+$displayCarbs = new DisplayDiets();
 
 $displayCarb = $displayCarbs->displayCarbs();
 

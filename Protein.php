@@ -2,9 +2,9 @@
 <?php
 include("navbar.php");
 include("DropList.php");
-include("database/DisplayRecomennded.php");
+include("database/DisplaySupplements.php");
 
-$displayProtein = new DisplayRecomennded();
+$displayProtein = new DisplaySupplements();
 
 $displayPro = $displayProtein->displayProtein();
 
