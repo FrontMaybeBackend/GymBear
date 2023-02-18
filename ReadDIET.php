@@ -8,8 +8,9 @@ include("DropList.php");
 
 
 $id = isset($_GET['id']) ? $_GET['id'] : 0;
-
-$stmt = $this->conn->prepare("SELECT * FROM diets where id = :id");
+$database = new connect();
+$conn = $database ->getConnection();
+$stmt = $conn->prepare("SELECT * FROM diets where id = :id");
 $stmt->bindParam(':id', $id);
 $stmt->execute();
 while ($result = $stmt->fetch()) {
