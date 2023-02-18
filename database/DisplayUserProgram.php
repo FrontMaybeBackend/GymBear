@@ -13,13 +13,11 @@ class DisplayUserProgram extends connect
 
     public $dayTrain;
     public function displayUserProgram(){
-        $database = new connect();
-        $conn = $database->getConnection();
-        $stmt = $conn ->prepare("SELECT exc_name,exc_series,exc_reps,name_train,day FROM users_plans WHERE username =:username");
+
+        $stmt = $this->conn ->prepare("SELECT exc_name,exc_series,exc_reps,name_train,day FROM users_plans WHERE username =:username");
         $stmt ->bindParam(":username", $_SESSION['username']);
         $stmt ->execute();
         $results = $stmt ->fetchAll();
-        $database->closeConnection();
 
         $userprograms = array();
         foreach($results as $result){
@@ -37,13 +35,11 @@ class DisplayUserProgram extends connect
     }
 
     public function displayMondayProgram(){
-        $database = new connect();
-        $conn = $database->getConnection();
-        $stmt = $conn ->prepare("SELECT exc_name, exc_series,exc_reps,name_train,day  FROM users_plans WHERE username =:username  AND day ='monday'");
+
+        $stmt = $this->conn ->prepare("SELECT exc_name, exc_series,exc_reps,name_train,day  FROM users_plans WHERE username =:username  AND day ='monday'");
         $stmt ->bindParam(":username", $_SESSION['username']);
         $stmt ->execute();
         $results = $stmt ->fetchAll();
-        $database->closeConnection();
         $mondayPrograms = array();
         foreach($results as $result){
             $mondayProgram = new self();
@@ -60,13 +56,11 @@ class DisplayUserProgram extends connect
     }
 
     public function displayTuesdayProgram(){
-        $database = new connect();
-        $conn = $database->getConnection();
-        $stmt = $conn ->prepare("SELECT exc_name, exc_series,exc_reps,name_train,day FROM users_plans WHERE username =:username  AND day ='tuesday'");
+
+        $stmt = $this->conn ->prepare("SELECT exc_name, exc_series,exc_reps,name_train,day FROM users_plans WHERE username =:username  AND day ='tuesday'");
         $stmt ->bindParam(":username", $_SESSION['username']);
         $stmt ->execute();
         $results = $stmt ->fetchAll();
-        $database->closeConnection();
         $tuesdayPrograms = array();
         foreach($results as $result){
             $tuesdayProgram = new self();
@@ -84,13 +78,11 @@ class DisplayUserProgram extends connect
 
     public function displayWednesdayProgram()
     {
-        $database = new connect();
-        $conn = $database->getConnection();
-        $stmt = $conn->prepare("SELECT  exc_name, exc_series,exc_reps,name_train,day FROM users_plans WHERE username =:username  AND day ='wednesday'");
+
+        $stmt = $this->conn->prepare("SELECT  exc_name, exc_series,exc_reps,name_train,day FROM users_plans WHERE username =:username  AND day ='wednesday'");
         $stmt->bindParam(":username", $_SESSION['username']);
         $stmt->execute();
         $results = $stmt->fetchAll();
-        $database->closeConnection();
         $wednesdayPrograms = array();
         foreach ($results as $result) {
             $wednesdayProgram = new self();
@@ -107,13 +99,11 @@ class DisplayUserProgram extends connect
     }
         public function displayThursdayProgram()
         {
-            $database = new connect();
-            $conn = $database->getConnection();
-            $stmt = $conn->prepare("SELECT exc_name, exc_series,exc_reps,name_train,day  FROM users_plans WHERE username =:username  AND day ='thursday'");
+
+            $stmt = $this->conn->prepare("SELECT exc_name, exc_series,exc_reps,name_train,day  FROM users_plans WHERE username =:username  AND day ='thursday'");
             $stmt->bindParam(":username", $_SESSION['username']);
             $stmt->execute();
             $results = $stmt->fetchAll();
-            $database->closeConnection();
             $thursdayPrograms = array();
             foreach ($results as $result) {
                 $thursdayProgram = new self();
@@ -130,13 +120,12 @@ class DisplayUserProgram extends connect
 
             public function displayFridayProgram()
             {
-                $database = new connect();
-                $conn = $database->getConnection();
-                $stmt = $conn->prepare("SELECT exc_name, exc_series,exc_reps,name_train,day FROM users_plans WHERE username =:username  AND day ='friday'");
+
+                $stmt = $this->conn->prepare("SELECT exc_name, exc_series,exc_reps,name_train,day FROM users_plans WHERE username =:username  AND day ='friday'");
                 $stmt->bindParam(":username", $_SESSION['username']);
                 $stmt->execute();
                 $results = $stmt->fetchAll();
-                $database->closeConnection();
+
                 $fridayPrograms = array();
                 foreach ($results as $result) {
                     $fridayProgram = new self();
@@ -153,13 +142,11 @@ class DisplayUserProgram extends connect
 
                 public function displaySaturdayProgram()
                 {
-                    $database = new connect();
-                    $conn = $database->getConnection();
-                    $stmt = $conn->prepare("SELECT exc_name, exc_series,exc_reps,name_train,day FROM users_plans WHERE username =:username  AND day ='saturday'");
+
+                    $stmt = $this->conn->prepare("SELECT exc_name, exc_series,exc_reps,name_train,day FROM users_plans WHERE username =:username  AND day ='saturday'");
                     $stmt->bindParam(":username", $_SESSION['username']);
                     $stmt->execute();
                     $results = $stmt->fetchAll();
-                    $database->closeConnection();
                     $saturdayPrograms = array();
                     foreach ($results as $result) {
                         $saturdayProgram = new self();
@@ -176,13 +163,10 @@ class DisplayUserProgram extends connect
                 }
                     public function displaySundayProgram()
                     {
-                        $database = new connect();
-                        $conn = $database->getConnection();
-                        $stmt = $conn->prepare("SELECT exc_name, exc_series,exc_reps,name_train,day FROM users_plans WHERE username =:username  AND day ='sunday'");
+                        $stmt = $this->conn->prepare("SELECT exc_name, exc_series,exc_reps,name_train,day FROM users_plans WHERE username =:username  AND day ='sunday'");
                         $stmt->bindParam(":username", $_SESSION['username']);
                         $stmt->execute();
                         $results = $stmt->fetchAll();
-                        $database->closeConnection();
                         $sundayPrograms = array();
                         foreach ($results as $result) {
                             $sundayProgram = new self();
