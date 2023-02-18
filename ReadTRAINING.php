@@ -7,9 +7,8 @@ include("DropList.php");
 
 
 $id = isset($_GET['id']) ? $_GET['id'] : 0;
-$dataBase = new connect();
-$conn = $dataBase ->getConnection();
-$stmt = $conn->prepare("SELECT * FROM recomennded where id = :id");
+
+$stmt = $this->conn->prepare("SELECT * FROM recomennded where id = :id");
 $stmt->bindParam(':id', $id);
 $stmt->execute();
 while ($result = $stmt->fetch()) {
