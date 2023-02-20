@@ -1,9 +1,9 @@
 <?php
 include("navbar.php");
 include("DropList.php");
-include("database/DisplayFBW.php");
+include("database/DisplayTraining.php");
 
-$display = new DisplayFBW();
+$display = new DisplayTraining();
 
 $displayFBW = $display->displayFBW();
 

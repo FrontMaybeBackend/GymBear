@@ -53,8 +53,7 @@ include("DropList.php");
                     <p class="card-text"></p>
                 </div>
                     <footer class="card-footer">
-                    <a class="secondary-link d-flex btn btn-dark align-items-center justify-content-center" href="chest.php?type=chest">Klatka piersiowa</a>
-                    </footer>
+                        <a class="secondary-link d-flex btn btn-dark align-items-center justify-content-center" href="chest.php?type=chest">Chest</a>
 
             </div>
         </div>

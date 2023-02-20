@@ -27,6 +27,7 @@ class UserProgramControl extends \UserProgramConfig
     private $errorMessages = array(
         "name" => "name is required",
         "radio" => "at least one exercise",
+        "session" => "to add exercises you must have account.",
 
 
     );
@@ -40,7 +41,11 @@ class UserProgramControl extends \UserProgramConfig
             return $this->errorMessages['radio'];
             $result = false;
     */
-        }if($result == true){
+        }if($this->userValidaiton() == false){
+            return $this->errorMessages['session'];
+            $result = false;
+        }
+        if($result == true){
             $this->addUserPrograms($this->name,$this->exercises,$this->repUser,$this->nameExc,$this->dayTrain);
 
         }
@@ -48,6 +53,14 @@ class UserProgramControl extends \UserProgramConfig
     public function nameValidation(){
         $result = true;
         if(empty($this->name)) {
+            $result = false;
+        }
+        return $result;
+    }
+
+    public function userValidaiton(){
+        $result = true;
+        if(!isset($_SESSION['username'])){
             $result = false;
         }
         return $result;

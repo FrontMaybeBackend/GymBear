@@ -1,9 +1,9 @@
 <?php
 include("navbar.php");
 include("DropList.php");
-include("database/DisplayUPL.php");
+include("database/DisplayTraining.php");
 
-$display = new DisplayUPL();
+$display = new DisplayTraining();
 
 $displayUL = $display->displayUL();
 
