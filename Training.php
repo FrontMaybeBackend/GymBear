@@ -5,7 +5,7 @@ include("database/DisplayUserProgram.php");
 
  $displayProgram = new DisplayUserProgram();
 
- $dis = $displayProgram->displayUserProgram();
+ $dis = $displayProgram->displayProgram();
 
 ?>
 
