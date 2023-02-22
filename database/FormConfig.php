@@ -13,7 +13,12 @@ class FormConfig extends connect
        $stmt->bindParam(2,$titleForm,PDO::PARAM_STR);
        $stmt->bindParam(3,$img, PDO::PARAM_LOB);
        $stmt->execute();
+       echo '<p style="color:white; text-align: center">I was able to add a program :)</p>';
+       ?>
+       <a class="text-decoration-none" href="RecommendedProgramms.php" style="color:white; display: flex; justify-content: center">  <p class ="text-uppercase"> Click here to back :)</a></p>
+       <?php
        exit();
+
    }
 
    public function addDietToDataBase($titleForm, $body, $img){

@@ -56,7 +56,7 @@ $displayFat = $displayFats->displayFats();
                         <?php echo $diet->mainDiet ?>
                 </div>
                 <div class="card-footer">
-                    <a id="readMore" class="btn btn-link link-dark p-md-1 my-1" data-mdb-toggle="collapse" href="ReadTRAINING.php?id=<?php echo $diet->idFAT; ?>" role="button" aria-expanded="false" aria-controls="collapseContent">Read more</a>
+                    <a id="readMore" class="btn btn-link link-dark p-md-1 my-1" data-mdb-toggle="collapse" href="ReadDIET.php?id=<?php echo $diet->idFAT; ?>" role="button" aria-expanded="false" aria-controls="collapseContent">Read more</a>
                 </div>
             </div>
         </section>
