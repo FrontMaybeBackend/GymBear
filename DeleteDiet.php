@@ -1,7 +1,7 @@
 <?php
 
-include_once("navbar.php");
-include_once("DropList.php");
+include_once("navbaro.php");
+
 
 include_once("database/DeleteProgramConfig.php");
 

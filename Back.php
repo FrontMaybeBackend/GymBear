@@ -3,8 +3,8 @@
 
 
 
-include("navbar.php");
-include("DropList.php");
+include("navbaro.php");
+
 include("classes/Exercises.php");
 include("classes/UserProgramControl.php");
 
@@ -22,10 +22,12 @@ if(isset($_POST['Compose'])){
     $repUser = '';
     $nameExc = '';
     $dayTrain = $_POST['day'];
-    foreach ($_POST['exercise'] as $exerciseName) {
-        $programUser .= $_POST['exercise_series'][$exerciseName] . ',';
-        $repUser .= $_POST['exercise_rep'][$exerciseName] . ',';
-        $nameExc .= $exerciseName . ',';
+    if(isset($_POST['exercise'])) {
+        foreach ($_POST['exercise'] as $exerciseName) {
+            $programUser .= $_POST['exercise_series'][$exerciseName] . ',';
+            $repUser .= $_POST['exercise_rep'][$exerciseName] . ',';
+            $nameExc .= $exerciseName . ',';
+        }
     }
     $programUser = rtrim($programUser, ',');
     $repUser = rtrim($repUser, ',');
@@ -45,10 +47,20 @@ if(isset($_POST['Compose'])){
 
 
 
-<html>
-<Body>
+    <!DOCTYPE html>
+    <html lang=" en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="Exercises.css">
+        <title>Document</title>
+    </head>
+    <body>
+
 
 <form method="POST" id="programUser" name="programUser">
+    <div class="table-container">
     <table class="table">
         <thead>
         <tr>
@@ -107,7 +119,8 @@ if(isset($_POST['Compose'])){
         </tbody>
     </table>
     <button class="p-2  m-3 align-content-end d-flex" type="submit" name="Compose" >Compose Workout</button>
+    </div>
 </form>
-</Body>
+</body>
 </html>
 <?php include("footer.php");?>

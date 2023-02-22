@@ -1,7 +1,6 @@
 <?php
 
-include("navbar.php");
-include("DropList.php");
+include("navbaro.php");
 include("database/DisplayTraining.php");
 
 ?>
@@ -14,6 +13,11 @@ include("database/DisplayTraining.php");
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .text-center{
+            color: white;
+        }
+    </style>
 </head>
 <body>
 
@@ -45,7 +49,7 @@ include("database/DisplayTraining.php");
                         </p>
                     </div>
                 </div>
-                <div class="bg-image hover-overlay ripple rounded-0" data-mdb-ripple-color="light">
+                <div class=" hover-overlay ripple rounded-0" data-mdb-ripple-color="light">
                     <img class="img-fluid" src="./images/<?php echo $recommendeds->img; ?>" width="100%" height="50%" alt="Card image cap" />
                     <a href="#!">
                         <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>

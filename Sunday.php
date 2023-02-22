@@ -1,6 +1,6 @@
 <?php
-include("navbar.php");
-include("DropList.php");
+include("navbaro.php");
+
 include("database/DisplayUserProgram.php");
 
 $displaySunday = new DisplayUserProgram();
@@ -13,6 +13,7 @@ $disSunday = $displaySunday->displaySundayProgram();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="Exercises.css">
     <title>Document</title>
     <meta name=”viewport” content="width=device-width, initial-scale=1.0">
 
@@ -22,9 +23,9 @@ $disSunday = $displaySunday->displaySundayProgram();
 
 
 
-<p class="text-uppercase d-flex justify-content-center"> Tuesday Training:</p>
+<p class="text-uppercase d-flex justify-content-center" style="color:white"> Tuesday Training:</p>
 
-<div class="container d-flex flex-row flex-wrap justify-content-between"">
+<div class="table-container d-flex flex-row flex-wrap justify-content-between"">
 <?php foreach($disSunday as $sundayPrograms): ?>
     <table class="table table-dark table-bordered  table-responsive " ">
     <thead >

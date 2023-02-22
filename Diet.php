@@ -1,7 +1,7 @@
 <?php
 include("database/connect.php");
-include("navbar.php");
-include("DropList.php");
+include("navbaro.php");
+
 
 
 

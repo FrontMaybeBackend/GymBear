@@ -1,6 +1,6 @@
 <?php
-include("navbar.php");
-include("DropList.php");
+include("navbaro.php");
+
 include("database/DisplayDiets.php");
 
 $displayFats = new DisplayDiets();
@@ -19,6 +19,11 @@ $displayFat = $displayFats->displayFats();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .text-center{
+            color: white;
+        }
+    </style>
 </head>
 <body>
 
@@ -49,10 +54,9 @@ $displayFat = $displayFats->displayFats();
                 <div class="card-body">
                     <p class="card-text collapse" id="collapseContent">
                         <?php echo $diet->mainDiet ?>
-                    </p>
-                    <div class="d-flex justify-content-between">
-                        <a id="readMore" class="btn btn-link link-dark p-md-1 my-1" data-mdb-toggle="collapse" href="ReadDIET.php?id=<?php echo $diet->idFAT; ?>" role="button" aria-expanded="false" aria-controls="collapseContent">Read more</a>
-                    </div>
+                </div>
+                <div class="card-footer">
+                    <a id="readMore" class="btn btn-link link-dark p-md-1 my-1" data-mdb-toggle="collapse" href="ReadTRAINING.php?id=<?php echo $diet->idFAT; ?>" role="button" aria-expanded="false" aria-controls="collapseContent">Read more</a>
                 </div>
             </div>
         </section>

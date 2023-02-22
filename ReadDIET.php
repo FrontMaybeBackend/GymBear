@@ -1,8 +1,8 @@
 <?php
 
 include("database/connect.php");
-include("navbar.php");
-include("DropList.php");
+include("navbaro.php");
+
 
 
 
@@ -19,7 +19,7 @@ while ($result = $stmt->fetch()) {
     ?> <img class="img-fluid rounded mx-auto d-block h-100 w-75" src="./images/<?php echo $result['img'] ?>" alt="Card image cap" />
     <?php
     ?>
-    <p class="text-lg-center p-2 m-3 " style="font-family: 'PT Serif', serif;" ><?php echo nl2br($result['diet']); ?></p>
+    <p class="text-lg-center p-2 m-3 " style="font-family: 'PT Serif', serif;color:white" ><?php echo nl2br($result['diet']); ?></p>
     <?php
 
 

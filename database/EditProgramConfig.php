@@ -20,9 +20,9 @@ class EditProgramConfig extends connect
         $stmt->bindParam(':programs', $programs);
         $stmt->bindParam(':id', $training_id);
         $stmt->execute();
-        echo "Good job, you edit this program ;)";
+        echo '<p style="color:white; text-align: center">Good job, you edit this program ;)</p>';
         ?>
-        <a class="text-decoration-none" href="/xampp/GymBear/RecommendedProgramms.php" style="color:black">  <p class ="text-uppercase"> Click here to back :)</a></p>
+        <a class="text-decoration-none" href="/xampp/GymBear/RecommendedProgramms.php" style="color:white; display: flex; justify-content: center">  <p class ="text-uppercase"> Click here to back :)</a></p>
         <?php
         exit();
     }
@@ -44,9 +44,9 @@ class EditProgramConfig extends connect
         $stmt->bindParam(':diet', $diet);
         $stmt->bindParam(':id', $diet_id);
         $stmt->execute();
-        echo "Good job, you edit this program ;)";
+        echo '<p style="color:white; text-align: center">Good job, you edit this program ;)</p>';
         ?>
-        <a class="text-decoration-none" href="/xampp/GymBear/RecommendedProgramms.php" style="color:black">  <p class ="text-uppercase"> Click here to back :)</a></p>
+        <a class="text-decoration-none" href="/xampp/GymBear/RecommendedProgramms.php" style="color:white; display: flex; justify-content: center">  <p class ="text-uppercase"> Click here to back :)</a></p>
         <?php
         exit();
     }
@@ -71,9 +71,9 @@ class EditProgramConfig extends connect
         $stmt->bindParam(':body', $supp);
         $stmt->bindParam(':id', $supp_id);
         $stmt->execute();
-        echo "Good job, you edit this program ;)";
+        echo '<p style="color:white; text-align: center">Good job, you edit this program ;)</p>';
         ?>
-        <a class="text-decoration-none" href="/xampp/GymBear/RecommendedProgramms.php" style="color:black">  <p class ="text-uppercase"> Click here to back :)</a></p>
+        <a class="text-decoration-none" href="/xampp/GymBear/RecommendedProgramms.php" style="color:white; display: flex; justify-content: center">  <p class ="text-uppercase"> Click here to back :)</a></p>
         <?php
         exit();
     }

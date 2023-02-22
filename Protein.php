@@ -1,7 +1,7 @@
 
 <?php
-include("navbar.php");
-include("DropList.php");
+include("navbaro.php");
+
 include("database/DisplaySupplements.php");
 
 $displayProtein = new DisplaySupplements();
@@ -20,6 +20,11 @@ $displayPro = $displayProtein->displayProtein();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .text-center{
+            color: white;
+        }
+    </style>
 </head>
 <body>
 

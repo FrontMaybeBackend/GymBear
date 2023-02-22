@@ -8,9 +8,10 @@
     <title>Wylogowano</title>
 </head>
 <body>
-<?php include("navbar.php"); ?>
-<?php include("DropList.php"); ?>
-<p class=" text-center">Logout successful!</p>
+<?php include("navbaro.php"); ?>
+
+<p class="text-uppercase text-center" style="color: white">Logout successful!</p>
+<?php include("footer.php")?>
 </body>
 </html>
 

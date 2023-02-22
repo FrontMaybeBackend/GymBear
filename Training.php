@@ -1,6 +1,5 @@
 <?php
-include("navbar.php");
-include("DropList.php");
+include("navbaro.php");
 include("database/DisplayUserProgram.php");
 
  $displayProgram = new DisplayUserProgram();
@@ -16,15 +15,21 @@ include("database/DisplayUserProgram.php");
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="Exercises.css">
     <title>Document</title>
+    <style>
+     p{
+         color:white;
+     }
+    </style>
 </head>
 <body>
 
-<p class="text-uppercase d-flex justify-content-center"> My Programs:</p>
+<p class="text-uppercase d-flex justify-content-center "> My Programs:</p>
 
-<div class="container d-flex flex-row flex-wrap justify-content-between"">
+<div class="table-container "">
     <?php foreach($dis as $userprograms): ?>
-        <table class="table table-dark table-bordered  table-responsive " ">
+        <table class="table table-dark table-bordered " ">
             <thead >
             <tr >
                 <th scope="col" class="text-center" style="width: 20%">Name</th>

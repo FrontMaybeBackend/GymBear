@@ -1,6 +1,4 @@
 <?php
-
-
 ?>
 
 <!DOCTYPE html>
@@ -13,16 +11,18 @@
     <title>Document</title>
     <meta name=”viewport” content="width=device-width, initial-scale=1.0">
 
+<style>
 
+</style>
 </head>
 
 <body>
 <footer
-    class="text-center text-lg-start text-white bg-dark"
+    class="text-center text-lg-start text-white bg-dark "
 
 >
     <!-- Grid container -->
-    <div class="container p-4 pb-0">
+    <div class="container-fluid ">
         <!-- Section: Links -->
         <section class="">
             <!--Grid row-->
@@ -56,22 +56,11 @@
                         <a class="text-white">API ninjas</a>
                     </p>
                 </div>
-                <!-- Grid column -->
 
-                <hr class="w-100 clearfix d-md-none" />
 
-                <!-- Grid column -->
-                <hr class="w-100 clearfix d-md-none" />
 
-                <!-- Grid column -->
-
-                <!-- Grid column -->
-
-                <!-- Grid column -->
-
-            <!--Grid row-->
         </section>
-        <!-- Section: Links -->
+
     </div>
     <!-- Grid container -->
 

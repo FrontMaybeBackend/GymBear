@@ -1,6 +1,6 @@
 <?php
-include("navbar.php");
-include("DropList.php");
+include("navbaro.php");
+
 
 
 
@@ -65,7 +65,7 @@ include("DropList.php");
                     <p class="card-text"></p>
                 </div>
                     <footer class="card-footer">
-                    <a class="secondary-link d-flex btn btn-dark align-items-center justify-content-center" href="Abs.php?type=abdominus">Brzuch</a>
+                    <a class="secondary-link d-flex btn btn-dark align-items-center justify-content-center" href="Abs.php?type=abdominus">Abs</a>
                     </footer>
 
             </div>

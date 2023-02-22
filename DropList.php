@@ -16,16 +16,18 @@
     <script src="js/bootstrap.bundle.js"> </script>
     <meta name=”viewport” content="width=device-width, initial-scale=1.0">
 </head>
+<style>
 
+    </style>
 <body>
 
-    <div class="dropdown bg-dark " >
+    <div class="dropdown bg-dark dropdown-menu-lg-end " >
 
         <button id="recPrograms" class="btn  dropdown-toggle-split m-3 text-center text-nowrap" style="width: 12rem; color:white" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
             Recomended Programs
         </button>
 
-        <ul class=" dropdown-menu text-center btn-sm bg-dark" aria-labelledby="dropdownMenu2">
+        <ul class=" dropdown-menu  text-center btn-sm bg-dark" aria-labelledby="dropdownMenu2">
             <li><a class="dropdown-item text-uppercase"  style="color:white" href="PushPullLegs.php" value="Push Pull Legs">Push Pull Legs</a></li>
                 <li><a class="dropdown-item text-uppercase"  href="UpperLower.php" style="color:white" value="Upper Lower">Upper Lower</a></li>
                 <li><a class="dropdown-item text-uppercase" href="FullBodyWorkout.php" style="color:white" value="Full Body Workout"> Full Body Workout</a></li>

@@ -1,28 +1,16 @@
 <?php
 
+include("navbaro.php");
 
-
-
-include("navbar.php");
-include("DropList.php");
 include("database/DisplayRecomennded.php");
 include("classes/Calculator.php");
-
-
-
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$monday = $_POST["monday"];
 }
 
-
-
-
-
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,15 +20,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
 	<meta name=”viewport” content="width=device-width, initial-scale=1.0">
-
-
-</head>
-
+    </head>
 <body>
 
-
-
-    <div class="container-fluid d-flex justify-content-between p-2 row w-25" >
+    <div class="btn-group-vertical p-2" role="group" aria-label="Basic example" >
         <button type="button"  class="btn btn-dark "> <a class="text-decoration-none text-light" href="Monday.php" >Monday</a></button>
         <button type="button" class="btn btn-dark "> <a class="text-decoration-none text-light" href="Tuesday.php" >Tuesday</a></button>
         <button type="button" class="btn btn-dark "> <a  class="text-decoration-none text-light"href="Wednesday.php" >Wednesday</a></button>
@@ -49,14 +32,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <button type="button" class="btn btn-dark "> <a class="text-decoration-none text-light" href="Saturday.php" >Saturday</a></button>
         <button type="button" class="btn btn-dark "><a class="text-decoration-none text-light" href="Sunday.php" >Sunday</a></button>
     </div>
-
-
-
-
-
-
-
+<?php include_once("footer.php")?>
 </body>
-<?php include("footer.php");?>
+
 </html>
 

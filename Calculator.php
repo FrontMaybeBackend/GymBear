@@ -1,7 +1,7 @@
 <?php
 
-include("navbar.php");
-include("DropList.php");
+include("navbaro.php");
+
 
 
 
@@ -31,7 +31,11 @@ if(isset($_POST['Calculate'])){
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="Main_style.css">
     <meta name=”viewport” content="width=device-width, initial-scale=1.0">
-
+    <style>
+        .form-label{
+            color: white;
+        }
+    </style>
 </head>
 
 <form id = "4" method="POST" >

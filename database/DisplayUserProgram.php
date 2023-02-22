@@ -13,11 +13,13 @@ class DisplayUserProgram extends connect
 
     public $dayTrain;
     public function displayProgram(){
-
-        $stmt = $this->conn ->prepare("SELECT exc_name,exc_series,exc_reps,name_train,day FROM users_plans WHERE username =:username");
+        $database = new connect();
+        $conn = $database->getConnection();
+        $stmt = $conn ->prepare("SELECT exc_name,exc_series,exc_reps,name_train,day FROM users_plans WHERE username =:username");
         $stmt ->bindParam(":username", $_SESSION['username']);
         $stmt ->execute();
         $results = $stmt ->fetchAll();
+        $database ->closeConnection();
 
         $userprograms = array();
         foreach($results as $result){

@@ -1,0 +1,50 @@
+.table{
+    color:white;
+
+
+}
+
+
+/* Dla kontenera tabeli */
+.table-container {
+    overflow-x: auto;
+}
+
+/* Dla tabeli */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    white-space: nowrap;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+/* Dodatkowy styl dla wierszy nagłówka tabeli */
+tr.header-row th {
+    background-color: #ddd;
+    position: sticky;
+    top: 0;
+}
+
+/* Dodatkowy styl dla ostatniej kolumny z przyciskami */
+td:last-child {
+    text-align: center;
+}
+
+label{
+    color:white;
+}
+
+.error{
+    color:red;
+    text-align: center;
+}

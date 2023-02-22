@@ -17,7 +17,7 @@ class UserProgramConfig extends connect
                 $stmt->bindParam(6, $dayTrain);
                 $stmt->execute();
                 //komunikat po zakończeniu dodawania ćwiczeń
-                echo "Exercise added successfully!";
+                echo '<p style="color:white">Exercise added successfully!</p>';
 
         }
 

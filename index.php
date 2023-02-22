@@ -1,8 +1,7 @@
 <?php
 
 
-include("navbar.php");
-include("DropList.php");
+include("navbaro.php");
 include("database/DisplayRecomennded.php");
 include("classes/Calculator.php");
 

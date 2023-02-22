@@ -1,10 +1,10 @@
 <?php
 
-include_once("navbar.php");
+include_once("navbaro.php");
 include_once("database/DisplayRecomennded.php");
 include_once("classes/DietFormControl.php");
 include_once("classes/SupplementsFormControl.php");
-include("DropList.php");
+
 
 
 
@@ -87,6 +87,14 @@ if(isset($_POST['sendSupp'])){
             color:inherit;
 
         }
+        .text-center{
+            color:white;
+        }
+
+       label{
+           color:white;
+       }
+
     </style>
 </head>
 
@@ -110,7 +118,7 @@ if(isset($_POST['sendSupp'])){
                     </p>
                 </div>
             </div>
-            <div class="bg-image hover-overlay ripple rounded-0" data-mdb-ripple-color="light">
+            <div class=" hover-overlay ripple rounded-0" data-mdb-ripple-color="light">
                 <img class="img-fluid" src="./images/<?php echo $recommendeds->img; ?>" width="100%" height="50%" alt="Card image cap" />
                 <a href="#">
                     <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
@@ -143,26 +151,23 @@ if(isset($_POST['sendSupp'])){
 
 ?>
 <button type="button" id = "btn2" class="btn btn-secondary">AddWorkout</button>
-<form id="form2" method="POST">
-    <?php
-    if(isset($checkForm)) {
-    echo  '<div class="error">' . $checkForm . '</div>';
-    }
-    ?>
-    <div id="titlePrograms" class="form-floating-mb-3" >
-        <input name="titlePrograms" type="text" class="form-control" id="titlePrograms" placeholder="Title" style="width:50%;">
-    </div>
-    <div id="imgPrograms" class="form-floating-mb-3" >
-        <input name="imgPrograms" type="file" class="form-control" id="imgPrograms" Value="upload" style="width:50%;">
+    <div class="form-outline">
+        <form id="form2" method="POST">
+            <?php
+            if(isset($checkForm)) {
+                echo  '<div class="error">' . $checkForm . '</div>';
+            }
+            ?>
+            <label class="form-label p-3" for="textAreaExample1"><strong>Title:</strong></label>
+            <textarea class="form-control p-4" id="textAreaExample1" rows="5" name="titlePrograms"></textarea>
+            <label class="form-label p-3 " for="textAreaExample2"><strong>Content:</strong></label>
+            <textarea class="form-control p-4 w-100" id="textAreaExample2" rows="15" name="bodyPrograms"></textarea>
+            <label class="form-label p-3" for="img"><strong>IMG:</strong></label>
+            <input name="imgPrograms" type="file" id="img" class="form-control" name="imgPrograms" Value="upload">
+            <button class="p-2  m-3 align-content-end d-flex" name="sendPrograms" type="submit">Add</button>
+        </form>
     </div>
 
-    <div id="bodyPrograms">
-        <label for="bodyPrograms"></label><br>
-        <textarea id="bodyPrograms" name="bodyPrograms" rows="15" cols="100" placeholder="Text"></textarea>
-
-            <input id="sendPrograms" name="sendPrograms" type="submit" value="sendPrograms">
-    </div>
-</form>
 <?php } ?>
 <hr>
 
@@ -183,7 +188,7 @@ if(isset($_POST['sendSupp'])){
                         </p>
                     </div>
                 </div>
-                <div class="bg-image hover-overlay ripple rounded-0" data-mdb-ripple-color="light">
+                <div class=" hover-overlay ripple rounded-0" data-mdb-ripple-color="light">
                     <img class="img-fluid" src="./images/<?php echo $diet->imgDiet; ?>" width="100%" height="50%" alt="Card image cap" />
                     <a href="#!">
                         <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
@@ -214,63 +219,30 @@ if(isset($_POST['sendSupp'])){
 
     ?>
 <button type="submit" name="addDietButton"  id ="btn" class="btn btn-secondary">AddDiet</button>
-<form id="form" method="POST">
-    <?php
-    if(isset($checkFormDiet)) {
-        echo  '<div class="error">' . $checkFormDiet . '</div>';
-    }
-    ?>
-    <div id="titleDiet" class="form-floating-mb-3" >
-        <input name="titleDiet" type="text" class="form-control" id="titleDiet" placeholder="Title" style="width:50%;">
-    </div>
-    <div id="imgDiet" class="form-floating-mb-3" >
-        <input name="imgDiet" type="file" class="form-control" id="imgDiet" Value="upload" style="width:50%;">
-    </div>
-
-    <div id="text">
-        <label for="bodyDiet"></label><br>
-        <textarea id="bodyDiet" name="bodyDiet" rows="15" cols="100" placeholder="Text"></textarea>
-
-        <form method="POST">
-            <input id="sendDiet" name="sendDiet" type="submit" value="sendDiet">
+    <div class="form-outline">
+        <form id="form" method="POST">
+            <?php
+            if(isset($checkFormDiet)) {
+                echo  '<div class="error">' . $checkFormDiet . '</div>';
+            }
+            ?>
+            <label class="form-label p-3" for="textAreaExample1"><strong>Title:</strong></label>
+            <textarea class="form-control p-4" id="textAreaExample1" rows="5" name="titleDiet"></textarea>
+            <label class="form-label p-3 " for="textAreaExample2"><strong>Content:</strong></label>
+            <textarea class="form-control p-4 w-100" id="textAreaExample2" rows="15" name="bodyDiet"></textarea>
+            <label class="form-label p-3" for="img"><strong>IMG:</strong></label>
+            <input  type="file" id="img" class="form-control" name="imgDiet" Value="upload">
+            <button class="p-2  m-3 align-content-end d-flex" name="sendDiet" type="submit">Add</button>
         </form>
+    </div>
 
-</div>
-</form>
 <?php } ?>
 
 
 <hr>
 <h4 class = "text-center"> Recommended Supplements</h4>
 
-<?php if (isset($_SESSION["username"]) && $_SESSION["username"] === 'adminadmin') {
 
-    ?>
-<button type="submit" name="addSuppButton"  id ="btn3" class="btn btn-secondary">AddSupp</button>
-
-<form id="form3" method="POST">
-    <?php
-    if(isset($checkFormSupp))  {
-        echo  '<div class="error">' . $checkFormSupp . '</div>';
-    }
-    ?>
-    <div id="titleSupp" class="form-floating-mb-3" >
-        <input name="titleSupp" type="text" class="form-control" id="titleSupp" placeholder="Title" style="width:50%;">
-    </div>
-    <div id="imgSupp" class="form-floating-mb-3" >
-        <input name="imgSupp" type="file" class="form-control" id="imgSupp" Value="upload" style="width:50%;">
-    </div>
-
-    <div id="text">
-        <label for="bodySupp"></label><br>
-        <textarea id="bodySupp" name="bodySupp" rows="15" cols="100" placeholder="Text"></textarea>
-
-        <form method="POST">
-            <input id="sendSupp" name="sendSupp" type="submit" value="sendSupp">
-        </form>
-    </div>
-</form>
-<?php } ?>
 
 <div class="container d-flex flex-row flex-wrap justify-content-between">
     <?php foreach($displaySupp as $supplementss): ?>
@@ -288,7 +260,7 @@ if(isset($_POST['sendSupp'])){
                         </p>
                     </div>
                 </div>
-                <div class="bg-image hover-overlay ripple rounded-0" data-mdb-ripple-color="light">
+                <div class=" hover-overlay ripple rounded-0" data-mdb-ripple-color="light">
                     <img class="img-fluid" src="./images/<?php echo $supplementss->imgSupp; ?>" width="100%" height="50%" alt="Card image cap" />
                     <a href="#">
                         <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
@@ -314,6 +286,31 @@ if(isset($_POST['sendSupp'])){
 
     <?php endforeach; ?>
 </div>
+
+<?php if (isset($_SESSION["username"]) && $_SESSION["username"] === 'adminadmin') {
+
+    ?>
+    <button type="submit" name="addSuppButton"  id ="btn3" class="btn btn-secondary">AddSupp</button>
+        <div class="form-outline">
+            <form id="form3" method="POST">
+                <?php
+                if(isset($checkFormSupp))  {
+                    echo  '<div class="error">' . $checkFormSupp . '</div>';
+                }
+                ?>
+                <label class="form-label p-3" for="textAreaExample1"><strong>Title:</strong></label>
+                <textarea class="form-control p-4" id="textAreaExample1" rows="5" name="titleSupp"></textarea>
+                <label class="form-label p-3 " for="textAreaExample2"><strong>Content:</strong></label>
+                <textarea class="form-control p-4 w-100" id="textAreaExample2" rows="15" name="bodySupp"></textarea>
+                <label class="form-label p-3" for="img"><strong>IMG:</strong></label>
+                <input  type="file" id="img" class="form-control" name="imgSupp" Value="upload">
+                <button class="p-2  m-3 align-content-end d-flex" name="sendSupp" type="submit">Add</button>
+            </form>
+        </div>
+
+
+<?php } ?>
+
 </body>
 <script
 

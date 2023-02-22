@@ -1,6 +1,6 @@
 <?php
-include("navbar.php");
-include("DropList.php");
+include("navbaro.php");
+
 include("database/DisplayDiets.php");
 
 $displayCarbs = new DisplayDiets();
@@ -20,6 +20,11 @@ $displayCarb = $displayCarbs->displayCarbs();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="carbs.css">
     <title>Document</title>
+    <style>
+        .text-center{
+            color: white;
+        }
+    </style>
 </head>
 <body>
 
@@ -53,10 +58,10 @@ $displayCarb = $displayCarbs->displayCarbs();
                     <p class="card-text collapse" id="collapseContent">
                         <?php echo $diet->mainDiet ?>
                     </p>
-                    <div class="d-flex justify-content-between">
+                </div>
+                    <div class="card-footer">
                         <a id="readMore" class="btn btn-link link-dark p-md-1 my-1" data-mdb-toggle="collapse" href="ReadDIET.php?id=<?php echo $diet->idCARB; ?>" role="button" aria-expanded="false" aria-controls="collapseContent">Read more</a>
                     </div>
-                </div>
             </div>
         </section>
     <?php endforeach; ?>

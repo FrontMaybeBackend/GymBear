@@ -1,6 +1,6 @@
 <?php
-include("navbar.php");
-include("DropList.php");
+include("navbaro.php");
+
 include("database/DisplayTraining.php");
 
 $display = new DisplayTraining();
@@ -19,6 +19,11 @@ $displayFBW = $display->displayFBW();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .text-center{
+            color: white;
+        }
+    </style>
 </head>
 <body>
 
@@ -50,9 +55,9 @@ $displayFBW = $display->displayFBW();
                     <p class="card-text collapse" id="collapseContent">
                         <?php echo $recommendeds->programms ?>
                     </p>
-                    <div class="d-flex justify-content-between">
-                        <a id="readMore" class="btn btn-link link-dark p-md-1 my-1" data-mdb-toggle="collapse" href="ReadTRAINING.php?id=<?php echo $recommendeds->idFBW; ?>" role="button" aria-expanded="false" aria-controls="collapseContent">Read more</a>
-                    </div>
+                </div>
+                <div class="card-footer">
+                    <a id="readMore" class="btn btn-link link-dark p-md-1 my-1" data-mdb-toggle="collapse" href="ReadTRAINING.php?id=<?php echo $recommendeds->idFBW; ?>" role="button" aria-expanded="false" aria-controls="collapseContent">Read more</a>
                 </div>
             </div>
 

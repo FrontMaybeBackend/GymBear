@@ -1,7 +1,7 @@
 <?php
 
-include_once("navbar.php");
-include_once("DropList.php");
+include("navbaro.php");
+
 include_once("database/DeleteProgramConfig.php");
  $delete = new DeleteProgramConfig();
 $delete_train  =$delete->deleteProgram();
@@ -22,7 +22,5 @@ $delete_train  =$delete->deleteProgram();
 <body>
 
 </body>
+
 </html>
-<?php
-include_once("footer.php");
-?>
