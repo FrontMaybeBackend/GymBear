@@ -1,6 +1,6 @@
 <?php
-include("database/connect.php");
-include("navbaro.php");
+include("../../../database/Connect.php");
+include("../../public/navbaro.php");;
 
 
 
@@ -9,7 +9,7 @@ include("navbaro.php");
 $id = isset($_GET['id']) ? $_GET['id'] : 0;
 $database = new connect();
 $conn = $database ->getConnection();
-$stmt = $conn->prepare("SELECT * FROM recomennded where id = :id");
+$stmt = $conn->prepare("SELECT * FROM recommended where id = :id");
 $stmt->bindParam(':id', $id);
 $stmt->execute();
 while ($result = $stmt->fetch()) {

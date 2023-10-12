@@ -39,7 +39,7 @@ include("database/DisplayTraining.php");
             <div class="card h-100"  style=" width: 250px;
              height: 300px;" >
                 <div class="card-body d-flex flex-row">
-                    <img src="./images/admin.webp" class="rounded-circle me-3" height="50px" width="50px" alt="avatar" />
+                    <img src="../../images/admin.webp" class="rounded-circle me-3" height="50px" width="50px" alt="avatar" />
                     <div>
                         <h5 class="card-title font-weight-bold mb-2"></h5>
                         <p class="card-text"><i class="far fa-clock pe-2"></i>
@@ -61,7 +61,7 @@ include("database/DisplayTraining.php");
                     </p>
                 </div>
                 <div class="card-footer">
-                    <a id="readMore" class="btn btn-link link-dark p-md-1 my-1" data-mdb-toggle="collapse" href="ReadTRAINING.php?id=<?php echo $recommendeds->idReco; ?>" role="button" aria-expanded="false" aria-controls="collapseContent">Read more</a>
+                    <a id="readMore" class="btn btn-link link-dark p-md-1 my-1" data-mdb-toggle="collapse" href="../crud/read/readTraining.php?id=<?php echo $recommendeds->idReco; ?>" role="button" aria-expanded="false" aria-controls="collapseContent">Read more</a>
                 </div>
             </div>
         </section>

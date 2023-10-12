@@ -11,7 +11,7 @@
 <?php include("navbaro.php"); ?>
 
 <p class="text-uppercase text-center" style="color: white">Logout successful!</p>
-<?php include("footer.php")?>
+<?php include("footer.php") ?>
 </body>
 </html>
 

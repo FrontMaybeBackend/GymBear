@@ -18,16 +18,15 @@ class SupplementsFormControl extends FormControl
     {
 
         $send = true;
-        if($this->inputsValidation() == false){
+        if ($this->inputsValidation() == false) {
             $send = false;
             return $this->errorForm['inputs'];
-        }if($send == true){
-        $this->addSupplementsToDataBase("$this->title", "$this->body", $this->img);
-    }
+        }
+        if ($send == true) {
+            $this->addSupplementsToDataBase("$this->title", "$this->body", $this->img);
+        }
         return $send;
     }
-
-
 
 
 }

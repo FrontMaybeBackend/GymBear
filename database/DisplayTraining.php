@@ -1,16 +1,18 @@
 <?php
 
-include("connect.php");
+include("Connect.php");
+
 class DisplayTraining extends connect
 {
 
-    public function displayUL(){
+    public function displayUL()
+    {
 
-        $stmt = $this->conn ->prepare("SELECT programms,img,title,id FROM recomennded WHERE title ='Upper Lower'");
-        $stmt ->execute();
-        $results = $stmt ->fetchAll();
+        $stmt = $this->conn->prepare("SELECT programms,img,title,id FROM recommended WHERE title ='Upper Lower'");
+        $stmt->execute();
+        $results = $stmt->fetchAll();
         $recommendeds = array();
-        foreach($results as $result){
+        foreach ($results as $result) {
             $recommended = new self();
             $recommended->programms = $result['programms'];
             $recommended->img = $result['img'];
@@ -21,13 +23,14 @@ class DisplayTraining extends connect
         return $recommendeds;
     }
 
-    public function displayPPL(){
+    public function displayPPL()
+    {
 
-        $stmt = $this->conn ->prepare("SELECT programms,img,title,id FROM recomennded WHERE title ='Push Pull Legs'");
-        $stmt ->execute();
-        $results = $stmt ->fetchAll();
+        $stmt = $this->conn->prepare("SELECT programms,img,title,id FROM recommended WHERE title ='Push Pull Legs'");
+        $stmt->execute();
+        $results = $stmt->fetchAll();
         $recommendeds = array();
-        foreach($results as $result){
+        foreach ($results as $result) {
             $recommended = new self();
             $recommended->programms = $result['programms'];
             $recommended->img = $result['img'];
@@ -38,13 +41,14 @@ class DisplayTraining extends connect
         return $recommendeds;
     }
 
-    public function displayFBW(){
+    public function displayFBW()
+    {
 
-        $stmt = $this->conn ->prepare("SELECT programms,img,title,id FROM recomennded WHERE title ='Full Body Workout'");
-        $stmt ->execute();
-        $results = $stmt ->fetchAll();
+        $stmt = $this->conn->prepare("SELECT programms,img,title,id FROM recommended WHERE title ='Full Body Workout'");
+        $stmt->execute();
+        $results = $stmt->fetchAll();
         $recommendeds = array();
-        foreach($results as $result){
+        foreach ($results as $result) {
             $recommended = new self();
             $recommended->programms = $result['programms'];
             $recommended->img = $result['img'];
@@ -55,13 +59,14 @@ class DisplayTraining extends connect
         return $recommendeds;
     }
 
-    public function displayBSL(){
+    public function displayBSL()
+    {
 
-        $stmt = $this->conn ->prepare("SELECT programms,img,title,id FROM recomennded WHERE title ='Split'");
-        $stmt ->execute();
-        $results = $stmt ->fetchAll();
+        $stmt = $this->conn->prepare("SELECT programms,img,title,id FROM recommended WHERE title ='Split'");
+        $stmt->execute();
+        $results = $stmt->fetchAll();
         $recommendeds = array();
-        foreach($results as $result){
+        foreach ($results as $result) {
             $recommended = new self();
             $recommended->programms = $result['programms'];
             $recommended->img = $result['img'];

@@ -36,7 +36,7 @@ $displayVitamin = $displayVitamins->displayVitamins();
             <div class="card h-100"  style=" width: 250px;
              height: 300px;" >
                 <div class="card-body d-flex flex-row">
-                    <img src="./images/admin.webp" class="rounded-circle me-3" height="50px" width="50px" alt="avatar" />
+                    <img src="../../images/admin.webp" class="rounded-circle me-3" height="50px" width="50px" alt="avatar" />
                     <div>
                         <h5 class="card-title font-weight-bold mb-2"></h5>
                         <p class="card-text"><i class="far fa-clock pe-2"></i>
@@ -58,7 +58,7 @@ $displayVitamin = $displayVitamins->displayVitamins();
                     </p>
                 </div>
                 <div class="card-footer">
-                    <a id="readMore" class="btn btn-link link-dark p-md-1 my-1" data-mdb-toggle="collapse" href="ReadSUPP.php?id=<?php echo $supplementss->idVIT; ?>" role="button" aria-expanded="false" aria-controls="collapseContent">Read more</a>
+                    <a id="readMore" class="btn btn-link link-dark p-md-1 my-1" data-mdb-toggle="collapse" href="../crud/read/readSupp.php?id=<?php echo $supplementss->idVIT; ?>" role="button" aria-expanded="false" aria-controls="collapseContent">Read more</a>
                 </div>
             </div>
         </section>

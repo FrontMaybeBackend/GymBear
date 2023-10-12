@@ -1,6 +1,7 @@
 <?php
 
-include("connect.php");
+include("Connect.php");
+
 class DisplayRecomennded extends connect
 {
 
@@ -18,12 +19,13 @@ class DisplayRecomennded extends connect
 
     //Funkcja, która pobiera dane z bazy, foreach  przeglada kazdy element tablicy diets.
 
-    public function displayDiets(){
-        $stmt = $this->conn ->prepare("SELECT title,img,diet,id FROM diets");
-        $stmt ->execute();
-        $results = $stmt ->fetchAll();
+    public function displayDiets()
+    {
+        $stmt = $this->conn->prepare("SELECT title,img,diet,id FROM diets");
+        $stmt->execute();
+        $results = $stmt->fetchAll();
         $diets = array();
-        foreach($results as $result){
+        foreach ($results as $result) {
             //Tworzy obiekt nowej klasy w tym wypadku obiekt klasy DietConfig.
             $diet = new self();
             $diet->titleDiet = $result['title'];
@@ -36,13 +38,14 @@ class DisplayRecomennded extends connect
     }
 
 
-    public function displayProgramms(){
+    public function displayProgramms()
+    {
 
-        $stmt = $this->conn ->prepare("SELECT programms,img,title,id FROM recomennded");
-        $stmt ->execute();
-        $results = $stmt ->fetchAll();
+        $stmt = $this->conn->prepare("SELECT programms,img,title,id FROM recommended");
+        $stmt->execute();
+        $results = $stmt->fetchAll();
         $recommendeds = array();
-        foreach($results as $result){
+        foreach ($results as $result) {
             $recommended = new self();
             $recommended->programms = $result['programms'];
             $recommended->img = $result['img'];
@@ -54,14 +57,15 @@ class DisplayRecomennded extends connect
     }
 
 
-    public function displaySupplements(){
+    public function displaySupplements()
+    {
 
-        $stmt = $this->conn ->prepare("SELECT body,img,title,id FROM supplements");
-        $stmt ->execute();
-        $results = $stmt ->fetchAll();
+        $stmt = $this->conn->prepare("SELECT body,img,title,id FROM supplements");
+        $stmt->execute();
+        $results = $stmt->fetchAll();
 
         $supplementss = array();
-        foreach($results as $result){
+        foreach ($results as $result) {
             $supplements = new self();
             $supplements->bodySupp = $result['body'];
             $supplements->imgSupp = $result['img'];
@@ -71,10 +75,6 @@ class DisplayRecomennded extends connect
         }
         return $supplementss;
     }
-
-
-
-
 
 
 }

@@ -1,6 +1,6 @@
 <?php
-include_once("navbaro.php");
-include_once("database/EditProgramConfig.php");
+include("../../public/navbaro.php");
+include_once("../../../database/EditProgramConfig.php");
  $training = new EditProgramConfig();
 $training_id  =$training->showProgramToEdit();
 
@@ -25,8 +25,8 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="navbar.css">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../css/myStyles/navbar.css">
+    <link rel="stylesheet" type="text/css" href="../../../css/bootstrap.min.css">
     <style>
         label{
             color:white;

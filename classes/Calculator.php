@@ -24,56 +24,61 @@ class Calculator
 
 
     );
-    public function OneRepMax()
+
+    public function oneRepMax()
     {
         $checkThis = true;
-        if($this->ValidationCalc() == false){
-            return  $this->errorCalc["empty"];
+        if ($this->validationCalc() == false) {
+            return $this->errorCalc["empty"];
             $checkThis = false;
         }
-        if($this->ValIsNumeric() == false){
+        if ($this->valIsNumeric() == false) {
             return $this->errorCalc['numeric'];
             $checkThis = false;
-        }if($checkThis = true) {
+        }
+        if ($checkThis = true) {
             $this->score = $this->weight * $this->reps * 0.0333 + $this->weight;
             return $this->score;
         }
 
     }
 
-    public function calcBMI(){
+    public function calcBMI()
+    {
         $checkThis = true;
-        if($this->ValidationCalc() == false){
-            return  $this->errorCalc["empty"];
+        if ($this->validationCalc() == false) {
+            return $this->errorCalc["empty"];
             $checkThis = false;
         }
-        if($this->ValIsNumeric() == false){
+        if ($this->valIsNumeric() == false) {
             return $this->errorCalc['numeric'];
             $checkThis = false;
-        }if($checkThis = true) {
-            $this ->height = $this->reps / 100;
+        }
+        if ($checkThis = true) {
+            $this->height = $this->reps / 100;
             $this->score = $this->weight / pow($this->height, 2);
             return $this->score;
         }
     }
 
 
-    public function ValidationCalc(){
+    public function validationCalc()
+    {
         $calc = true;
-        if(empty($this->weight) || empty($this->reps)){
+        if (empty($this->weight) || empty($this->reps)) {
             $calc = false;
-        }else{
-            $calc  = true;
+        } else {
+            $calc = true;
         }
         return $calc;
     }
 
-    public function ValIsNumeric()
+    public function valIsNumeric()
     {
-         $calcNum = true;
+        $calcNum = true;
         if (!is_numeric($this->weight) || !is_numeric($this->reps)) {
             $calcNum = false;
-        }else{
+        } else {
             $calcNum = true;
         }
         return $calcNum;

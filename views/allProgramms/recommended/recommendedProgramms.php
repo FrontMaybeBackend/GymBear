@@ -71,8 +71,8 @@ if(isset($_POST['sendSupp'])){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="rp.css">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../css/myStyles/rp.css">
+    <link rel="stylesheet" type="text/css" href="../../../css/bootstrap.min.css">
     <title>LoginPanel</title>
 
 
@@ -108,7 +108,7 @@ if(isset($_POST['sendSupp'])){
 
             <div class="card-body d-flex flex-row">
 
-                <img src="./images/admin.webp" class="rounded-circle me-3" height="50px" width="50px" alt="avatar" />
+                <img src="../../../images/admin.webp" class="rounded-circle me-3" height="50px" width="50px" alt="avatar" />
                 <div>
                     <h5 class="card-title font-weight-bold mb-2"></h5>
                     <p class="card-text"><i class="far fa-clock pe-2"></i>
@@ -130,11 +130,11 @@ if(isset($_POST['sendSupp'])){
                 </p>
             </div>
             <div class="card-footer">
-                <a id="readMore" class="btn btn-link link-dark p-md-1 my-1" data-mdb-toggle="collapse" href="views/crud/read/ReadTRAINING.php?id=<?php echo $recommendeds->idReco; ?>" role="button" aria-expanded="false" aria-controls="collapseContent">Read more</a>
+                <a id="readMore" class="btn btn-link link-dark p-md-1 my-1" data-mdb-toggle="collapse" href="../../crud/read/readTraining.php?id=<?php echo $recommendeds->idReco; ?>" role="button" aria-expanded="false" aria-controls="collapseContent">Read more</a>
                 <?php
                 if (isset($_SESSION["username"]) && $_SESSION["username"] === 'adminadmin') {
-                    echo '<button class="btn btn-dark btn-block"><a href="EditProgram.php?id=' . $recommendeds->idReco . '">Edit</a></button>';
-                    echo '<button class="btn btn-dark btn-block"><a href="DeleteProgram.php?id=' . $recommendeds->idReco . '">Delete</a></button>';
+                    echo '<button class="btn btn-dark btn-block"><a href="../../crud/edit/editProgram.php?id=' . $recommendeds->idReco . '">Edit</a></button>';
+                    echo '<button class="btn btn-dark btn-block"><a href="../../crud/delete/deleteProgram.php?id=' . $recommendeds->idReco . '">Delete</a></button>';
                 }
                 ?>
             </div>
@@ -180,7 +180,7 @@ if(isset($_POST['sendSupp'])){
             <div class="card h-100"  style=" width: 250px;
              height: 300px;" >
                 <div class="card-body d-flex flex-row">
-                    <img src="./images/admin.webp" class="rounded-circle me-3" height="50px" width="50px" alt="avatar" />
+                    <img src="../../../images/admin.webp" class="rounded-circle me-3" height="50px" width="50px" alt="avatar" />
                     <div>
                         <h5 class="card-title font-weight-bold mb-2"></h5>
                         <p class="card-text"><i class="far fa-clock pe-2"></i>
@@ -201,11 +201,11 @@ if(isset($_POST['sendSupp'])){
 
                 </div>
                 <div class="card-footer">
-                    <a id="readMore" class="btn btn-link link-dark p-md-1 my-1" data-mdb-toggle="collapse" href="views/allProgramms/Diet.php?id=<?php echo $diet->idDiet; ?>" role="button" aria-expanded="false" aria-controls="collapseContent">Read more</a>
+                    <a id="readMore" class="btn btn-link link-dark p-md-1 my-1" data-mdb-toggle="collapse" href="../../crud/read/readDiet.php?id=<?php echo $diet->idDiet; ?>" role="button" aria-expanded="false" aria-controls="collapseContent">Read more</a>
                     <?php
                     if (isset($_SESSION["username"]) && $_SESSION["username"] === 'adminadmin') {
-                        echo '<button class="btn btn-dark btn-block" > <a href="EditDiet.php?id=' . $diet->idDiet . '">Edit</a></button>';
-                        echo '<button class="btn btn-dark btn-block"><a href="DeleteDiet.php?id=' . $diet->idDiet . '">Delete</a></button>';
+                        echo '<button class="btn btn-dark btn-block" > <a href="../../crud/edit/editDiet.php?id=' . $diet->idDiet . '">Edit</a></button>';
+                        echo '<button class="btn btn-dark btn-block"><a href="../../crud/delete/deleteDiet.php?id=' . $diet->idDiet . '">Delete</a></button>';
                     }
 
                     ?>
@@ -250,7 +250,7 @@ if(isset($_POST['sendSupp'])){
             <div class="card h-100"  style=" width: 250px;
              height: 300px;">
                 <div class="card-body d-flex flex-row">
-                    <img src="./images/admin.webp" class="rounded-circle me-3" height="50px" width="50px" alt="avatar" />
+                    <img src="../../../images/admin.webp" class="rounded-circle me-3" height="50px" width="50px" alt="avatar" />
                     <div>
                         <h5 class="card-title font-weight-bold mb-2"></h5>
                         <p class="card-text"><i class="far fa-clock pe-2"></i>
@@ -272,11 +272,11 @@ if(isset($_POST['sendSupp'])){
                     </p>
             </div>
                 <div class="card-footer">
-                    <a id="readMore" class="btn btn-link link-dark p-md-1 my-1" data-mdb-toggle="collapse" href="views/crud/read/ReadSUPP.php?id=<?php echo $supplementss->idSupp; ?>"" role="button" aria-expanded="false" aria-controls="collapseContent">Read more</a>
+                    <a id="readMore" class="btn btn-link link-dark p-md-1 my-1" data-mdb-toggle="collapse" href="../../crud/read/readSupp.php?id=<?php echo $supplementss->idSupp; ?>"" role="button" aria-expanded="false" aria-controls="collapseContent">Read more</a>
                     <?php
                     if (isset($_SESSION["username"]) && $_SESSION["username"] === 'adminadmin') {
-                        echo '<button class="btn btn-dark btn-block"><a href="EditSupplements.php?id=' . $supplementss->idSupp . '">Edit</a></button>';
-                        echo '<button class="btn btn-dark btn-block"><a href="DeleteSupp.php?id=' . $supplementss->idSupp . '">Delete</a></button>';
+                        echo '<button class="btn btn-dark btn-block"><a href="../../crud/edit/editSupp.php?id=' . $supplementss->idSupp . '">Edit</a></button>';
+                        echo '<button class="btn btn-dark btn-block"><a href="../../crud/delete/deleteSupp.php?id=' . $supplementss->idSupp . '">Delete</a></button>';
                     }
                     ?>
                 </div>
@@ -314,7 +314,7 @@ if(isset($_POST['sendSupp'])){
 </body>
 <script
 
-    src="form.js">
+    src="../../../js/myJs/form.js">
 </script>
 
 </html>

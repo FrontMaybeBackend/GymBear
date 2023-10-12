@@ -1,16 +1,18 @@
 <?php
 
-include("connect.php");
+include("Connect.php");
+
 class DisplaySupplements extends connect
 {
 
-    public function displayCreatine(){
+    public function displayCreatine()
+    {
 
-        $stmt = $this->conn ->prepare("SELECT body,img,title,id FROM supplements WHERE title ='Creatine'");
-        $stmt ->execute();
-        $results = $stmt ->fetchAll();
+        $stmt = $this->conn->prepare("SELECT body,img,title,id FROM supplements WHERE title ='Creatine'");
+        $stmt->execute();
+        $results = $stmt->fetchAll();
         $supplementss = array();
-        foreach($results as $result){
+        foreach ($results as $result) {
             $supplements = new self();
             $supplements->bodySupp = $result['body'];
             $supplements->imgSupp = $result['img'];
@@ -21,13 +23,14 @@ class DisplaySupplements extends connect
         return $supplementss;
     }
 
-    public function displayProtein(){
+    public function displayProtein()
+    {
 
-        $stmt = $this->conn ->prepare("SELECT body,img,title,id FROM supplements WHERE title ='Protein'");
-        $stmt ->execute();
-        $results = $stmt ->fetchAll();
+        $stmt = $this->conn->prepare("SELECT body,img,title,id FROM supplements WHERE title ='Protein'");
+        $stmt->execute();
+        $results = $stmt->fetchAll();
         $supplementss = array();
-        foreach($results as $result){
+        foreach ($results as $result) {
             $supplements = new self();
             $supplements->bodySupp = $result['body'];
             $supplements->imgSupp = $result['img'];
@@ -38,13 +41,14 @@ class DisplaySupplements extends connect
         return $supplementss;
     }
 
-    public function displayVitamins(){
+    public function displayVitamins()
+    {
 
-        $stmt = $this->conn ->prepare("SELECT body,img,title,id FROM supplements WHERE title ='Vitamins'");
-        $stmt ->execute();
-        $results = $stmt ->fetchAll();
+        $stmt = $this->conn->prepare("SELECT body,img,title,id FROM supplements WHERE title ='Vitamins'");
+        $stmt->execute();
+        $results = $stmt->fetchAll();
         $supplementss = array();
-        foreach($results as $result){
+        foreach ($results as $result) {
             $supplements = new self();
             $supplements->bodySupp = $result['body'];
             $supplements->imgSupp = $result['img'];

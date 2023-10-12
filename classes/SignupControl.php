@@ -1,7 +1,10 @@
 <?php
 
 namespace classes;
-include('database/SignupConfig.php');
+
+use SignupConfig;
+
+include(__DIR__ . '/../database/SignupConfig.php');
 
 class SignupControl extends SignupConfig
 {
@@ -33,7 +36,7 @@ class SignupControl extends SignupConfig
     );
 
 
-    public function Validation()
+    public function validation()
     {
         $checkThisSign = true;
         if ($this->checkInput() == false) {

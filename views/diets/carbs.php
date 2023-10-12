@@ -1,7 +1,7 @@
 <?php
-include("navbaro.php");
+include("../public/navbaro.php");
 
-include("database/DisplayDiets.php");
+include("../../database/DisplayDiets.php");
 
 $displayCarbs = new DisplayDiets();
 
@@ -60,7 +60,7 @@ $displayCarb = $displayCarbs->displayCarbs();
                     </p>
                 </div>
                     <div class="card-footer">
-                        <a id="readMore" class="btn btn-link link-dark p-md-1 my-1" data-mdb-toggle="collapse" href="../crud/read/ReadDIET.php?id=<?php echo $diet->idCARB; ?>" role="button" aria-expanded="false" aria-controls="collapseContent">Read more</a>
+                        <a id="readMore" class="btn btn-link link-dark p-md-1 my-1" data-mdb-toggle="collapse" href="../crud/read/readDiet.php?id=<?php echo $diet->idCARB; ?>" role="button" aria-expanded="false" aria-controls="collapseContent">Read more</a>
                     </div>
             </div>
         </section>

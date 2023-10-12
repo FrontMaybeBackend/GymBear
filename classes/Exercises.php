@@ -1,9 +1,10 @@
 <?php
 
 namespace classes;
+
 use connect;
 
-include("database/connect.php");
+include("database/Connect.php");
 
 class Exercises extends connect
 {
@@ -34,7 +35,8 @@ class Exercises extends connect
     }
 
 
-    public function getBack($type){
+    public function getBack($type)
+    {
 
         $muscle = 'middle_back';
         $api_url = 'https://api.api-ninjas.com/v1/exercises?muscle=' . $muscle;
@@ -59,7 +61,8 @@ class Exercises extends connect
     }
 
 
-    public function getLegs($type){
+    public function getLegs($type)
+    {
 
         $muscle = 'quadriceps';
         $api_url = 'https://api.api-ninjas.com/v1/exercises?muscle=' . $muscle;
@@ -84,7 +87,8 @@ class Exercises extends connect
 
     }
 
-    public function getAbs($type){
+    public function getAbs($type)
+    {
 
         $muscle = 'abdominals';
         $api_url = 'https://api.api-ninjas.com/v1/exercises?muscle=' . $muscle;
@@ -109,7 +113,8 @@ class Exercises extends connect
 
     }
 
-    public function getShoulders($type){
+    public function getShoulders($type)
+    {
 
         $muscle = 'shoulders';
         $api_url = 'https://api.api-ninjas.com/v1/exercises?muscle=' . $muscle;
@@ -134,7 +139,8 @@ class Exercises extends connect
 
     }
 
-    public function getGlutes($type){
+    public function getGlutes($type)
+    {
 
         $muscle = 'glutes';
         $api_url = 'https://api.api-ninjas.com/v1/exercises?muscle=' . $muscle;
@@ -160,7 +166,8 @@ class Exercises extends connect
 
     }
 
-    public function getTriceps($type){
+    public function getTriceps($type)
+    {
 
         $muscle = 'triceps';
         $api_url = 'https://api.api-ninjas.com/v1/exercises?muscle=' . $muscle;
@@ -185,7 +192,8 @@ class Exercises extends connect
 
     }
 
-    public function getBiceps($type){
+    public function getBiceps($type)
+    {
 
         $muscle = 'biceps';
         $api_url = 'https://api.api-ninjas.com/v1/exercises?muscle=' . $muscle;

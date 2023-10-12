@@ -36,7 +36,7 @@ if(isset($_POST['Compose'])){
 
     $program = new UserProgramControl("$name","$programUser", $repUser, $nameExc,$dayTrain);
 
-    $validation = $program ->ValidationTraining();
+    $validation = $program ->validationTraining();
     if($validation){
         echo '<div class="error">' . $validation . '</div>';
     }
@@ -55,7 +55,7 @@ if(isset($_POST['Compose'])){
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
-        <link rel="stylesheet" type="text/css" href="../../Exercises.css">
+        <link rel="stylesheet" type="text/css" href="../../css/myStyles/Exercises.css">
         <meta name=”viewport” content="width=device-width, initial-scale=1.0">
         <style>
 

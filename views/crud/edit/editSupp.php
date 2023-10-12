@@ -1,7 +1,8 @@
 <?php
-include_once("navbaro.php");
+include("../../public/navbaro.php");
 
-include_once("database/EditProgramConfig.php");
+include_once("../../../database/EditProgramConfig.php");
+
 $supp = new EditProgramConfig();
 $supp_id  = $supp->showSuppToEdit();
 

@@ -5,7 +5,7 @@ use classes\LoginControl;
 
 if(isset($_POST["login"])) {
 
-    include("classes/LoginControl.php");
+    include("../../classes/LoginControl.php");
     $usernameLogin = $_POST["username"];
     $userPassword = $_POST["password"];
     $_SESSION["username"] = $usernameLogin;
@@ -34,7 +34,7 @@ if(isset($_POST["login"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LoginPanel</title>
 
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
 
     <style>
         .error {

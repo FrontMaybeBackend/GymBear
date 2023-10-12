@@ -36,7 +36,7 @@ if(isset($_POST['Compose'])){
 
     $program = new UserProgramControl("$name","$programUser", $repUser, $nameExc,$dayTrain);
 
-    $validation = $program ->ValidationTraining();
+    $validation = $program ->validationTraining();
     if($validation){
         echo '<div class="error">' . $validation . '</div>';
     }
@@ -49,7 +49,7 @@ if(isset($_POST['Compose'])){
 
 
 <html>
-<link rel="stylesheet" type="text/css" href="../../Exercises.css">
+<link rel="stylesheet" type="text/css" href="../../css/myStyles/Exercises.css">
 <Body>
 
 <form method="POST" id="programUser" name="programUser">

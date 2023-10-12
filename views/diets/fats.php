@@ -1,7 +1,7 @@
 <?php
-include("navbaro.php");
+include("../public/navbaro.php");
 
-include("database/DisplayDiets.php");
+include("../../database/DisplayDiets.php");
 
 $displayFats = new DisplayDiets();
 
@@ -37,7 +37,7 @@ $displayFat = $displayFats->displayFats();
                 <div class="card h-100" style=" width: 250px;
              height: 300px;">
                     <div class="card-body d-flex flex-row">
-                        <img src="./images/admin.webp" class="rounded-circle me-3" height="50px" width="50px"
+                        <img src="../../images/admin.webp" class="rounded-circle me-3" height="50px" width="50px"
                              alt="avatar"/>
                         <div>
                             <h5 class="card-title font-weight-bold mb-2"></h5>
@@ -59,7 +59,7 @@ $displayFat = $displayFats->displayFats();
                     </div>
                     <div class="card-footer">
                         <a id="readMore" class="btn btn-link link-dark p-md-1 my-1" data-mdb-toggle="collapse"
-                           href="views/crud/read/ReadDIET.php?id=<?php echo $diet->idFAT; ?>" role="button"
+                           href="../crud/read/readDiet.php?id=<?php echo $diet->idFAT; ?>" role="button"
                            aria-expanded="false" aria-controls="collapseContent">Read more</a>
                     </div>
                 </div>

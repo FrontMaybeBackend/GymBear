@@ -1,6 +1,7 @@
 <?php
 
-include("connect.php");
+include("Connect.php");
+
 class DisplayDiets extends connect
 {
 

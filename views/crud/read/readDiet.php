@@ -1,7 +1,7 @@
 <?php
 
-include("database/connect.php");
-include("navbaro.php");
+include("../../../database/Connect.php");
+include("../../public/navbaro.php");
 
 
 

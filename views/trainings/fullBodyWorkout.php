@@ -23,6 +23,19 @@ $displayFBW = $display->displayFBW();
         .text-center{
             color: white;
         }
+
+        .my-5{
+            max-width: 23rem;
+        }
+
+        .card{
+            width: 250px;
+            height: 300px;
+        }
+
+        .mask{
+            background-color: rgba(251, 251, 251, 0.15);
+        }
     </style>
 </head>
 <body>
@@ -35,7 +48,7 @@ $displayFBW = $display->displayFBW();
             <div class="card"  style=" width: 250px;
              height: 300px;">
                 <div class="card-body d-flex flex-row">
-                    <img src="./images/admin.webp" class="rounded-circle me-3" height="50px" width="50px" alt="avatar" />
+                    <img src="../../images/admin.webp" class="rounded-circle me-3" height="50px" width="50px" alt="avatar" />
                     <div>
                         <h5 class="card-title font-weight-bold mb-2"></h5>
                         <p class="card-text"><i class="far fa-clock pe-2"></i>
@@ -57,7 +70,7 @@ $displayFBW = $display->displayFBW();
                     </p>
                 </div>
                 <div class="card-footer">
-                    <a id="readMore" class="btn btn-link link-dark p-md-1 my-1" data-mdb-toggle="collapse" href="ReadTRAINING.php?id=<?php echo $recommendeds->idFBW; ?>" role="button" aria-expanded="false" aria-controls="collapseContent">Read more</a>
+                    <a id="readMore" class="btn btn-link link-dark p-md-1 my-1" data-mdb-toggle="collapse" href="../crud/read/readTraining.php?id=<?php echo $recommendeds->idFBW; ?>" role="button" aria-expanded="false" aria-controls="collapseContent">Read more</a>
                 </div>
             </div>
 

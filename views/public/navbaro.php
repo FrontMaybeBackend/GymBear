@@ -5,7 +5,7 @@ $username = isset($_SESSION["username"]) ? $_SESSION["username"] : null;
 
 if(isset($_POST["logout"])){
     unset($_SESSION["username"]);
-    header("Location: Logout.php");
+    header("Location: logout.php");
     exit;
 }
 
@@ -37,21 +37,21 @@ if(isset($_POST["logout"])){
 
 <nav class="navbar navbar-expand-sm navbar-dark ">
     <div class="container-fluid">
-        <a class="navbar-brand" href="Main.php">GymBear</a>
+        <a class="navbar-brand" href="main.php">GymBear</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse " id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link " aria-current="page" href="views/about/About.php">About</a>
+                    <a class="nav-link " aria-current="page" href="../about/about.php">About</a>
                 </li>
                 <?php if(!isset($_SESSION["username"])){ ?>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="views/authorization/loginpanel.php">Login</a>
+                        <a class="nav-link active" aria-current="page" href="../authorization/loginPanel.php">Login</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="views/authorization/register.php">Register</a>
+                        <a class="nav-link active" href="../authorization/register.php">Register</a>
                     </li>
                 <?php } ?>
                 <div class="dropdown bg-dark">
@@ -61,14 +61,14 @@ if(isset($_POST["logout"])){
                                 <?php echo  $username ?>
                             </a>
                             <ul class ="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <li><a class="dropdown-item" href="views/allProgramms/userProgramms/Training.php">Training</a></li>
+                                <li><a class="dropdown-item" href="../allProgramms/userProgramms/training.php">Training</a></li>
                                 <input class="btn dropdown-item" type="submit" name="logout" value="Logout">
                             </ul>
                         </form>
                     <?php } ?>
                 </div>
                 <li class="nav-item">
-                    <a class="nav-link " href="views/allProgramms/recommended/RecommendedProgramms.php">Programms</a>
+                    <a class="nav-link " href="../allProgramms/recommended/recommendedProgramms.php">Programms</a>
                 </li>
             </ul>
         </div>
@@ -82,10 +82,10 @@ if(isset($_POST["logout"])){
     </button>
 
     <ul class=" dropdown-menu  text-center btn-sm bg-dark" aria-labelledby="dropdownMenu2">
-        <li><a class="dropdown-item text-uppercase" style="color:white" href="views/trainings/PushPullLegs.php" value="Push Pull Legs">Push Pull Legs</a></li>
-        <li><a class="dropdown-item text-uppercase" href="views/trainings/UpperLower.php" style="color:white" value="Upper Lower">Upper Lower</a></li>
-        <li><a class="dropdown-item text-uppercase" href="views/trainings/FullBodyWorkout.php" style="color:white" value="Full Body Workout"> Full Body Workout</a></li>
-        <li><a class="dropdown-item text-uppercase" href="views/trainings/Split.php" style="color:white" value="Bro Split"> Bro Split</a></li>
+        <li><a class="dropdown-item text-uppercase" style="color:white" href="../trainings/pushPullLegs.php" value="Push Pull Legs">Push Pull Legs</a></li>
+        <li><a class="dropdown-item text-uppercase" href="../trainings/upperLower.php" style="color:white" value="Upper Lower">Upper Lower</a></li>
+        <li><a class="dropdown-item text-uppercase" href="../trainings/fullBodyWorkout.php" style="color:white" value="Full Body Workout"> Full Body Workout</a></li>
+        <li><a class="dropdown-item text-uppercase" href="../trainings/split.php" style="color:white" value="Bro Split"> Bro Split</a></li>
     </ul>
 
 
@@ -93,8 +93,8 @@ if(isset($_POST["logout"])){
         Diet
     </button>
     <ul class="dropdown-menu text-center btn-sm bg-dark " aria-labelledby="dropdownMenu3">
-        <li><a class="dropdown-item text-uppercase" href="views/diets/Carbs.php" style="color:white" value=" Carbs"> Carbs </a></li>
-        <li><a class="dropdown-item text-uppercase" href="views/diets/Fats.php" style="color:white" value=" Fats">Fats </a></li>
+        <li><a class="dropdown-item text-uppercase" href="../diets/carbs.php" style="color:white" value=" Carbs"> Carbs </a></li>
+        <li><a class="dropdown-item text-uppercase" href="../diets/fats.php" style="color:white" value=" Fats">Fats </a></li>
     </ul>
 
 
@@ -102,20 +102,20 @@ if(isset($_POST["logout"])){
         Supplements
     </button>
     <ul class="dropdown-menu text-center btn-sm bg-dark" aria-labelledby="dropdownMenu4">
-        <li><a class="dropdown-item text-uppercase" href="views/supplements/Creatine.php" style="color:white"> Creatine</a></li>
-        <li><a class="dropdown-item text-uppercase" href="views/supplements/Protein.php" style="color:white"> Whey</a></li>
-        <li><a class="dropdown-item text-uppercase" href="views/supplements/Vitamin.php" style="color:white"> Vitamins</a></li>
+        <li><a class="dropdown-item text-uppercase" href="../supplements/creatine.php" style="color:white"> Creatine</a></li>
+        <li><a class="dropdown-item text-uppercase" href="../supplements/protein.php" style="color:white"> Whey</a></li>
+        <li><a class="dropdown-item text-uppercase" href="../supplements/vitamin.php" style="color:white"> Vitamins</a></li>
     </ul>
 
     <button class=" btn  dropdown-toggle-split m-3 text-center text-nowrap" style=" color:white" type="button" id="dropdownMenu5" data-bs-toggle="dropdown" aria-expanded="false">
         Calculator
     </button>
     <ul class="dropdown-menu text-center btn-sm bg-dark " aria-labelledby="dropdownMenu5">
-        <li><a class="dropdown-item text-uppercase" id="1RM" href="views/calculators/Calculator.php" style="color:white">1RM </a> </li>
-        <li><a class="dropdown-item text-uppercase" href="views/calculators/CalculactorBMI.php" style="color:white">BMI </a> </li>
+        <li><a class="dropdown-item text-uppercase" id="1RM" href="../calculators/calculator.php" style="color:white">1RM </a> </li>
+        <li><a class="dropdown-item text-uppercase" href="../calculators/calculactorBMI.php" style="color:white">BMI </a> </li>
     </ul>
     <button class=" btn dropdown-toggle-split m-3 text-center text-nowrap " type="button"  aria-expanded="false">
-        <a class="dropdown-item " id="1RM" href="views/crud/create/ComposeWorkout.php" style="color:white"> Compose</a>
+        <a class="dropdown-item " id="1RM" href="../crud/create/composeWorkout.php" style="color:white"> Compose</a>
     </button>
 
 </div>

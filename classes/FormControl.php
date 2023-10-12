@@ -5,6 +5,7 @@ namespace classes;
 use FormConfig;
 
 include("database/FormConfig.php");
+
 class
 FormControl extends FormConfig
 {
@@ -15,33 +16,37 @@ FormControl extends FormConfig
 
     public $img;
 
-    public function __construct($title,$body,$img){
-        $this->title=$title;
-        $this->body=$body;
-        $this->img=$img;
+    public function __construct($title, $body, $img)
+    {
+        $this->title = $title;
+        $this->body = $body;
+        $this->img = $img;
     }
 
-    public  $errorForm = array(
+    public $errorForm = array(
         "inputs" => "inputs are required"
     );
 
-    public function formValidation(){
+    public function formValidation()
+    {
         $send = true;
-       if($this->inputsValidation() == false){
-           $send = false;
-           return $this->errorForm['inputs'];
-       }if($send == true){
-           $this->addFormToDatabase("$this->title", "$this->body", $this->img);
+        if ($this->inputsValidation() == false) {
+            $send = false;
+            return $this->errorForm['inputs'];
+        }
+        if ($send == true) {
+            $this->addFormToDatabase("$this->title", "$this->body", $this->img);
 
-       }
-       return $send;
+        }
+        return $send;
     }
 
-    public function inputsValidation(){
+    public function inputsValidation()
+    {
         $form = true;
-        if(empty($this->title) || empty($this->body) || empty($this->img)){
+        if (empty($this->title) || empty($this->body) || empty($this->img)) {
             $form = false;
-        }else{
+        } else {
             $form = true;
         }
         return $form;

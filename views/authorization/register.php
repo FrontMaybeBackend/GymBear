@@ -1,8 +1,7 @@
 <?php
 
 
-
-
+use classes\SignupControl;
 
 if(isset($_POST["create"])){
 
@@ -16,7 +15,7 @@ if(isset($_POST["create"])){
     $user = new SignupControl("$username","$email", "$password", "$repPassword");
 
 
-    $checkIt = $user->  Validation();
+    $checkIt = $user->  validation();
     if($checkIt){
         echo '<div class="error">' . $checkIt . '</div>';
     }
@@ -41,7 +40,7 @@ if(isset($_POST["create"])){
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
   <style>
     .error {
       color: red;

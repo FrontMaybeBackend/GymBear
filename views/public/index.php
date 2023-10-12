@@ -2,9 +2,8 @@
 
 
 include("navbaro.php");
-include("database/DisplayRecomennded.php");
-include("classes/Calculator.php");
-
+include("../../database/DisplayRecomennded.php");
+include("../../classes/Calculator.php");
 
 
 
@@ -38,13 +37,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 <div class="container-fluid d-flex justify-content-between p-2 row w-25" >
-    <button type="button"  class="btn btn-dark "> <a class="text-decoration-none text-light" href="views/days/Monday.php" >Monday</a></button>
-    <button type="button" class="btn btn-dark "> <a class="text-decoration-none text-light" href="views/days/Tuesday.php" >Tuesday</a></button>
-    <button type="button" class="btn btn-dark "> <a  class="text-decoration-none text-light"href="views/days/Wednesday.php" >Wednesday</a></button>
-    <button type="button" class="btn btn-dark "> <a class="text-decoration-none text-light" href="views/days/Thursday.php" >Thursday</a></button>
-    <button type="button" class="btn btn-dark "> <a class="text-decoration-none text-light" href="views/days/Friday.php" >Friday</a></button>
-    <button type="button" class="btn btn-dark "> <a class="text-decoration-none text-light" href="views/days/Saturday.php" >Saturday</a></button>
-    <button type="button" class="btn btn-dark "><a class="text-decoration-none text-light" href="views/days/Sunday.php" >Sunday</a></button>
+    <button type="button"  class="btn btn-dark "> <a class="text-decoration-none text-light" href="../days/monday.php" >Monday</a></button>
+    <button type="button" class="btn btn-dark "> <a class="text-decoration-none text-light" href="../days/tuesday.php" >Tuesday</a></button>
+    <button type="button" class="btn btn-dark "> <a  class="text-decoration-none text-light"href="../days/wednesday.php" >Wednesday</a></button>
+    <button type="button" class="btn btn-dark "> <a class="text-decoration-none text-light" href="../days/thursday.php" >Thursday</a></button>
+    <button type="button" class="btn btn-dark "> <a class="text-decoration-none text-light" href="../days/friday.php" >Friday</a></button>
+    <button type="button" class="btn btn-dark "> <a class="text-decoration-none text-light" href="../days/saturday.php" >Saturday</a></button>
+    <button type="button" class="btn btn-dark "><a class="text-decoration-none text-light" href="../days/sunday.php" >Sunday</a></button>
 </div>
 
 
